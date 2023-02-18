@@ -1,6 +1,7 @@
-export const BTN_TYPE = {
+export const BTN_NAME = {
   REGISTER: 'register',
   LOGIN: 'login',
-  CONFIRMATION: 'confirmation',
-  BALANCE_ENTRY: 'balance',
+  ORANGE: 'orange',
+  WHITE: 'white',
+  CONFIRM: 'confirm',
 };

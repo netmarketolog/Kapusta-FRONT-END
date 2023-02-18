@@ -1,7 +1,7 @@
 // import { styled } from '@mui/material/styles';
 // import Button from '@mui/material/Button';
 import styled from 'styled-components';
-import { BTN_TYPE } from '../../utils/constants';
+import { BTN_NAME } from '../../utils/constants';
 
 const StyledButton = styled.button`
   display: flex;
@@ -16,23 +16,28 @@ const StyledButton = styled.button`
   line-height: 1.167;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #52555f;
+  color: ${props =>
+    props.type === (BTN_NAME.LOGIN || BTN_NAME.ORANGE) ? '#fff' : '#52555f'};
 
   background-color: ${props =>
-    props.type === BTN_TYPE.REGISTER ? '#f6f7fb' : 'transparent'};
-  border-width: ${props => (props.type === BTN_TYPE.REGISTER ? 0 : '1px')};
+    props.type === BTN_NAME.REGISTER
+      ? '#f6f7fb'
+      : props.type === (BTN_NAME.LOGIN || BTN_NAME.ORANGE)
+      ? '#ff751d'
+      : 'transparent'};
+  border-width: ${props => (props.type === BTN_NAME.REGISTER ? 0 : '1px')};
   border-style: solid;
   border-color: ${props =>
-    props.type === BTN_TYPE.CONFIRMATION ? '#f6f7fc' : '#fff'};
+    props.type === BTN_NAME.WHITE ? '#f6f7fc' : '#fff'};
   border-radius: 16px;
   box-shadow: ${props =>
-    props.type === BTN_TYPE.REGISTER
+    props.type === BTN_NAME.REGISTER
       ? '1px 3px 5px rgba(82, 85, 95, 0.15)'
       : 'none'};
 
   @media screen and (max-width: 767px) {
     border-radius: ${props =>
-      props.type === BTN_TYPE.BALANCE_ENTRY && '0px 22px 22px 0px'};
+      props.type === BTN_NAME.CONFIRM && '0px 22px 22px 0px'};
   }
 
   &:hover,

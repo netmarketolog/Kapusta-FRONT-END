@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import StyledButton from './Button.styled';
-import { BTN_TYPE } from '../../utils/constants';
+import { BTN_NAME } from '../../utils/constants';
 
-function Button({ name, disabled = false, handleAction, children }) {
+function Button({ name, handleAction, children }) {
   return (
-    <StyledButton type={name} disabled={disabled} onClick={handleAction}>
+    <StyledButton type={name} onClick={handleAction}>
       {children}
     </StyledButton>
   );
@@ -13,9 +13,11 @@ function Button({ name, disabled = false, handleAction, children }) {
 Button.propTypes = {
   children: PropTypes.node,
   name: PropTypes.oneOf([
-    BTN_TYPE.REGISTER,
-    BTN_TYPE.CONFIRMATION,
-    BTN_TYPE.BALANCE_ENTRY,
+    BTN_NAME.REGISTER,
+    BTN_NAME.LOGIN,
+    BTN_NAME.ORANGE,
+    BTN_NAME.WHITE,
+    BTN_NAME.CONFIRM,
   ]),
   disabled: PropTypes.bool,
   handleAction: PropTypes.func,

@@ -13,7 +13,7 @@ export const TestComponent = () => {
   };
   return (
     <TestStyled>
-      <Button name="register" handleAction={testing} autofocus>
+      <Button name="login" handleAction={testing}>
         Войти
       </Button>
       <Button name="register" handleAction={testing}>
