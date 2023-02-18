@@ -1,3 +1,5 @@
+import { AuthForm } from './Forms/AuthForm/AuthForm';
+
 export const App = () => {
   return (
     <div
@@ -11,6 +13,7 @@ export const App = () => {
       }}
     >
       React homework template
+      <AuthForm />
     </div>
   );
 };
