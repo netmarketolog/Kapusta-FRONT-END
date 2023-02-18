@@ -8,7 +8,6 @@ export const Google = styled.span`
   display: flex;
   align-items: center;
   letter-spacing: 0.02em;
-
   color: #000000;
 `;
 export const Link = styled.a`
@@ -18,7 +17,7 @@ export const Link = styled.a`
   text-decoration: none;
   background-color: #f6f7fb;
   padding: 10px 20px;
-  transition: all var(--transition);
+
   width: 122px;
   height: 40px;
   border-radius: 26px;

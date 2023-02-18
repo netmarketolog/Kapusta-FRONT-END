@@ -12,13 +12,13 @@ export const FormAuth = styled(Form)`
   margin-left: auto;
   margin-right: auto;
   margin-top: 200px;
-  padding: 40px 18px 53px 18px;
-  width: 300px;
-  height: 525px;
+  padding: 40px 18px 20px;
+  width: 280px;
+  height: 496px;
   background-color: #fff;
   box-shadow: 5px 10px 20px 5px rgba(170, 178, 197, 0.4);
   border-radius: 30px;
-  text-align: center;
+  /* text-align: center; */
   @media screen and (min-width: 768px) {
     z-index: 4;
     width: 426px;
@@ -36,6 +36,7 @@ export const StyleForm = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 40px;
   @media screen and (min-width: 768px) {
     align-items: center;
   } ;
@@ -44,7 +45,7 @@ export const Input = styled(Field)`
   display: flex;
   width: 240px;
   height: 52px;
-  align-items: center;
+  /* align-items: center; */
 
   background: #f6f7fb;
   border-radius: 30px;
@@ -67,26 +68,29 @@ export const Label = styled.p`
   line-height: 12px;
   letter-spacing: 0.04em;
 `;
-export const Button = styled.button`
-  width: 116px;
-  height: 44px;
-  border-radius: 16px;
-  border: none;
-  :hover {
-    background-color: red;
-  }
-`;
-export const LogIn = styled.button`
-  width: 116px;
-  height: 44px;
-  border-radius: 16px;
-  border: none;
-  background: #ff751d;
-  color: white;
-  :hover {
-    background-color: red;
-  }
-`;
+// export const Button = styled.button`
+//   width: 116px;
+//   height: 44px;
+//   border-radius: 16px;
+//   border: none;
+//   filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
+//   :hover {
+//     background-color: red;
+//   }
+// `;
+// export const LogIn = styled.button`
+//   width: 116px;
+//   height: 44px;
+//   border-radius: 16px;
+//   margin-right: 20px;
+//   border: none;
+//   background: #ff751d;
+//   color: white;
+//   filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
+//   :hover {
+//     background-color: red;
+//   }
+// `;
 export const TextForm = styled.p`
   margin-top: 0;
   margin-bottom: 16px;
