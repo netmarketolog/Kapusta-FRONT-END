@@ -14,16 +14,16 @@ export const TestComponent = () => {
   return (
     <TestStyled>
       <Button name="login" handleAction={testing}>
-        Войти
+        Login
       </Button>
       <Button name="register" handleAction={testing}>
-        регистрация
+        Register
       </Button>
-      <Button name="confirmation" handleAction={testing}>
-        Подтвердить
+      <Button name="white" handleAction={testing}>
+        Input
       </Button>
-      <Button name="balance" handleAction={testing}>
-        баланс/любая
+      <Button name="confirm" handleAction={testing}>
+        Confirmation
       </Button>
     </TestStyled>
   );

@@ -29,11 +29,15 @@ const StyledButton = styled.button`
   border-style: solid;
   border-color: ${props =>
     props.type === BTN_NAME.WHITE ? '#f6f7fc' : '#fff'};
-  border-radius: 16px;
+
   box-shadow: ${props =>
     props.type === BTN_NAME.REGISTER
       ? '1px 3px 5px rgba(82, 85, 95, 0.15)'
       : 'none'};
+
+  @media screen and (min-width: 768px) {
+    border-radius: 16px;
+  }
 
   @media screen and (max-width: 767px) {
     border-radius: ${props =>
