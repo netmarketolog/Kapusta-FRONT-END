@@ -13,7 +13,6 @@ export const App = () => {
       }}
     >
       React homework template
-      <AuthForm />
     </div>
   );
 };
