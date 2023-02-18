@@ -68,29 +68,29 @@ export const Label = styled.p`
   line-height: 12px;
   letter-spacing: 0.04em;
 `;
-// export const Button = styled.button`
-//   width: 116px;
-//   height: 44px;
-//   border-radius: 16px;
-//   border: none;
-//   filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
-//   :hover {
-//     background-color: red;
-//   }
-// `;
-// export const LogIn = styled.button`
-//   width: 116px;
-//   height: 44px;
-//   border-radius: 16px;
-//   margin-right: 20px;
-//   border: none;
-//   background: #ff751d;
-//   color: white;
-//   filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
-//   :hover {
-//     background-color: red;
-//   }
-// `;
+export const Button = styled.button`
+  width: 116px;
+  height: 44px;
+  border-radius: 16px;
+  border: none;
+  filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
+  :hover {
+    background-color: red;
+  }
+`;
+export const LogIn = styled.button`
+  width: 116px;
+  height: 44px;
+  border-radius: 16px;
+  margin-right: 20px;
+  border: none;
+  background: #ff751d;
+  color: white;
+  filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
+  :hover {
+    background-color: red;
+  }
+`;
 export const TextForm = styled.p`
   margin-top: 0;
   margin-bottom: 16px;

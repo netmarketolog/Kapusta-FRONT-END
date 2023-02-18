@@ -60,10 +60,10 @@ export const AuthForm = () => {
           </label>
         </StyleForm>
         <div>
-          <button name="login" type="submit">
+          <LogIn name="login" type="submit">
             Log in
-          </button>
-          <button type="submit">Registration</button>
+          </LogIn>
+          <Button type="submit">Registration</Button>
         </div>
       </FormAuth>
     </Formik>
