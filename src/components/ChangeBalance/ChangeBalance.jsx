@@ -9,20 +9,26 @@ import {
   BalanceInput,
   InputBtn,
   BalanceForm,
+  CalendarContainer,
+  Calendar,
+  Label,
+  InputContainer,
 } from './ChangeBalance.styled';
-import { ReactComponent as ReportsSvg } from './svg/ReportsSvg.svg';
+
+import { ReactComponent as ReportsSvg } from '../../images/icons/ReportsSvg.svg';
+import { ReactComponent as CalendarSvg } from '../../images/icons/СalendarSvg.svg';
 
 export const ChangeBalance = () => {
-  const [balance, setbalance] = useState(`00.00 UAH`);
+  const [balance, setbalance] = useState(`00.00`);
+  const date = new Date().toLocaleDateString();
 
   const formBalanceChange = e => {
     setbalance(e.currentTarget.value);
   };
-
   const formSubmit = e => {
     e.preventDefault();
   };
-  console.log(balance);
+
   return (
     <BackgroundContainer>
       <BalanceContainer>
@@ -34,14 +40,22 @@ export const ChangeBalance = () => {
         <Balance>
           <BalanceText>Balance:</BalanceText>
           <BalanceForm onSubmit={formSubmit}>
-            <BalanceInput
-              type="text"
-              value={`${balance}`}
-              onChange={formBalanceChange}
-            />
+            <InputContainer>
+              <BalanceInput
+                type="Number"
+                value={balance}
+                onChange={formBalanceChange}
+              />
+              <Label>UAH</Label>
+            </InputContainer>
             <InputBtn type="submit">Confirm</InputBtn>
           </BalanceForm>
         </Balance>
+
+        <CalendarContainer>
+          <CalendarSvg />
+          <Calendar>{date}</Calendar>
+        </CalendarContainer>
       </BalanceContainer>
     </BackgroundContainer>
   );
