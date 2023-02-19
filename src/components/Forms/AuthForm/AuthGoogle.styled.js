@@ -1,27 +1,19 @@
 import styled from 'styled-components';
-export const Google = styled.span`
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.02em;
-  color: #000000;
-`;
+
 export const Link = styled.a`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   text-decoration: none;
   background-color: #f6f7fb;
-  padding: 10px 20px;
 
   width: 122px;
   height: 40px;
   border-radius: 26px;
   filter: drop-shadow(1px 2px 3px rgba(170, 178, 197, 0.2));
+  @media screen and (min-width: 768px) {
+    width: 120px;
+  } ;
 `;
 export const StyleG = styled.div`
   display: flex;

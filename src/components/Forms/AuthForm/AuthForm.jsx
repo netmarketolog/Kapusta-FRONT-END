@@ -2,12 +2,13 @@ import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 
 import {
-  Button,
+  Buttons,
   Custom,
   FormAuth,
   Input,
   Label,
   LogIn,
+  Register,
   StyleForm,
   TextForm,
 } from './AuthForm.styled';
@@ -36,8 +37,8 @@ export const AuthForm = () => {
         <AuthGoogle />
         <StyleForm>
           <TextForm>
-            Or log in using an email and password, after registering:
-          </TextForm>{' '}
+            Or log in using an email and password, <br /> after registering:
+          </TextForm>
           <label htmlFor="Email">
             <Label>Email:</Label>
             <Input
@@ -59,12 +60,12 @@ export const AuthForm = () => {
             <ErrorMessage name="password" component={Custom} />
           </label>
         </StyleForm>
-        <div>
+        <Buttons>
           <LogIn name="login" type="submit">
             Log in
           </LogIn>
-          <Button type="submit">Registration</Button>
-        </div>
+          <Register type="submit">Registration</Register>
+        </Buttons>
       </FormAuth>
     </Formik>
   );

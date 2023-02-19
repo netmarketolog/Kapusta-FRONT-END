@@ -1,4 +1,5 @@
 import Button from 'components/Buttons/Buttons';
+import { AuthForm } from 'components/Forms/AuthForm/AuthForm';
 import styled from 'styled-components';
 
 const TestStyled = styled.div`
@@ -25,6 +26,7 @@ export const TestComponent = () => {
       <Button name="confirm" handleAction={testing}>
         Confirmation
       </Button>
+      <AuthForm></AuthForm>
     </TestStyled>
   );
 };
