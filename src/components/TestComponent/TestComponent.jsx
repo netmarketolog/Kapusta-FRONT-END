@@ -1,3 +1,4 @@
+import { BackToMain } from 'components/BackToMain/BackToMain';
 import Button from 'components/Buttons/Buttons';
 import { AuthForm } from 'components/Forms/AuthForm/AuthForm';
 import styled from 'styled-components';
@@ -27,6 +28,7 @@ export const TestComponent = () => {
         Confirmation
       </Button>
       <AuthForm></AuthForm>
+      <BackToMain></BackToMain>
     </TestStyled>
   );
 };
