@@ -5,14 +5,14 @@ export const BackgroundContainer = styled.div`
   padding: 40px 0px 40px;
   background-color: #f5f6fb;
   border-bottom-left-radius: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
 `;
 
 export const BalanceContainer = styled.div`
   width: 280px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -93,8 +93,8 @@ export const BalanceForm = styled.form`
 `;
 
 export const BalanceInput = styled.input`
-  width: 73px;
-  height: 16px;
+  width: 140px;
+  height: 44px;
   text-align: end;
   padding: 12px 44px 12px 19px;
   border: 2px solid #fff;
@@ -114,7 +114,7 @@ export const BalanceInput = styled.input`
   }
 
   @media screen and (min-width: 768px) {
-    width: 74px;
+    width: 125px;
     padding: 12px 47px 12px 0px;
     margin-right: 15px;
     border: 2px solid #ffffff;
