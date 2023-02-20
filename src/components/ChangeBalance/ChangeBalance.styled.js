@@ -100,14 +100,14 @@ export const BalanceInput = styled.input`
   border: 2px solid #fff;
   border-radius: 22px 0px 0px 22px;
   background: transparent;
-outline: none;
-font-weight: 700;
-font-size: 12px;
-line-height: 14px;
-text-transform: uppercase;
-color: #000000;
+  outline: none;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: #000000;
   :focus {
-    border-width: 2px
+    border-width: 2px;
     border-style: solid;
     border-color: #ff751d;
   }
@@ -116,13 +116,14 @@ color: #000000;
     width: 74px;
     padding: 12px 47px 12px 0px;
     margin-right: 15px;
-    border: 2px solid #FFFFFF;
+    border: 2px solid #ffffff;
     border-radius: 16px;
   }
-  
-  @media screen and (min-width: 1200px){
-        margin-right: 16px;
-    }`;
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 16px;
+  }
+`;
 
 export const InputBtn = styled.button`
   width: 142px;

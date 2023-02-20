@@ -1,12 +1,12 @@
-// import { useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+// import { useDispatch } from 'react-redux';
 
 // import { selectIsLoggedIn, selectUserEmail } from 'redux/selectors';
 // import  logOut  from '';
 
 import logoutImg from 'images/header/logout.svg';
 
-// import Modal from '';
+import { ModalAsk } from 'components/Modal/ModalAsk/ModalAsk';
 
 import {
   AuthNavContainer,
@@ -18,18 +18,19 @@ import {
 } from './HeaderNav.styled';
 
 export const HeaderNav = () => {
-  //   const [modalOpen, setModalOpen] = useState(false);
-  //   const dispatch = useDispatch();
+  const [modalOpen, setModalOpen] = useState(false);
+  // const dispatch = useDispatch();
   //   const isLoggedIn = useSelector(selectIsLoggedIn);
   //   const userEmail = useSelector(selectUserEmail);
 
-  // const handleClick = () => {
-  //    dispatch(logOut());
-  // };
+  const toggleModal = () => {
+    setModalOpen(prevState => !prevState);
+  };
 
-  //   const toggleModal = () => {
-  // setModalOpen(prevState => !prevState);
-  //   };
+  const handleClick = () => {
+    // dispatch(logOut());
+    toggleModal();
+  };
 
   return (
     // isLoggedIn && (
@@ -37,18 +38,19 @@ export const HeaderNav = () => {
       <AuthNavContainer>
         <UserAvatar>U</UserAvatar>
         <UserEmail>UserEmail</UserEmail>
-        <LogoutImg src={logoutImg} alt="logout" />
+        <LogoutImg src={logoutImg} alt="logout" onClick={toggleModal} />
         <VerticalLine></VerticalLine>
-        <ExitButton type="button">Exit</ExitButton>
+        <ExitButton type="button" onClick={toggleModal}>
+          Exit
+        </ExitButton>
       </AuthNavContainer>
-      {/* {modalOpen && (
-        <Modal
-          closeModal={toggleModal}
-          // dispatch={handleClick}
-        >
-          Do you really want to leave?
-        </Modal>
-      )} */}
+      {modalOpen && (
+        <ModalAsk
+          onConfirm={handleClick}
+          onClose={toggleModal}
+          title="Do you really want to leave?"
+        />
+      )}
     </>
   );
   //   );
