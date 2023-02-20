@@ -9,16 +9,22 @@ export const SummaryContainer = styled.div`
   }
 
   @media screen and (min-width: 1200px) {
+    width: 213px;
   }
 `;
 
 export const TitleContainer = styled.div`
   background: #f5f6fb;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   padding: 12px 77px;
   margin-bottom: 2px;
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 4px;
+  }
 `;
+
 export const Text = styled.p`
   text-align: center;
   font-weight: 700;
@@ -37,11 +43,22 @@ export const Item = styled.li`
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #52555f;
-  padding: 12px 20px 10px 22px;
+  padding: 13px 20px 11px 22px;
   margin-bottom: 2px;
   display: flex;
   justify-content: space-between;
+  :last-child {
+    border-bottom-right-radius: 20px;
+    margin-bottom: 0px;
+  }
 `;
-// export const SummaryContainer = styled.div`
 
-// `;
+export const Plug = styled.div`
+  background: #f5f6fb;
+  padding: 20px 20px 18px 22px;
+  margin-bottom: 2px;
+  :last-child {
+    border-bottom-right-radius: 20px;
+    margin-bottom: 0px;
+  }
+`;
