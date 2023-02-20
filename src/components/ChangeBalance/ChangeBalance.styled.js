@@ -106,6 +106,7 @@ export const BalanceInput = styled.input`
   line-height: 14px;
   text-transform: uppercase;
   color: #000000;
+
   :focus {
     border-width: 2px;
     border-style: solid;
