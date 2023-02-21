@@ -106,6 +106,18 @@ export const BalanceInput = styled.input`
   line-height: 14px;
   text-transform: uppercase;
   color: #000000;
+  ::-webkit-outer-spin-button,
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  ::-moz-outer-spin-button,
+  ::-moz-inner-spin-button {
+    -moz-appearance: none;
+  }
+  ::-ms-outer-spin-button,
+  ::-ms-inner-spin-button {
+    -ms-appearance: none;
+  }
 
   :focus {
     border-width: 2px;
