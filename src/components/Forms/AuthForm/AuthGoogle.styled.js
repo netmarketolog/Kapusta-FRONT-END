@@ -6,15 +6,16 @@ export const Link = styled.a`
   justify-content: space-evenly;
   text-decoration: none;
   background-color: #f6f7fb;
-
   width: 122px;
   height: 40px;
   border-radius: 26px;
   filter: drop-shadow(1px 2px 3px rgba(170, 178, 197, 0.2));
+
   @media screen and (min-width: 768px) {
     width: 120px;
-  } ;
+  }
 `;
+
 export const StyleG = styled.div`
   display: flex;
   align-items: center;
@@ -23,16 +24,13 @@ export const StyleG = styled.div`
   flex-direction: column;
   margin-bottom: 32px;
 `;
+
 export const TextForm = styled.p`
-  margin-top: 0;
   margin-bottom: 16px;
-  font-family: 'Roboto';
-  font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.04em;
   text-align: start;
-
   color: #52555f;
 `;
