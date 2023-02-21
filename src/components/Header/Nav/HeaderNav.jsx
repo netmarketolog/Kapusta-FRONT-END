@@ -37,7 +37,7 @@ export const HeaderNav = () => {
       <>
         <AuthNavContainer>
           <UserAvatar>U</UserAvatar>
-          <UserEmail>UserEmail</UserEmail>
+          <UserEmail>EmailUser</UserEmail>
           <LogoutImg src={logoutImg} alt="logout" onClick={toggleModal} />
           <VerticalLine></VerticalLine>
           <ExitButton type="button" onClick={toggleModal}>
