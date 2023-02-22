@@ -1,18 +1,17 @@
 import { 
   TitleItem, 
-  DesktopTitle, 
-  DesctopContainer,
-  DesctopScrollbar,
-  DesctopExpensesList,
-  DesktopItem,
-  FormDesktop,
-  DatePickerDesktop,
+  Title, 
+  Container,
+  Scrollbar,
+  BudgetList,
+  Item,
+  Form,
+  DatePicker,
   ConteinerGeneral,
 } from './Expenses.styled';
 
-import { 
-  Tab
-} from './Tab/Tab';
+import {Tab} from './Tab/Tab';
+// import {Summary} from '../../Summary/Summary';
 
 // import { 
 //   InputWraper
@@ -25,33 +24,37 @@ export const Expenses = () => {
     <>
     <Tab></Tab>
     <ConteinerGeneral>
-      <FormDesktop>
-        <DatePickerDesktop>
+      <Form>
+        <DatePicker>
           <DatePickerCustom/>
           {/* <InputWraper/> */}
-        </DatePickerDesktop>
-      </FormDesktop>
-        <DesctopContainer>
-          <DesktopTitle>
+        </DatePicker>
+      </Form>
+        <Container>
+          <Title>
             <TitleItem>DATA</TitleItem>
             <TitleItem>DESCRIPTION</TitleItem>
             <TitleItem>CATEGORY</TitleItem>
             <TitleItem>SUM</TitleItem>
-          </DesktopTitle>
-          <DesctopScrollbar>
-            <DesctopExpensesList>
-              <DesktopItem></DesktopItem>
-              <DesktopItem></DesktopItem>
-              <DesktopItem></DesktopItem>
-              <DesktopItem></DesktopItem>
-              <DesktopItem></DesktopItem>
-              <DesktopItem></DesktopItem>
-              <DesktopItem></DesktopItem>
-              <DesktopItem></DesktopItem>
-              <DesktopItem></DesktopItem>
-            </DesctopExpensesList>
-          </DesctopScrollbar>
-        </DesctopContainer>
+          </Title>
+
+            <Scrollbar>
+              <BudgetList>
+                <Item></Item>
+                <Item></Item>
+                <Item></Item>
+                <Item></Item>
+                <Item></Item>
+                <Item></Item>
+                <Item></Item>
+                <Item></Item>
+                <Item></Item>
+              </BudgetList>
+            </Scrollbar>
+            {/* <Summary></Summary> */}
+
+        </Container>
+        
     </ConteinerGeneral>  
     </>
   );

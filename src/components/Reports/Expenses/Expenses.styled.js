@@ -14,7 +14,7 @@ export const TitleItem = styled.div`
     padding: 0 8px;
     text-transform: uppercase;
 `;
-export const DesktopTitle = styled.div`
+export const Title = styled.div`
     height: 38px;
     align-items: center;
     display: grid;
@@ -28,12 +28,12 @@ export const DesktopTitle = styled.div`
     background-color: #f4f6fb;
     
 `;
-export const DesctopContainer = styled.div`
+export const Container = styled.div`
     width: 746px;
     margin-left: 32px;
     padding-top: 60px;
 `;
-export const DesctopScrollbar = styled.div`
+export const Scrollbar = styled.div`
     display: block;
     overflow: auto;
     height: 342px;
@@ -42,13 +42,13 @@ export const DesctopScrollbar = styled.div`
     // border-radius: 2px;
 `;
 
-export const DesctopExpensesList = styled.div`
+export const BudgetList = styled.div`
     margin: 0;
     position: relative;
     border-left: 2px solid #f4f6fb;
     border-right: 2px solid #f4f6fb;
 `;
-export const DesktopItem = styled.div`
+export const Item = styled.div`
     height: 38px;
     grid-template-columns: 126px 168px 216px 117px 119px;
     align-items: center;
@@ -59,14 +59,14 @@ export const DesktopItem = styled.div`
     border-bottom: 2px solid #f4f6fb;
     
 `;
-export const FormDesktop = styled.div`
+export const Form = styled.div`
     display: flex;
     max-width: 100%;
     justify-content: space-between;
     height: 44px;
     padding-top: 32px;
 `;
-export const DatePickerDesktop = styled.div`
+export const DatePicker = styled.div`
     width: fit-content;
     display: flex;
     justify-content: flex-start;
