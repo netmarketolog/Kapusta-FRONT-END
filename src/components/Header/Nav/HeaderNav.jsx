@@ -1,12 +1,12 @@
-// import { useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-// import { selectIsLoggedIn, selectUserEmail } from 'redux/selectors';
-// import  logOut  from '';
+import { selectIsLoggedIn } from 'redux/selectors';
 
 import logoutImg from 'images/header/logout.svg';
 
-// import Modal from '';
+import { ModalAsk } from 'components/Modal/ModalAsk/ModalAsk';
+import { logOut } from 'redux/auth/authOperations';
 
 import {
   AuthNavContainer,
@@ -18,38 +18,40 @@ import {
 } from './HeaderNav.styled';
 
 export const HeaderNav = () => {
-  //   const [modalOpen, setModalOpen] = useState(false);
-  //   const dispatch = useDispatch();
-  //   const isLoggedIn = useSelector(selectIsLoggedIn);
-  //   const userEmail = useSelector(selectUserEmail);
+  const [modalOpen, setModalOpen] = useState(false);
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  // const userEmail = useSelector(selectUser);
 
-  // const handleClick = () => {
-  //    dispatch(logOut());
-  // };
+  const toggleModal = () => {
+    setModalOpen(prevState => !prevState);
+  };
 
-  //   const toggleModal = () => {
-  // setModalOpen(prevState => !prevState);
-  //   };
+  const handleClick = () => {
+    dispatch(logOut());
+    toggleModal();
+  };
 
   return (
-    // isLoggedIn && (
-    <>
-      <AuthNavContainer>
-        <UserAvatar>U</UserAvatar>
-        <UserEmail>UserEmail</UserEmail>
-        <LogoutImg src={logoutImg} alt="logout" />
-        <VerticalLine></VerticalLine>
-        <ExitButton type="button">Exit</ExitButton>
-      </AuthNavContainer>
-      {/* {modalOpen && (
-        <Modal
-          closeModal={toggleModal}
-          // dispatch={handleClick}
-        >
-          Do you really want to leave?
-        </Modal>
-      )} */}
-    </>
+    isLoggedIn && (
+      <>
+        <AuthNavContainer>
+          <UserAvatar>U</UserAvatar>
+          <UserEmail>EmailUser</UserEmail>
+          <LogoutImg src={logoutImg} alt="logout" onClick={toggleModal} />
+          <VerticalLine></VerticalLine>
+          <ExitButton type="button" onClick={toggleModal}>
+            Exit
+          </ExitButton>
+        </AuthNavContainer>
+        {modalOpen && (
+          <ModalAsk
+            onConfirm={handleClick}
+            onClose={toggleModal}
+            title="Do you really want to leave?"
+          />
+        )}
+      </>
+    )
   );
-  //   );
 };
