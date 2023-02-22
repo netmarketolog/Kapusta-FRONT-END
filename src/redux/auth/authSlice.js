@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 // import { Notify } from 'notiflix';
-import { logOut } from './authOperations';
+import { logIn, logOut, register } from './authOperations';
 
 const initialState = {
-  user: { name: null, email: null }, //зависит от того, как будем получать с бека
+  user: { email: null, balance: null }, //зависит от того, как будем получать с бека
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
@@ -13,11 +13,22 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   extraReducers: builder =>
-    builder.addCase(logOut.fulfilled, state => {
-      state.user = { name: null, email: null };
-      state.token = null;
-      state.isLoggedIn = false;
-    }),
+    builder
+      .addCase(register.fulfilled, (state, action) => {
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+        state.isLoggedIn = true;
+      })
+      .addCase(logIn.fulfilled, (state, action) => {
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+        state.isLoggedIn = true;
+      })
+      .addCase(logOut.fulfilled, state => {
+        state.user = { name: null, email: null };
+        state.token = null;
+        state.isLoggedIn = false;
+      }),
 });
 
 export const authReducer = authSlice.reducer;
