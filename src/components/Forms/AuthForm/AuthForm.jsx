@@ -1,4 +1,6 @@
 import { Formik, ErrorMessage } from 'formik';
+import { useDispatch } from 'react-redux';
+import { logIn, register } from 'redux/auth/authOperations';
 import * as yup from 'yup';
 
 import {
@@ -23,6 +25,11 @@ const initialValues = {
   password: '',
 };
 export const AuthForm = () => {
+  const dispatch = useDispatch();
+
+  dispatch(register({ email: 'example', password: '******' })); // Причепить на кнопку реєстрації
+  dispatch(logIn({ email: 'example', password: '******' })); // Причепить на кнопку логіна ;-)
+
   const handleSubmit = (values, { resetForm }) => {
     console.log(values);
     resetForm();
