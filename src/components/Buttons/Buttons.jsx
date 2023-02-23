@@ -1,4 +1,4 @@
-import StyledButton from './Button.styled';
+import StyledButton from './Buttons.styled';
 
 function Button({ name, handleAction, children }) {
   return (
