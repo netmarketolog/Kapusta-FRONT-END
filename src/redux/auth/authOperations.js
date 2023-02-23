@@ -2,7 +2,7 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-axios.defaults.baseURL = '';
+axios.defaults.baseURL = 'https://kapusta-wwgw.onrender.com';
 
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
