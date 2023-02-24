@@ -6,8 +6,8 @@ export const Container = styled.div`
     // justify-content: center;
     margin: 0 auto;
     margin-left: 32px;
-    width: 714px;
-`;
+//     width: 714px;
+// `;
 export const IconDate = styled.img`
     background-image: url('../../../../images/icons/calendar.png');
     width: 20px;

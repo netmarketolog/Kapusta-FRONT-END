@@ -1,20 +1,18 @@
 import {
-  StyledButtonExpenses,
-  StyledButtonIncome,
+  // StyledButtonExpenses,
+  // StyledButtonIncome,
   TabConteiner,
-  TitleConteinerExpenses,
-  TitleConteinerIncome,
+  // TitleConteinerExpenses,
+  // TitleConteinerIncome,
 } from './Tab.styled';
+
+import TabButton from './Buttons';
 
 export const Tab = () => {
   return (
     <TabConteiner>
-      <TitleConteinerExpenses>
-          <StyledButtonExpenses>EXPENSES</StyledButtonExpenses>
-      </TitleConteinerExpenses>
-      <TitleConteinerIncome>
-          <StyledButtonIncome>INCOME</StyledButtonIncome>
-      </TitleConteinerIncome>
+      <TabButton>EXPENSES</TabButton>
+      <TabButton>INCOME</TabButton>
    </TabConteiner>
   );
 }

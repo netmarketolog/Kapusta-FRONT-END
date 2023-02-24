@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const SummaryContainer = styled.div`
   display: none;
+  margin-left: 75px;
 
   @media screen and (min-width: 768px) {
     display: block;

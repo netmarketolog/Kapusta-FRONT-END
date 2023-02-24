@@ -24,7 +24,7 @@ export const TabConteiner = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0;
+    // margin: 0;
     // height: 40px;
     width: 316px;
         @media screen and (min-width: 768px) {

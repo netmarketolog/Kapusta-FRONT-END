@@ -31,15 +31,15 @@ export const Title = styled.div`
 export const Container = styled.div`
     width: 746px;
     margin-left: 32px;
-    padding-top: 60px;
+    
 `;
 export const Scrollbar = styled.div`
-    display: block;
+    // display: block;
     overflow: auto;
     height: 342px;
     // width: 6px;
     // background-color: #FF751D;
-    // border-radius: 2px;
+    border-radius: 2px;
 `;
 
 export const BudgetList = styled.div`
@@ -79,4 +79,8 @@ export const ConteinerGeneral = styled.div`
     background: #FFFFFF;
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 0px 30px 30px 30px;
+`;
+export const Cont = styled.div`
+    display: flex;
+    padding-top: 60px;
 `;

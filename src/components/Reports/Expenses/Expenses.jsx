@@ -8,14 +8,16 @@ import {
   Form,
   DatePicker,
   ConteinerGeneral,
+  Cont,
 } from './Expenses.styled';
 
 import {Tab} from './Tab/Tab';
-// import {Summary} from '../../Summary/Summary';
+import {Summary} from '../../Summary/Summary';
+import {ProductCategori} from '../../ProductCategory/ProductCategori.jsx';
+import Button from '../../Buttons/Buttons';
 
-// import { 
-//   InputWraper
-// } from './InputWraper/InputWraper';
+import {Input} from './Input/Input';
+import {Calc} from './Calc/Calc';
 
 import {DatePickerCustom} from '../Expenses/DatePicker/DatePicker'
 
@@ -27,9 +29,14 @@ export const Expenses = () => {
       <Form>
         <DatePicker>
           <DatePickerCustom/>
-          {/* <InputWraper/> */}
+          <Input></Input>
+          <ProductCategori></ProductCategori>
+          <Calc></Calc>
+          <Button>INPUT</Button>
+          <Button style = {{}}>CLEAR</Button>
         </DatePicker>
       </Form>
+      <Cont>
         <Container>
           <Title>
             <TitleItem>DATA</TitleItem>
@@ -37,9 +44,9 @@ export const Expenses = () => {
             <TitleItem>CATEGORY</TitleItem>
             <TitleItem>SUM</TitleItem>
           </Title>
-
-            <Scrollbar>
-              <BudgetList>
+          {/* <Scrollbar> */}
+            <BudgetList>
+              <Scrollbar>
                 <Item></Item>
                 <Item></Item>
                 <Item></Item>
@@ -49,12 +56,12 @@ export const Expenses = () => {
                 <Item></Item>
                 <Item></Item>
                 <Item></Item>
-              </BudgetList>
-            </Scrollbar>
-            {/* <Summary></Summary> */}
-
+              </Scrollbar>
+            </BudgetList>
+          {/* </Scrollbar> */}
         </Container>
-        
+        <Summary></Summary>
+      </Cont>  
     </ConteinerGeneral>  
     </>
   );
