@@ -4,7 +4,7 @@ import { ReportsLink, ReportsText } from './ReportsBtn.styled';
 
 import { ReactComponent as ReportsSvg } from '../../../images/icons/ReportsSvg.svg';
 
-const ReportsBtn = () => {
+export const ReportsBtn = () => {
   const location = useLocation();
 
   return (
@@ -14,5 +14,3 @@ const ReportsBtn = () => {
     </ReportsLink>
   );
 };
-
-export default ReportsBtn;
