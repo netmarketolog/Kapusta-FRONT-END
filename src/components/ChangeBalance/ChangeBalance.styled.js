@@ -30,29 +30,6 @@ export const BalanceContainer = styled.div`
   }
 `;
 
-export const ReportsLink = styled.p`
-  margin: 0;
-  margin-right: 15px;
-  padding: 0;
-  color: rgba(82, 85, 95, 0.7);
-  font-size: 12px;
-  line-height: 14px;
-
-  @media screen and (min-width: 768px) {
-    margin-right: 20px;
-  }
-`;
-
-export const ReportsContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 45px;
-
-  @media screen and (min-width: 768px) {
-    margin-bottom: 0px;
-  }
-`;
-
 export const Balance = styled.div`
   display: flex;
   flex-direction: column;
