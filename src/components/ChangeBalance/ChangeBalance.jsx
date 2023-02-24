@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ReportsBtn from './ReportsButton/ReportsBtn';
+import { ReportsBtn } from './ReportsButton/ReportsBtn';
 import {
   BackgroundContainer,
   BalanceContainer,
