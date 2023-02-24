@@ -1,8 +1,7 @@
 import { useState } from 'react';
+import ReportsBtn from './ReportsButton/ReportsBtn';
 import {
   BackgroundContainer,
-  ReportsLink,
-  ReportsContainer,
   BalanceContainer,
   BalanceText,
   Balance,
@@ -15,8 +14,7 @@ import {
   InputContainer,
 } from './ChangeBalance.styled';
 
-import { ReactComponent as ReportsSvg } from '../../images/icons/ReportsSvg.svg';
-import { ReactComponent as CalendarSvg } from '../../images/icons/СalendarSvg.svg';
+import { ReactComponent as CalendarSvg } from '../../images/icons/CalendarSvg.svg';
 
 export const ChangeBalance = () => {
   const [balance, setbalance] = useState(`00.00`);
@@ -32,10 +30,7 @@ export const ChangeBalance = () => {
   return (
     <BackgroundContainer>
       <BalanceContainer>
-        <ReportsContainer>
-          <ReportsLink>Reports</ReportsLink>
-          <ReportsSvg />
-        </ReportsContainer>
+        <ReportsBtn />
 
         <Balance>
           <BalanceText>Balance:</BalanceText>
