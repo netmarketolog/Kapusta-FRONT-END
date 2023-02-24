@@ -1,5 +1,6 @@
 import { ButtonMain } from 'components/Buttons/ButtonMain';
 import Button from 'components/Buttons/Buttons';
+import { Container } from 'components/Container/Container';
 import { AuthForm } from 'components/Forms/AuthForm/AuthForm';
 import styled from 'styled-components';
 
@@ -15,20 +16,23 @@ export const TestComponent = () => {
   };
   return (
     <TestStyled>
-      <Button name="login" handleAction={testing}>
-        Login
-      </Button>
-      <Button name="register" handleAction={testing}>
-        Register
-      </Button>
-      <Button name="white" handleAction={testing}>
-        Input
-      </Button>
-      <Button name="confirm" handleAction={testing}>
-        Confirmation
-      </Button>
-      <AuthForm></AuthForm>
-      <ButtonMain></ButtonMain>
+      <Container>
+        <Button name="login" handleAction={testing}>
+          Login
+        </Button>
+        <Button name="register" handleAction={testing}>
+          Register
+        </Button>
+        <Button name="white" handleAction={testing}>
+          Input
+        </Button>
+        <Button name="confirm" handleAction={testing}>
+          Confirmation
+        </Button>
+
+        <AuthForm></AuthForm>
+        <ButtonMain></ButtonMain>
+      </Container>
     </TestStyled>
   );
 };
