@@ -2,9 +2,9 @@ import {
   TitleItem, 
   Title, 
   Container,
-  Scrollbar,
-  BudgetList,
-  Item,
+  // Scrollbar,
+  // BudgetList,
+  // Item,
   Form,
   DatePicker,
   ConteinerGeneral,
@@ -16,8 +16,10 @@ import {Summary} from '../../Summary/Summary';
 import {ProductCategori} from '../../ProductCategory/ProductCategori.jsx';
 import Button from '../../Buttons/Buttons';
 
+
 import {Input} from './Input/Input';
 import {Calc} from './Calc/Calc';
+import {TabExIn} from './TabExIn/TabExIn';
 
 import {DatePickerCustom} from '../Expenses/DatePicker/DatePicker'
 
@@ -44,8 +46,9 @@ export const Expenses = () => {
             <TitleItem>CATEGORY</TitleItem>
             <TitleItem>SUM</TitleItem>
           </Title>
+          <TabExIn></TabExIn>
           {/* <Scrollbar> */}
-            <BudgetList>
+            {/* <BudgetList>
               <Scrollbar>
                 <Item></Item>
                 <Item></Item>
@@ -57,7 +60,7 @@ export const Expenses = () => {
                 <Item></Item>
                 <Item></Item>
               </Scrollbar>
-            </BudgetList>
+            </BudgetList> */}
           {/* </Scrollbar> */}
         </Container>
         <Summary></Summary>

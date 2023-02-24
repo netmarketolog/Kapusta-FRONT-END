@@ -31,3 +31,18 @@ export const CalcS = styled.input`
     border-left: 1px #C7CCDC;
   }
 `;
+
+// export const IconCalc = styled.img`
+//     background-image: url('../../../../images/icons/calculator.png');
+//     width: 20px;
+//     height: 20px;
+//     background-size: cover;
+//     // fill: #52555F;
+//     // padding-right: 10px;
+//     position: absolute;
+//     z-index: 1;
+// `;
+
+// export const ContCalk = styled.img`
+//     displey: flex;
+// `;
