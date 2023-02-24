@@ -35,7 +35,7 @@ export const Expenses = () => {
           <ProductCategori></ProductCategori>
           <Calc></Calc>
           <Button>INPUT</Button>
-          <Button style = {{}}>CLEAR</Button>
+          <Button>CLEAR</Button>
         </DatePicker>
       </Form>
       <Cont>
@@ -47,21 +47,6 @@ export const Expenses = () => {
             <TitleItem>SUM</TitleItem>
           </Title>
           <TabExIn></TabExIn>
-          {/* <Scrollbar> */}
-            {/* <BudgetList>
-              <Scrollbar>
-                <Item></Item>
-                <Item></Item>
-                <Item></Item>
-                <Item></Item>
-                <Item></Item>
-                <Item></Item>
-                <Item></Item>
-                <Item></Item>
-                <Item></Item>
-              </Scrollbar>
-            </BudgetList> */}
-          {/* </Scrollbar> */}
         </Container>
         <Summary></Summary>
       </Cont>  
