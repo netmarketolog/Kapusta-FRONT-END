@@ -33,6 +33,7 @@ export const logIn = createAsyncThunk(
       setAuthHeader(data.token);
       return data;
     } catch (e) {
+      Notify.warning(e.response.data.message);
       return ThunkAPI.rejectWithValue(e.message);
     }
   }
