@@ -20,6 +20,7 @@ export const register = createAsyncThunk(
       setAuthHeader(data.token);
       return data;
     } catch (e) {
+      Notify.warning(e.response.data.message);
       return ThunkAPI.rejectWithValue(e.message);
     }
   }
@@ -58,11 +59,10 @@ export const RefreshUser = createAsyncThunk(
     if (persistedToken === null) {
       return thunkAPI.rejectWithValue('Unable to fetch user');
     }
-    console.log(persistedToken);
     try {
       setAuthHeader(persistedToken);
       const { data } = await axios.get('users/current');
-      return data.data;
+      return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }

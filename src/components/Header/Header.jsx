@@ -2,6 +2,7 @@ import { Link, Outlet } from 'react-router-dom';
 import logo from 'images/header/logo.svg';
 import { HeaderStyled } from './Header.styled';
 import { HeaderNav } from './Nav/HeaderNav';
+import { Suspense } from 'react';
 
 export const Header = () => {
   return (
@@ -12,7 +13,9 @@ export const Header = () => {
         </Link>
         <HeaderNav />
       </HeaderStyled>
-      <Outlet />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
