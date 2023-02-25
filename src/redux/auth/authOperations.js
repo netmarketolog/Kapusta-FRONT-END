@@ -20,6 +20,7 @@ export const register = createAsyncThunk(
       setAuthHeader(data.token);
       return data;
     } catch (e) {
+      Notify.warning(e.response.data.message);
       return ThunkAPI.rejectWithValue(e.message);
     }
   }
@@ -48,3 +49,22 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     return thunkAPI.rejectWithValue(error.message);
   }
 });
+
+export const RefreshUser = createAsyncThunk(
+  'auth/refresh',
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue('Unable to fetch user');
+    }
+    try {
+      setAuthHeader(persistedToken);
+      const { data } = await axios.get('users/current');
+      return data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);

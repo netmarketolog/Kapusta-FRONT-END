@@ -11,7 +11,7 @@ const TestStyled = styled.div`
   align-items: center;
 `;
 
-export const TestComponent = () => {
+const TestComponent = () => {
   const testing = e => {
     e.preventDefault();
   };
@@ -54,3 +54,4 @@ export const TestComponent = () => {
     </TestStyled>
   );
 };
+export default TestComponent;
