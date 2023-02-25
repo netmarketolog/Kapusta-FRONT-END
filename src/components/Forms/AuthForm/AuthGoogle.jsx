@@ -7,7 +7,7 @@ export const AuthGoogle = () => {
     <StyleG>
       <TextForm>You can log in with your Google Account:</TextForm>
 
-      <Link href="https://www.google.com/">
+      <Link href="https://kapusta-wwgw.onrender.com/auth/google">
         <Icon />
       </Link>
     </StyleG>
