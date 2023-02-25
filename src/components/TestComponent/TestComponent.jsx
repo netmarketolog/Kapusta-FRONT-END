@@ -44,9 +44,9 @@ export const TestComponent = () => {
         <Button name="confirm" handleAction={testing}>
           Confirmation
         </Button>
-        <Button name="clear" handleAction={handleClear}>
+        {/* <Button name="clear" handleAction={handleClear}>
           CLEAR
-        </Button>
+        </Button> */}
 
         <AuthForm></AuthForm>
         <ButtonMain></ButtonMain>
