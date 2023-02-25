@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ButtonMain } from 'components/Buttons/ButtonMain';
 import Button from 'components/Buttons/Buttons';
 import { Container } from 'components/Container/Container';
@@ -14,6 +15,20 @@ export const TestComponent = () => {
   const testing = e => {
     e.preventDefault();
   };
+  const [formData, setFormData] = useState({
+    description: '',
+    category: '',
+    sum: '',
+  });
+
+  const handleClear = () => {
+    setFormData({
+      description: '',
+      category: '',
+      sum: '',
+    });
+  };
+
   return (
     <TestStyled>
       <Container>
@@ -28,6 +43,9 @@ export const TestComponent = () => {
         </Button>
         <Button name="confirm" handleAction={testing}>
           Confirmation
+        </Button>
+        <Button name="clear" handleAction={handleClear}>
+          CLEAR
         </Button>
 
         <AuthForm></AuthForm>
