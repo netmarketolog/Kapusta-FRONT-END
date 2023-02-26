@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const dateWrapper = styled.div`
+const DateWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
-  
+
   @media screen and (min-width: 320px) {
     width: auto;
   }
@@ -25,4 +25,4 @@ const dateWrapper = styled.div`
     margin-right: 23px;
     margin-left: 0;
   }
-`
+`;

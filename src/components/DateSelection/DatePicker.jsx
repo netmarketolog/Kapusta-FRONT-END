@@ -1,7 +1,7 @@
 import DatePicker from 'react-datepicker';
 import { useState, useEffect } from 'react';
 import { AiOutlineCalendar } from 'react-icons/ai';
-import { dateWrapper } from '../DateSelection/DatePicker.styled';
+import { DateWrapper } from '../DateSelection/DatePicker.styled';
 
 const datePicker = ({ handleDate }) => {
   const [date, setDate] = useState(new Date());
@@ -9,7 +9,7 @@ const datePicker = ({ handleDate }) => {
   useEffect(() => handleDate(date));
 
   return (
-    <dateWrapper>
+    <DateWrapper>
       <AiOutlineCalendar />
       <DatePicker
         maxDate={new Date()}
@@ -17,7 +17,7 @@ const datePicker = ({ handleDate }) => {
         onChange={date => setDate(date)}
         dateFormat="dd/MM/yyyy"
       />
-    </dateWrapper>
+    </DateWrapper>
   );
 };
 
