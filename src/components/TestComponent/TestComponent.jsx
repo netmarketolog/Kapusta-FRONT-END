@@ -1,8 +1,7 @@
-
-// import styled from 'styled-components';
-
-import { Expenses } from 'components/Expenses/Expenses';
-
+import { ButtonMain } from 'components/Buttons/ButtonMain';
+import Button from 'components/Buttons/Buttons';
+import { AuthForm } from 'components/Forms/AuthForm/AuthForm';
+import styled from 'styled-components';
 
 // const TestStyled = styled.div`
 //   display: flex;
@@ -11,12 +10,26 @@ import { Expenses } from 'components/Expenses/Expenses';
 // `;
 
 export const TestComponent = () => {
-  // const testing = e => {
-  //   e.preventDefault();
-  // };
+  const testing = e => {
+    e.preventDefault();
+  };
   return (
-
-      <Expenses></Expenses>
-
+    <TestStyled>
+      <Button name="login" handleAction={testing}>
+        Login
+      </Button>
+      <Button name="register" handleAction={testing}>
+        Register
+      </Button>
+      <Button name="white" handleAction={testing}>
+        Input
+      </Button>
+      <Button name="confirm" handleAction={testing}>
+        Confirmation
+      </Button>
+      <AuthForm></AuthForm>
+      <ButtonMain></ButtonMain>
+    </TestStyled>
   );
 };
+export default TestComponent;

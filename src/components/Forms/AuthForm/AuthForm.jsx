@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import { Formik, ErrorMessage } from 'formik';
+import { useDispatch } from 'react-redux';
+import { logIn, register } from 'redux/auth/authOperations';
 import * as yup from 'yup';
 
 import {
@@ -23,8 +26,31 @@ const initialValues = {
   password: '',
 };
 export const AuthForm = () => {
+  const dispatch = useDispatch();
+  const [button, setButton] = useState(null);
+
+  const handleClick = e => {
+    switch (e.target.name) {
+      case 'login':
+        console.log(true);
+        return setButton(true);
+      case 'register':
+        console.log(false);
+        return setButton(false);
+      default:
+        console.log('no');
+        return;
+    }
+  };
+
   const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
+    if (!button) {
+      console.log('register');
+      dispatch(register(values));
+      return;
+    }
+    console.log('login');
+    dispatch(logIn(values));
     resetForm();
   };
   return (
@@ -61,10 +87,12 @@ export const AuthForm = () => {
           </label>
         </StyleForm>
         <Buttons>
-          <LogIn name="login" type="submit">
+          <LogIn onClick={handleClick} name="login" type="submit">
             Log in
           </LogIn>
-          <Register type="submit">Registration</Register>
+          <Register onClick={handleClick} name="register" type="submit">
+            Registration
+          </Register>
         </Buttons>
       </FormAuth>
     </Formik>

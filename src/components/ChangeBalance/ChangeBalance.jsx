@@ -1,41 +1,51 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { ReportsBtn } from './ReportsButton/ReportsBtn';
 import {
   BackgroundContainer,
-  ReportsLink,
-  ReportsContainer,
   BalanceContainer,
   BalanceText,
   Balance,
   BalanceInput,
   InputBtn,
   BalanceForm,
-  CalendarContainer,
-  Calendar,
   Label,
   InputContainer,
 } from './ChangeBalance.styled';
-
-import { ReactComponent as ReportsSvg } from '../../images/icons/ReportsSvg.svg';
-import { ReactComponent as CalendarSvg } from '../../images/icons/СalendarSvg.svg';
+import { addBalance, fetchBalance } from './api';
+import { useDispatch, useSelector } from 'react-redux';
+import { update } from '../../redux/balance/balanceSlice';
 
 export const ChangeBalance = () => {
-  const [balance, setbalance] = useState(`00.00`);
-  const date = new Date().toLocaleDateString();
+  const [balance, setBalance] = useState(`00.00`);
+  const balanceState = useSelector(state => state.balance);
+  console.log(balanceState);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    fetchBalance()
+      .then(res => dispatch(update(Number(res))))
+      .catch(error => console.error(error));
+  }, [dispatch]);
 
   const formBalanceChange = e => {
-    setbalance(e.currentTarget.value);
-  };
-  const formSubmit = e => {
-    e.preventDefault();
+    setBalance(e.currentTarget.value);
   };
 
+  const formSubmit = e => {
+    e.preventDefault();
+    dispatch(
+      addBalance({
+        balance: Number(balance),
+      })
+    );
+    dispatch(update(balance));
+  };
+
+  console.log(balance);
   return (
     <BackgroundContainer>
       <BalanceContainer>
-        <ReportsContainer>
-          <ReportsLink>Reports</ReportsLink>
-          <ReportsSvg />
-        </ReportsContainer>
+        <ReportsBtn />
 
         <Balance>
           <BalanceText>Balance:</BalanceText>
@@ -43,19 +53,23 @@ export const ChangeBalance = () => {
             <InputContainer>
               <BalanceInput
                 type="Number"
-                value={balance}
+                value={
+                  balanceState.balance > 0 ? balanceState.balance : balance
+                }
                 onChange={formBalanceChange}
+                disabled={balanceState.balance > 0 ? true : false}
               />
               <Label>UAH</Label>
             </InputContainer>
-            <InputBtn type="submit">Confirm</InputBtn>
+            <InputBtn
+              type="submit"
+              disabled={balanceState.balance > 0 ? true : false}
+              onSubmit={formSubmit}
+            >
+              Confirm
+            </InputBtn>
           </BalanceForm>
         </Balance>
-
-        <CalendarContainer>
-          <CalendarSvg />
-          <Calendar>{date}</Calendar>
-        </CalendarContainer>
       </BalanceContainer>
     </BackgroundContainer>
   );
