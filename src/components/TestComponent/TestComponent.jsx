@@ -1,4 +1,3 @@
-
 import { ButtonMain } from 'components/Buttons/ButtonMain';
 import Button from 'components/Buttons/Buttons';
 import { ContainerAuth } from 'components/Container/ContainerAuth';
@@ -6,10 +5,9 @@ import { ContainerAuth } from 'components/Container/ContainerAuth';
 import { HomePages } from 'components/Home/HomePage';
 import styled from 'styled-components';
 
+import { Expenses } from 'components/Expenses/Expenses';
 
-import { Expenses } from "components/Expenses/Expenses"
-
-
+export const TestComponent = () => {
   const handleClear = () => {};
 
   return (
