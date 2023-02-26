@@ -3,6 +3,7 @@ import logo from 'images/header/logo.svg';
 import { HeaderStyled } from './Header.styled';
 import { HeaderNav } from './Nav/HeaderNav';
 import { Suspense } from 'react';
+import Loader from 'components/Loader/Loader';
 
 export const Header = () => {
   return (
@@ -13,7 +14,7 @@ export const Header = () => {
         </Link>
         <HeaderNav />
       </HeaderStyled>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
     </>
