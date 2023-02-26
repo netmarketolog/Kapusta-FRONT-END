@@ -90,7 +90,6 @@ export const DatePicker = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    // margin-right: 20px;
 `;
 export const ConteinerGeneral = styled.div`
     display: none;
