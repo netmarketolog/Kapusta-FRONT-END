@@ -20,7 +20,7 @@ import {Input} from './Input/Input';
 import {Calc} from './Calc/Calc';
 import {TabExIn} from './TabExIn/TabExIn';
 
-import {DatePickerCustom} from '../Expenses/DatePicker/DatePicker'
+import {Calendar} from '../../components/Expenses/DatePicker/DatePicker'
 
 export const Expenses = () => {
   return (
@@ -30,7 +30,7 @@ export const Expenses = () => {
       <ContForm>
         <Form>
           <DatePicker>
-            <DatePickerCustom/>
+            <Calendar/>
             <Input></Input>
             <ProductCategori></ProductCategori>
             <Calc></Calc>

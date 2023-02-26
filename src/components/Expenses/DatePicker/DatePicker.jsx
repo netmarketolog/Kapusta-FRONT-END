@@ -1,24 +1,28 @@
-import React from 'react';
 import DatePicker from 'react-datepicker';
-import { 
-  Container,
-  IconDate,
-  } from '../DatePicker/DatePicker.styled';
-import Styles from './DatePicker.module.css';
-import "react-datepicker/dist/react-datepicker.css";
+import 'react-datepicker/dist/react-datepicker.css'
+import { useState, useEffect } from 'react';
+import { AiOutlineCalendar } from 'react-icons/ai';
+import { DateWrapper } from '../DatePicker/DatePicker.styled';
+import style from '../DatePicker/DatePicker.module.css'
 
-  export const DatePickerCustom = ({ startDate, handleChange }) => (
-    <Container>
-      <IconDate></IconDate>
+
+export const Calendar = () => {
+  const [startDate, setStartDate] = useState(new Date());
+
+  return (
+    <DateWrapper>
+      <AiOutlineCalendar />
       <DatePicker
-        className={Styles.picker}
+        maxDate={new Date()}
         selected={startDate}
-        onChange={handleChange}
-        dateFormat="dd.MM.yyyy"
-        name="date"
-        fixedHeight
-        withPortal
+        className={ style.pickerStyle}
+        onChange={date => setStartDate(date)}
+        dateFormat="dd/MM/yyyy"
       />
-    </Container>
+    </DateWrapper>
   );
+};
+
+
+
   
