@@ -11,9 +11,6 @@ import { RestrictedRoute } from './RestrictedRoute';
 const Home = lazy(() => import('../pages/Home/Home'));
 const ReportPage = lazy(() => import('../pages/Report/ReportPage'));
 const AuthPage = lazy(() => import('../pages/Auth/Auth'));
-const TestComponent = lazy(() =>
-  import('components/TestComponent/TestComponent')
-);
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -35,8 +32,6 @@ export const App = () => {
             path="auth"
             element={<RestrictedRoute component={<AuthPage />} />}
           />
-
-          <Route path="test" element={<TestComponent />} />
         </Route>
       </Routes>
     </>
