@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import imgTab from '../../images/bgs/kapustaTab-bottom.svg';
-import imgDesc from '../../images/bgs/kapustaDesc-Bottom.svg';
+import imgTab from '../../../images/bgs/kapustaTab-bottom.svg';
+import imgDesc from '../../../images/bgs/kapustaDesc-Bottom.svg';
 
 export const BgBottom = styled.svg`
   @media screen and (min-width: 768px) {

@@ -5,6 +5,8 @@ import logoTab from '../../images/bgs/logoBgTab.svg';
 import logoDesc from '../../images/bgs/logoBgDesc.svg';
 
 export const HeroLogo = styled.div`
+  margin-top: 120px;
+  margin-left: 170px;
   width: 183px;
   height: 63px;
   @media screen and (min-width: 768px) {
