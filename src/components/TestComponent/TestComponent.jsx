@@ -1,7 +1,7 @@
 
 // import styled from 'styled-components';
 
-import { Expenses } from 'components/Reports/Expenses/Expenses';
+import { Expenses } from 'components/Expenses/Expenses';
 
 
 // const TestStyled = styled.div`

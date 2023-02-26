@@ -11,9 +11,9 @@ import {
 } from './Expenses.styled';
 
 import {Tab} from './Tab/Tab';
-import {Summary} from '../../Reports/Expenses/Summary/Summary';
-import {ProductCategori} from '../../ProductCategory/ProductCategori.jsx';
-import {Button} from '../../Reports/Expenses/Buttons/Buttons';
+import {Summary} from '../Expenses/Summary/Summary';
+import {ProductCategori} from '../ProductCategory/ProductCategori.jsx';
+import {Button} from '../Expenses/Buttons/Buttons';
 
 
 import {Input} from './Input/Input';

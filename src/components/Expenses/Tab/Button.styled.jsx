@@ -1,5 +1,12 @@
 import styled from 'styled-components';
-import { BTN_NAME } from '../../../../utils/constants';
+
+const BTN_NAME = {
+  REGISTER: 'register',
+  LOGIN: 'login',
+  ORANGE: 'orange',
+  WHITE: 'white',
+  CONFIRM: 'confirm',
+};
 
 const StyledTabButton = styled.button`
   display: flex;
