@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const DateWrapper = styled.div`
+export const DateWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
