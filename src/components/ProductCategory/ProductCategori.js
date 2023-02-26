@@ -17,7 +17,7 @@ export const SelectCustom = styled(Select)`
     color: #c7ccdc;
     :hover {
       outline: none;
-      border: 2px solid #ffffff;
+      border: 2px solid #C7CCDC;
     }
     @media screen and (min-width: 768px) {
       width: 186px;
