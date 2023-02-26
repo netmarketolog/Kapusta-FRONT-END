@@ -51,6 +51,16 @@ export const Item = styled.li`
   border-bottom-right-radius: 10px;
   height: 15px;
   background-color: #fed9bf;
+  animation: left 500ms;
+
+  @keyframes left {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: width;
+    }
+  }
 
   &:not(:last-child) {
     margin-bottom: 36px;
@@ -63,6 +73,17 @@ export const Item = styled.li`
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 0;
+
+    animation: up 500ms;
+
+    @keyframes up {
+      0% {
+        height: 0;
+      }
+      100% {
+        height: height;
+      }
+    }
 
     width: 38px;
 
