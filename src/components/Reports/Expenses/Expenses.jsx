@@ -2,19 +2,18 @@ import {
   TitleItem, 
   Title, 
   Container,
-  // Scrollbar,
-  // BudgetList,
-  // Item,
   Form,
   DatePicker,
   ConteinerGeneral,
   Cont,
+  ButtonCont,
+  ContForm
 } from './Expenses.styled';
 
 import {Tab} from './Tab/Tab';
-import {Summary} from '../../Summary/Summary';
+import {Summary} from '../../Reports/Expenses/Summary/Summary';
 import {ProductCategori} from '../../ProductCategory/ProductCategori.jsx';
-import Button from '../../Buttons/Buttons';
+import {Button} from '../../Reports/Expenses/Buttons/Buttons';
 
 
 import {Input} from './Input/Input';
@@ -28,16 +27,20 @@ export const Expenses = () => {
     <>
     <Tab></Tab>
     <ConteinerGeneral>
-      <Form>
-        <DatePicker>
-          <DatePickerCustom/>
-          <Input></Input>
-          <ProductCategori></ProductCategori>
-          <Calc></Calc>
-          <Button>INPUT</Button>
-          <Button>CLEAR</Button>
-        </DatePicker>
-      </Form>
+      <ContForm>
+        <Form>
+          <DatePicker>
+            <DatePickerCustom/>
+            <Input></Input>
+            <ProductCategori></ProductCategori>
+            <Calc></Calc>
+          </DatePicker>
+        </Form>
+        <ButtonCont>
+            <Button>INPUT</Button>
+            <Button>CLEAR</Button>
+        </ButtonCont> 
+      </ContForm>
       <Cont>
         <Container>
           <Title>

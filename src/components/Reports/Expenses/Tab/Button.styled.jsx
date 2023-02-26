@@ -5,8 +5,8 @@ const StyledTabButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 138px;
-  height: 40px;
+  width: 158px;
+  height: 53px;
   font-family: Roboto, sans-serif;
   font-size: 12px;
   font-weight: 700;
@@ -18,23 +18,27 @@ const StyledTabButton = styled.button`
   border-style: solid;
   border-color: ${props =>
     props.type === BTN_NAME.WHITE ? '#FEFEFE' : '#FAFBFD'};
+
+  &:focus {
+    color: #FEFEFE;
+    background-color: #FF751D;
+    border: none;
+  }
   
   @media screen and (min-width: 768px) {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    width: 138px;
+    height: 40px;
+    color: #000000;
+    background-color: #FAFBFD;
+    &:focus {
+      color: #FF751D;
+      background-color: #FEFEFE;
+      border: none;
+    }
   }
 
-  @media screen and (max-width: 767px) {
-    border-radius: none;
-    width: 158px;
-    height: 53px;
-  }
-
-  &:focus {
-    color: #FF751D;
-    background-color: #FEFEFE;
-    border: none;
-  }
 `;
 
 export default StyledTabButton;

@@ -15,23 +15,37 @@ export const TitleItem = styled.div`
     text-transform: uppercase;
 `;
 export const Title = styled.div`
-    height: 38px;
-    align-items: center;
-    display: grid;
-    font-size: 13px;
-    font-weight: normal;
-    color: #52555f;
-    border-bottom: 2px solid #f4f6fb;
-    grid-template-columns: 126px 168px 216px 117px 119px;
-    border-top-right-radius: 16px;
-    border-top-left-radius: 16px;
-    background-color: #f4f6fb;
     
+    @media screen and (min-width: 768px) {
+        height: 40px;
+        align-items: center;
+        display: grid;
+        font-size: 13px;
+        font-weight: normal;
+        color: #52555f;
+        border-bottom: 2px solid #f4f6fb;
+        grid-template-columns: 89px 142px 199px 107px 87px;
+        border-top-right-radius: 16px;
+        border-top-left-radius: 16px;
+        background-color: #f4f6fb;
+    }
+    
+    @media screen and (min-width: 1200px) {
+        grid-template-columns: 126px 168px 216px 117px 119px;
+        height: 38px;
+    }
 `;
 export const Container = styled.div`
-    width: 746px;
-    margin-left: 32px;
     
+    @media screen and (min-width: 768px) {
+        width: 624px;
+        margin-left: 40px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 746px;
+        margin-left: 32px;
+    }
 `;
 export const Scrollbar = styled.div`
     // display: block;
@@ -64,23 +78,79 @@ export const Form = styled.div`
     max-width: 100%;
     justify-content: space-between;
     height: 44px;
-    padding-top: 32px;
+    // padding-top: 32px;
+    
+    @media screen and (min-width: 768px) {
+        display: block;
+
+    }
+    
+    @media screen and (min-width: 1200px) {
+        display: flex;
+        max-width: 100%;
+        justify-content: space-between;
+    }
 `;
 export const DatePicker = styled.div`
     width: fit-content;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-right: 20px;
+    // margin-right: 20px;
 `;
 export const ConteinerGeneral = styled.div`
-    width: 1098px;
-    height: 579px;
-    background: #FFFFFF;
-    box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
-    border-radius: 0px 30px 30px 30px;
+    display: none;
+    @media screen and (min-width: 768px) {
+        display: block;
+        width: 704px;
+        height: 616px;
+        background: #FFFFFF;
+        box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+        border-radius: 0px 30px 30px 30px;
+        padding-top: 24px;
+    }
+    
+    @media screen and (min-width: 1200px) {
+        width: 1098px;
+        height: 579px;
+        padding-top: 32px;
+    }
 `;
 export const Cont = styled.div`
+ 
+    @media screen and (min-width: 768px) {
+        display: flex;
+        padding-top: 48px;
+    }
+    
+    @media screen and (min-width: 1200px) {
+        display: flex;
+        padding-top: 60px;
+    }
+`;
+export const ButtonCont = styled.div`
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        padding-top: 32px;
+        justify-content: center;
+    }
+    
+    @media screen and (min-width: 1200px) {
+        display: flex;
+        padding-top: 0px;
+    }
+`;
+export const ContForm = styled.div`
+@media screen and (min-width: 768px) {
+    display: block;
+
+}
+
+@media screen and (min-width: 1200px) {
     display: flex;
-    padding-top: 60px;
+
+}
+    // padding-top: 32px;
+    
 `;
