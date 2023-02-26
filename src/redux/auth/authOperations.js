@@ -17,7 +17,7 @@ export const register = createAsyncThunk(
   async (credentials, ThunkAPI) => {
     try {
       const { data } = await axios.post('/auth/register', credentials);
-      setAuthHeader(data.token);
+      setAuthHeader(data.token.accessToken);
       return data;
     } catch (e) {
       Notify.warning(e.response.data.message);
@@ -31,7 +31,7 @@ export const logIn = createAsyncThunk(
   async (credentials, ThunkAPI) => {
     try {
       const { data } = await axios.post('/auth/login', credentials);
-      setAuthHeader(data.token);
+      setAuthHeader(data.token.accessToken);
       return data;
     } catch (e) {
       Notify.warning(e.response.data.message);
@@ -60,8 +60,9 @@ export const RefreshUser = createAsyncThunk(
       return thunkAPI.rejectWithValue('Unable to fetch user');
     }
     try {
-      setAuthHeader(persistedToken);
+      setAuthHeader(persistedToken.accessToken);
       const { data } = await axios.get('users/current');
+
       return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

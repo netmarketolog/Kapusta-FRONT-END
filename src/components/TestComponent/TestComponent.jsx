@@ -1,3 +1,4 @@
+
 import { ButtonMain } from 'components/Buttons/ButtonMain';
 import Button from 'components/Buttons/Buttons';
 import { ContainerAuth } from 'components/Container/ContainerAuth';
@@ -5,21 +6,9 @@ import { ContainerAuth } from 'components/Container/ContainerAuth';
 import { HomePages } from 'components/Home/HomePage';
 import styled from 'styled-components';
 
-const TestStyled = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 
-const TestComponent = () => {
-  const testing = e => {
-    e.preventDefault();
-  };
-  // const [formData, setFormData] = useState({
-  //   description: '',
-  //   category: '',
-  //   sum: '',
-  // });
+import { Expenses } from "components/Expenses/Expenses"
+
 
   const handleClear = () => {};
 
@@ -41,6 +30,7 @@ const TestComponent = () => {
         <Button name="clear" handleAction={handleClear}>
           CLEAR
         </Button>
+        <Expenses></Expenses>
 
         <ButtonMain></ButtonMain>
       </ContainerAuth>
