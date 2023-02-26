@@ -1,8 +1,8 @@
-// import { useState } from 'react';
 import { ButtonMain } from 'components/Buttons/ButtonMain';
 import Button from 'components/Buttons/Buttons';
-import { Container } from 'components/Container/Container';
-import { AuthForm } from 'components/Forms/AuthForm/AuthForm';
+import { ContainerAuth } from 'components/Container/ContainerAuth';
+
+import { HomePages } from 'components/Home/HomePage';
 import styled from 'styled-components';
 
 const TestStyled = styled.div`
@@ -21,17 +21,11 @@ const TestComponent = () => {
   //   sum: '',
   // });
 
-  // const handleClear = () => {
-  //   setFormData({
-  //     description: '',
-  //     category: '',
-  //     sum: '',
-  //   });
-  // };
+  const handleClear = () => {};
 
   return (
     <TestStyled>
-      <Container>
+      <ContainerAuth>
         <Button name="login" handleAction={testing}>
           Login
         </Button>
@@ -44,13 +38,13 @@ const TestComponent = () => {
         <Button name="confirm" handleAction={testing}>
           Confirmation
         </Button>
-        {/* <Button name="clear" handleAction={handleClear}>
+        <Button name="clear" handleAction={handleClear}>
           CLEAR
-        </Button> */}
+        </Button>
 
-        <AuthForm></AuthForm>
         <ButtonMain></ButtonMain>
-      </Container>
+      </ContainerAuth>
+      <HomePages></HomePages>
     </TestStyled>
   );
 };

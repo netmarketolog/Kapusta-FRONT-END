@@ -2,11 +2,6 @@ import { Field, Form } from 'formik';
 import styled from 'styled-components';
 
 export const FormAuth = styled(Form)`
-  position: absolute;
-  left: 50%;
-  top: 261px;
-  transform: translate(-50%, 0);
-  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,11 +22,6 @@ export const FormAuth = styled(Form)`
     height: 552px;
     padding: 56px 20px 56px 20px;
     justify-content: center;
-  }
-
-  @media screen and (min-width: 1280px) {
-    top: 117px;
-    left: 75%;
   }
 `;
 export const StyleForm = styled.div`
