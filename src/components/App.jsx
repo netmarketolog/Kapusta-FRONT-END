@@ -30,21 +30,13 @@ export const App = () => {
             index
             element={<PrivateRoute redirectTo="/auth" component={<Home />} />}
           />
-          <Route
-            path="reports"
-            element={
-              <PrivateRoute redirectTo="/auth" component={<ReportPage />} />
-            }
-          />
+          <Route path="/reports" element={<ReportPage />} />
           <Route
             path="auth"
             element={<RestrictedRoute component={<AuthPage />} />}
           />
 
-          <Route
-            path="test"
-            element={<RestrictedRoute component={<TestComponent />} />}
-          />
+          <Route path="test" element={<TestComponent />} />
         </Route>
       </Routes>
     </>

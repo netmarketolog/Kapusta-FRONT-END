@@ -1,11 +1,11 @@
-import { Container } from 'components/Container/Container';
-import { AuthForm } from 'components/Forms/AuthForm/AuthForm';
+import { ContainerUnAuth } from 'components/Container/ContainerUnAuth';
+import { HomePages } from 'components/Home/HomePage';
 
 const AuthPage = () => {
   return (
-    <Container>
-      <AuthForm></AuthForm>
-    </Container>
+    <ContainerUnAuth>
+      <HomePages></HomePages>
+    </ContainerUnAuth>
   );
 };
 export default AuthPage;
