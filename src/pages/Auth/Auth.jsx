@@ -1,4 +1,4 @@
-import { ContainerUnAuth } from 'components/Container/ContainerUnAuth ';
+import { ContainerUnAuth } from 'components/Container/ContainerUnAuth';
 import { HomePages } from 'components/Home/HomePage';
 
 const AuthPage = () => {
