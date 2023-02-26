@@ -38,7 +38,7 @@ export const BgIconBottom = styled.svg`
     background-image: url(${imgTabBot});
     width: 183px;
     height: 142px;
-    bottom: 56px;
+    bottom: 76px;
     left: 13%;
     @media screen and (min-width: 1280px) {
       bottom: 50px;
