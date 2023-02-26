@@ -24,8 +24,6 @@ export const TabConteiner = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    // margin: 0;
-    // height: 40px;
     width: 316px;
         @media screen and (min-width: 768px) {
         width: 276px;
@@ -54,6 +52,4 @@ export const TitleConteinerIncome = styled.div`
 `;
 export const WrapConteiner = styled.div`
 display: flex;
-// width: 98px;
-// height: 40px;
 `;

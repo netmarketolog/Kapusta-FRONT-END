@@ -7,10 +7,6 @@ import {
 import Styles from './DatePicker.module.css';
 import "react-datepicker/dist/react-datepicker.css";
 
-// import { 
-//   InputWraper
-// } from '../InputWraper/InputWraper';
-
   export const DatePickerCustom = ({ startDate, handleChange }) => (
     <Container>
       <IconDate></IconDate>
@@ -23,7 +19,6 @@ import "react-datepicker/dist/react-datepicker.css";
         fixedHeight
         withPortal
       />
-      {/* <InputWraper></InputWraper> */}
     </Container>
   );
   

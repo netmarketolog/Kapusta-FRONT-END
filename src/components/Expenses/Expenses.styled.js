@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-//desktop
-
 export const TitleItem = styled.div`
     font-style: normal;    
     font-size: 12px;
@@ -48,11 +46,8 @@ export const Container = styled.div`
     }
 `;
 export const Scrollbar = styled.div`
-    // display: block;
     overflow: auto;
     height: 342px;
-    // width: 6px;
-    // background-color: #FF751D;
     border-radius: 2px;
 `;
 
@@ -78,7 +73,6 @@ export const Form = styled.div`
     max-width: 100%;
     justify-content: space-between;
     height: 44px;
-    // padding-top: 32px;
     
     @media screen and (min-width: 768px) {
         display: block;
@@ -151,6 +145,5 @@ export const ContForm = styled.div`
     display: flex;
 
 }
-    // padding-top: 32px;
     
 `;

@@ -1,9 +1,5 @@
 import {
-  // StyledButtonExpenses,
-  // StyledButtonIncome,
   TabConteiner,
-  // TitleConteinerExpenses,
-  // TitleConteinerIncome,
 } from './Tab.styled';
 
 import TabButton from './Buttons';

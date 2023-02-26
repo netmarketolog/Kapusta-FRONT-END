@@ -19,6 +19,5 @@ export const IconDate = styled.img`
     height: 20px;
     background-size: cover;
     fill: #52555F;
-    // padding-right: 10px;
 `;
 

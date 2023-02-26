@@ -27,27 +27,6 @@ export const Scrollbar = styled.div`
 }
 `;
 
-// export const TitleContainer = styled.div`
-//   background: #f5f6fb;
-//   border-top-left-radius: 20px;
-//   border-top-right-radius: 20px;
-//   padding: 12px 77px;
-//   margin-bottom: 2px;
-
-//   @media screen and (min-width: 1200px) {
-//     margin-bottom: 4px;
-//   }
-// `;
-
-// export const Text = styled.p`
-//   text-align: center;
-//   font-weight: 700;
-//   font-size: 12px;
-//   line-height: 14px;
-//   text-transform: uppercase;
-//   color: #000000;
-// `;
-
 export const Item = styled.li`
   
   @media screen and (min-width: 768px) {
