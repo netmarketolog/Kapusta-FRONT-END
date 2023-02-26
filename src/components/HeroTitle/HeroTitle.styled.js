@@ -5,17 +5,21 @@ import logoTab from '../../images/bgs/logoBgTab.svg';
 import logoDesc from '../../images/bgs/logoBgDesc.svg';
 
 export const HeroLogo = styled.div`
-  margin-top: 120px;
-  margin-left: 170px;
+  display: flex;
+  flex-direction: column;
   width: 183px;
   height: 63px;
+  margin-bottom: 50px;
   @media screen and (min-width: 768px) {
     width: 306px;
     height: 100px;
+    margin-bottom: 80px;
   }
   @media screen and (min-width: 1280px) {
     width: 377px;
     height: 139px;
+    margin-right: 160px;
+    margin-top: 300px;
   }
 `;
 
