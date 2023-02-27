@@ -12,8 +12,3 @@ export const addBalance = createAsyncThunk('users/update', async balance => {
   const data = await patchBalance(balance);
   return data;
 });
-
-export async function fetchBalance() {
-  const { data } = await axios.get('users/current');
-  return data.user.balance;
-}
