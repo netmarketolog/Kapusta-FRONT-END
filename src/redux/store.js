@@ -25,6 +25,7 @@ const balancePersistConfig = {
   storage,
   whitelist: ['balance'],
 };
+
 const authPersistConfig = {
   key: 'auth',
   storage,

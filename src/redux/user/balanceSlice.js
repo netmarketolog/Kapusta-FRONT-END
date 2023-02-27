@@ -17,7 +17,7 @@ const balanceSlice = createSlice({
         state.isLoggedIn = true;
       })
       .addCase(addBalance.fulfilled, (state, action) => {
-        state.user.balance = action.payload.data.balance;
+        state.balance = action.payload.data.balance;
         state.isLoggedIn = true;
         state.isRefreshing = false;
       })
