@@ -21,7 +21,21 @@ export const DateWrapper = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
-    margin-right: 23px;
-    margin-left: 0;
+    margin-right: 20px;
+    margin-left: 32px;
+  };
+  .react-datepicker__input-container{
+    width: 80px;
+  };
+  input{
+    border: none;
+    width: 100px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
 `;

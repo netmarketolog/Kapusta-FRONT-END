@@ -86,7 +86,7 @@ export const Form = styled.div`
     }
 `;
 export const DatePicker = styled.div`
-    width: fit-content;
+    width: auto;
     display: flex;
     justify-content: flex-start;
     align-items: center;
