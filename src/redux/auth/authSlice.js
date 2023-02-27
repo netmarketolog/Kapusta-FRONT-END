@@ -47,7 +47,7 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
       })
       .addCase(addBalance.fulfilled, (state, action) => {
-        state.user = action.payload.data;
+        state.user.balance = action.payload.data.balance;
         state.isLoggedIn = true;
         state.isRefreshing = false;
       })
