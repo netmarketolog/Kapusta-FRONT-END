@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 // import { Notify } from 'notiflix';
 import { logIn, logOut, RefreshUser, register } from './authOperations';
-
 const initialState = {
   user: { email: null, balance: null }, //зависит от того, как будем получать с бека
   token: null,
@@ -31,7 +30,7 @@ const authSlice = createSlice({
       })
       .addCase(RefreshUser.pending, state => {
         state.isRefreshing = true;
-        state.isLoggedIn = false;
+        state.isLoggedIn = true;
       })
       .addCase(RefreshUser.fulfilled, (state, action) => {
         state.user = action.payload.user;

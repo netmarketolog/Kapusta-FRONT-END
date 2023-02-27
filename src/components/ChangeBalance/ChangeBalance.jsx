@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { ReportsBtn } from './ReportsButton/ReportsBtn';
 import {
   BackgroundContainer,
@@ -11,36 +13,27 @@ import {
   Label,
   InputContainer,
 } from './ChangeBalance.styled';
-import { addBalance, fetchBalance } from './api';
-import { useDispatch, useSelector } from 'react-redux';
-import { update } from '../../redux/balance/balanceSlice';
+import { addBalance } from '../../redux/balance/balanceOperation';
+import { selectBalance } from '../../redux/selectors';
+import { LoaderBtn } from '../Loader/Loader';
 
 export const ChangeBalance = () => {
-  const [balance, setBalance] = useState(`00.00`);
-  const balanceState = useSelector(state => state.balance);
-  console.log(balanceState);
+  const [startBalance, setStartBalance] = useState(`00.00`);
+  const { balance, isRefreshing } = useSelector(selectBalance);
+
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    fetchBalance()
-      .then(res => dispatch(update(Number(res))))
-      .catch(error => console.error(error));
-  }, [dispatch]);
-
   const formBalanceChange = e => {
-    setBalance(e.currentTarget.value);
+    setStartBalance(e.currentTarget.value);
   };
 
   const formSubmit = e => {
     e.preventDefault();
     dispatch(
       addBalance({
-        balance: Number(balance),
+        balance: Number(startBalance),
       })
     );
-    dispatch(update(balance));
   };
-
   console.log(balance);
   return (
     <BackgroundContainer>
@@ -51,22 +44,27 @@ export const ChangeBalance = () => {
           <BalanceText>Balance:</BalanceText>
           <BalanceForm onSubmit={formSubmit}>
             <InputContainer>
-              <BalanceInput
-                type="Number"
-                value={
-                  balanceState.balance > 0 ? balanceState.balance : balance
-                }
-                onChange={formBalanceChange}
-                disabled={balanceState.balance > 0 ? true : false}
-              />
-              <Label>UAH</Label>
+              {isRefreshing ? (
+                LoaderBtn()
+              ) : (
+                <>
+                  <BalanceInput
+                    type="Number"
+                    value={balance > 0 ? balance : startBalance} //
+                    disabled={balance > 0 ? true : false}
+                    onChange={formBalanceChange}
+                  />
+                  <Label>UAH</Label>
+                </>
+              )}
             </InputContainer>
             <InputBtn
+              BackgroundColor="transparent"
               type="submit"
-              disabled={balanceState.balance > 0 ? true : false}
+              disabled={balance > 0 ? true : false}
               onSubmit={formSubmit}
             >
-              Confirm
+              {isRefreshing ? LoaderBtn() : 'Confirm'}
             </InputBtn>
           </BalanceForm>
         </Balance>

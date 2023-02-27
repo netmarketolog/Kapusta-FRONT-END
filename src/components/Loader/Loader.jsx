@@ -1,5 +1,5 @@
-import { MutatingDots } from 'react-loader-spinner';
-import { LoaderWrap } from './Loader.styled';
+import { MutatingDots, RotatingLines } from 'react-loader-spinner';
+import { LoaderWrap, LoaderBalance } from './Loader.styled';
 
 export default function Loader() {
   return (
@@ -18,3 +18,17 @@ export default function Loader() {
     </LoaderWrap>
   );
 }
+
+export const LoaderBtn = () => {
+  return (
+    <LoaderBalance>
+      <RotatingLines
+        strokeWidth="5"
+        strokeColor={'#ff751d'}
+        animationDuration="0.75"
+        width="30"
+        visible={true}
+      />
+    </LoaderBalance>
+  );
+};
