@@ -11,7 +11,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import { authReducer } from './auth/authSlice';
-import { balanceReducer } from './user/balanceSlice';
+import { balanceReducer } from './balance/balanceSlice';
 
 // const middleware = [
 //   ...getDefaultMiddleware({

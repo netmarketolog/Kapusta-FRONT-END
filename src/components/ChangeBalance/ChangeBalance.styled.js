@@ -8,7 +8,6 @@ export const BackgroundContainer = styled.div`
   padding-left: 20px;
   padding-right: 20px;
 `;
-
 export const BalanceContainer = styled.div`
   width: 280px;
   margin-left: auto;
@@ -38,7 +37,6 @@ export const Balance = styled.div`
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
-    align-items: baseline;
     margin-bottom: 0px;
   }
 
@@ -48,6 +46,8 @@ export const Balance = styled.div`
 `;
 
 export const BalanceText = styled.p`
+  display: flex;
+  align-items: center;
   color: rgba(82, 85, 95, 0.7);
   margin: 0;
   font-weight: 500;
@@ -133,7 +133,6 @@ export const InputBtn = styled.button`
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: rgba(82, 85, 95, 0.7);
-
   :hover {
     border-width: 2px 2px 2px 0px;
     border-style: solid;
@@ -141,7 +140,29 @@ export const InputBtn = styled.button`
     background: #ff751d;
     color: #ffffff;
   }
-
+  :disabled {
+    width: 142px;
+    height: 44px;
+    align-items: center;
+    color: rgba(82, 85, 95, 0.7);
+    padding: 12px 22px 12px 18px;
+    border-width: 2px 2px 2px 0px;
+    border-style: solid;
+    border-color: #fff;
+    border-radius: 0px 22px 22px 0px;
+    background: transparent;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: rgba(82, 85, 95, 0.7);
+    @media screen and (min-width: 768px) {
+      width: 125px;
+      padding: 12px 6px;
+      border: 2px solid #ffffff;
+      border-radius: 16px;
+    }
+  }
   @media screen and (min-width: 768px) {
     width: 125px;
     padding: 12px 6px;

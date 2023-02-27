@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addBalance } from '../user/balanceOperation';
+import { addBalance } from './balanceOperation';
 
 const initialState = {
   balance: null,

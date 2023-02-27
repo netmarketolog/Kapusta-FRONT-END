@@ -13,27 +13,28 @@ import {
   Label,
   InputContainer,
 } from './ChangeBalance.styled';
-import { addBalance } from '../../redux/user/balanceOperation';
-import { selectUser } from '../../redux/selectors';
+import { addBalance } from '../../redux/balance/balanceOperation';
+import { selectBalance } from '../../redux/selectors';
 import { LoaderBtn } from '../Loader/Loader';
 
 export const ChangeBalance = () => {
-  const [balance, setBalance] = useState(`00.00`);
-  const { user, isRefreshing } = useSelector(selectUser);
+  const [startBalance, setStartBalance] = useState(`00.00`);
+  const { balance, isRefreshing } = useSelector(selectBalance);
+
   const dispatch = useDispatch();
   const formBalanceChange = e => {
-    setBalance(e.currentTarget.value);
+    setStartBalance(e.currentTarget.value);
   };
 
   const formSubmit = e => {
     e.preventDefault();
     dispatch(
       addBalance({
-        balance: Number(balance),
+        balance: Number(startBalance),
       })
     );
   };
-  const newBalance = user.balance;
+  console.log(balance);
   return (
     <BackgroundContainer>
       <BalanceContainer>
@@ -43,17 +44,24 @@ export const ChangeBalance = () => {
           <BalanceText>Balance:</BalanceText>
           <BalanceForm onSubmit={formSubmit}>
             <InputContainer>
-              <BalanceInput
-                type="Number"
-                value={newBalance > 0 ? newBalance : balance}
-                onChange={formBalanceChange}
-                disabled={newBalance > 0 ? true : false}
-              />
-              <Label>UAH</Label>
+              {isRefreshing ? (
+                LoaderBtn()
+              ) : (
+                <>
+                  <BalanceInput
+                    type="Number"
+                    value={balance > 0 ? balance : startBalance} //
+                    disabled={balance > 0 ? true : false}
+                    onChange={formBalanceChange}
+                  />
+                  <Label>UAH</Label>
+                </>
+              )}
             </InputContainer>
             <InputBtn
+              BackgroundColor="transparent"
               type="submit"
-              disabled={newBalance > 0 ? true : false}
+              disabled={balance > 0 ? true : false}
               onSubmit={formSubmit}
             >
               {isRefreshing ? LoaderBtn() : 'Confirm'}
