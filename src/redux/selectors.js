@@ -6,6 +6,7 @@ export const selectTokenDeadline = state => state.auth.token?.expiresIn;
 export const selectEmail = state => state.auth.user.email;
 
 // Transactions
+export const selectIsLoading = state => state.transactions.isLoading;
 export const selectTransactions = state => state.transactions.items;
 export const selectSumary = state => state.transactions.sumary;
 export const selectReports = state => state.transactions.report;

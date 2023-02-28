@@ -42,7 +42,7 @@ export const ExpIncContainer = styled.div`
     }
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     width: 1034px;
     ::after {
       content: '';
@@ -62,10 +62,6 @@ export const ExpСontainer = styled.div`
     justify-content: flex-end;
     padding-right: 20px;
   }
-
-  /* @media screen and (min-width: 1200px) {
-    width: 1098px;
-  } */
 `;
 export const IncСontainer = styled.div`
   margin-top: auto;
@@ -77,10 +73,6 @@ export const IncСontainer = styled.div`
     display: flex;
     padding-left: 20px;
   }
-
-  /* @media screen and (min-width: 1200px) {
-    width: 1098px;
-  } */
 `;
 export const Title = styled.div`
   font-weight: 700;

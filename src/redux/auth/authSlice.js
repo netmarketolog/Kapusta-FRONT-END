@@ -49,7 +49,6 @@ const authSlice = createSlice({
         state.isRefreshing = false;
         state.isLoggedIn = false;
       })
-
       .addCase(addBalance.pending, state => {
         state.isRefreshing = true;
         state.isLoggedIn = true;
