@@ -75,4 +75,3 @@ const transactionsSlice = createSlice({
 
 export const transactionsReducer = transactionsSlice.reducer;
 export const { setOperationType } = transactionsSlice.actions;
-

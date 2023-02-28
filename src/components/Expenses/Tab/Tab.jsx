@@ -1,51 +1,38 @@
-import { useDispatch, useSelector } from 'react-redux';
-
-import { setOperationType } from 'redux/transactions/transactionsSlice';
+import { OPERATION_TYPES } from 'utils/constants';
+import { TabConteiner } from './Tab.styled';
+import StyledTabButton from './Button.styled';
 import { selectOperationType } from 'redux/selectors';
+import { useSelector } from 'react-redux';
 
-import {
-  TabConteiner,
-} from './Tab.styled';
-
-import TabButton from './Buttons';
-
-import {OPERATION_TYPES} from 'utils/constants';
-
-export const Tab = ({ onChange }) => {
-
-  const dispatch = useDispatch();
-  const switchOperationType = e => {
-    console.log(e.target);
-    onChange(true);
-    dispatch(setOperationType(e));
-    console.log('switchOperationType');
-  };
-
-  // e.target.name ()
-  // () => switchOperationType(OPERATION_TYPES.expense)
-  // () => switchOperationType(OPERATION_TYPES.income)
-
-  // useEffect(() => {
-
-  //   console.log('switchOperationType');
-  // }, [dispatch]);
-
+export const Tab = switchOperationType => {
   const OperationType = useSelector(selectOperationType);
-
   return (
     <TabConteiner>
-      <TabButton
-      type="button"
-      onClick={switchOperationType}
-      active={OperationType === OPERATION_TYPES.expense ? true : false}
-      name='EXPENSES'
-      >EXPENSES</TabButton>
-      <TabButton
-      type="button"
-      onClick={switchOperationType}
-      active={OperationType === OPERATION_TYPES.income ? true : false}
-      name='INCOME'
-      >INCOME</TabButton>
-   </TabConteiner>
+      <StyledTabButton
+        type="button"
+        onClick={switchOperationType}
+        active={OperationType === OPERATION_TYPES.expense ? true : false}
+        name="expense"
+      >
+        EXPENSES
+      </StyledTabButton>
+      <StyledTabButton
+        type="button"
+        onClick={switchOperationType}
+        active={OperationType === OPERATION_TYPES.income ? true : false}
+        name="income"
+      >
+        INCOME
+      </StyledTabButton>
+    </TabConteiner>
   );
-}
+};
+
+// e.target.name ()
+// () => switchOperationType(OPERATION_TYPES.expense)
+// () => switchOperationType(OPERATION_TYPES.income)
+
+// useEffect(() => {
+
+//   console.log('switchOperationType');
+// }, [dispatch]);
