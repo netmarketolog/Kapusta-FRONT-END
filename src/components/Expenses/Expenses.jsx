@@ -1,15 +1,6 @@
-import {
-  TitleItem,
-  Title,
-  Container,
-  Form,
-  DatePicker,
-  ConteinerGeneral,
-  Cont,
-  ButtonCont,
-  ContForm,
-  MainContainer
-} from './Expenses.styled';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { getTransactions } from 'redux/transactions/transactionsOperations';
 
 import { Tab } from './Tab/Tab';
 import { Summary } from '../Expenses/Summary/Summary';
@@ -22,42 +13,66 @@ import { TabExIn } from './TabExIn/TabExIn';
 
 import { Calendar } from '../../components/Expenses/DatePicker/DatePicker';
 
+
+import {
+  TitleItem,
+  Title,
+  Container,
+  Form,
+  DatePicker,
+  ConteinerGeneral,
+  Cont,
+  ButtonCont,
+  ContForm,
+
+} from './Expenses.styled';
+
 export const Expenses = () => {
+  const dispatch = useDispatch();
+  const [btn, setBtn] = useState(true);
+
+  const toggleBtn = () => {
+    setBtn(!btn);
+  };
+
+  const switchOperation = type => {
+    const operation = type.target.name ?? 'expense';
+    dispatch(getTransactions({ operation }));
+    toggleBtn();
+  };
+
   return (
     <>
-      <MainContainer>
-        <div>
-          <Tab></Tab>
-        </div>
-          <ConteinerGeneral>
-            <ContForm>
-              <Form>
-                <DatePicker>
-                  <Calendar />
-                  <Input></Input>
-                  <ProductCategori></ProductCategori>
-                  <Calc></Calc>
-                </DatePicker>
-              </Form>
-              <ButtonCont>
-                <Button>INPUT</Button>
-                <Button>CLEAR</Button>
-              </ButtonCont>
-            </ContForm>
-            <Cont>
-              <Container>
-                <Title>
-                  <TitleItem>DATA</TitleItem>
-                  <TitleItem>DESCRIPTION</TitleItem>
-                  <TitleItem>CATEGORY</TitleItem>
-                  <TitleItem>SUM</TitleItem>
-                </Title>
-                <TabExIn></TabExIn>
-              </Container>
-              <Summary></Summary>
-            </Cont>
-          </ConteinerGeneral>
-      </MainContainer>
+      <Tab switchOperation={switchOperation} btn={btn} />
+      <ConteinerGeneral>
+        <ContForm>
+          <Form>
+            <DatePicker>
+              <Calendar />
+              <Input></Input>
+              <ProductCategori></ProductCategori>
+              <Calc></Calc>
+            </DatePicker>
+          </Form>
+          <ButtonCont>
+            <Button>INPUT</Button>
+            <Button>CLEAR</Button>
+          </ButtonCont>
+        </ContForm>
+        <Cont>
+          <Container>
+            <Title>
+              <TitleItem>DATA</TitleItem>
+              <TitleItem>DESCRIPTION</TitleItem>
+              <TitleItem>CATEGORY</TitleItem>
+              <TitleItem>SUM</TitleItem>
+            </Title>
+            <TabExIn></TabExIn>
+          </Container>
+          <Summary></Summary>
+        </Cont>
+      </ConteinerGeneral>
     </>
   );
 };
+

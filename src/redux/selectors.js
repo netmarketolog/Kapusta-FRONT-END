@@ -9,3 +9,5 @@ export const selectEmail = state => state.auth.user.email;
 export const selectTransactions = state => state.transactions.items;
 export const selectSumary = state => state.transactions.sumary;
 export const selectReports = state => state.transactions.report;
+export const selectOperationType = state => state.transactions.operationType;
+

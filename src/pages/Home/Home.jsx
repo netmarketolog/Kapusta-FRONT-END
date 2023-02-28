@@ -7,10 +7,11 @@ import { useEffect } from 'react';
 import { getTransactions } from 'redux/transactions/transactionsOperations';
 import { selectTokenDeadline } from 'redux/selectors';
 import { RefreshUser } from 'redux/auth/authOperations';
+import { selectOperationType } from 'redux/selectors';
 
 const Home = () => {
-  const dispatch = useDispatch();
-  const operation = 'income';
+const dispatch = useDispatch();
+  const operation = useSelector(selectOperationType);
   const deadline = useSelector(selectTokenDeadline);
 
   useEffect(() => {
@@ -22,7 +23,9 @@ const Home = () => {
     })();
 
     console.log('UseEffect!!!!!');
-  }, [deadline, dispatch]);
+
+  }, [dispatch, operation, deadline]);
+
 
   return (
     <ContainerAuth>

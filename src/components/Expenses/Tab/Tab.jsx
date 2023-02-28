@@ -1,14 +1,33 @@
-import {
-  TabConteiner,
-} from './Tab.styled';
+import { PropTypes } from 'prop-types';
 
-import TabButton from './Buttons';
+import { TabConteiner } from './Tab.styled';
+import { StyledTabButton, StyledTabButtonA } from './Button.styled';
 
-export const Tab = () => {
+export const Tab = ({ switchOperation, btn }) => {
+
   return (
     <TabConteiner>
-      <TabButton>EXPENSES</TabButton>
-      <TabButton>INCOME</TabButton>
-   </TabConteiner>
+      <StyledTabButton
+        type="button"
+        onClick={switchOperation}
+        active={btn}
+        name="expense"
+      >
+        EXPENSES
+      </StyledTabButton>
+      <StyledTabButtonA
+        type="button"
+        onClick={switchOperation}
+        active={!btn}
+        name="income"
+      >
+        INCOME
+      </StyledTabButtonA>
+    </TabConteiner>
   );
-}
+};
+
+Tab.propTypes = {
+  switchOperation: PropTypes.func.isRequired,
+  btn: PropTypes.bool.isRequired,
+};

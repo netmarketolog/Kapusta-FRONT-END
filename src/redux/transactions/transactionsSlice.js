@@ -12,6 +12,7 @@ const initialState = {
   items: [],
   report: {},
   error: null,
+  operationType: 'expense',
 };
 
 const handlePending = state => {
