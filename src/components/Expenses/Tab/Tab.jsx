@@ -4,7 +4,7 @@ import StyledTabButton from './Button.styled';
 import { selectOperationType } from 'redux/selectors';
 import { useSelector } from 'react-redux';
 
-export const Tab = switchOperationType => {
+export const Tab = ({ switchOperationType }) => {
   const OperationType = useSelector(selectOperationType);
   return (
     <TabConteiner>
