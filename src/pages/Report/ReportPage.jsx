@@ -3,7 +3,8 @@ import { Diagram } from 'components/Reports/Diagram/Diagram';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getReport } from 'redux/transactions/transactionsOperations';
-
+import { ExpensesIncomes } from '../../components/ExpensesIncomes/ExpensesIncomes.jsx';
+import { ChangeBalance } from '../../components/ChangeBalance/ChangeBalance';
 const ReportPage = () => {
   const dispatch = useDispatch();
   const operation = 'expense';
@@ -15,6 +16,8 @@ const ReportPage = () => {
   }, [dispatch]);
   return (
     <>
+      <ChangeBalance />
+      <ExpensesIncomes />
       <Diagram stats={arr} />
     </>
   );
