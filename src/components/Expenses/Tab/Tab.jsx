@@ -14,10 +14,21 @@ import {OPERATION_TYPES} from 'utils/constants';
 export const Tab = ({ onChange }) => {
 
   const dispatch = useDispatch();
-  const switchOperationType = type => {
+  const switchOperationType = e => {
+    console.log(e.target);
     onChange(true);
-    dispatch(setOperationType(type));
+    dispatch(setOperationType(e));
+    console.log('switchOperationType');
   };
+
+  // e.target.name ()
+  // () => switchOperationType(OPERATION_TYPES.expense)
+  // () => switchOperationType(OPERATION_TYPES.income)
+
+  // useEffect(() => {
+
+  //   console.log('switchOperationType');
+  // }, [dispatch]);
 
   const OperationType = useSelector(selectOperationType);
 
@@ -25,13 +36,15 @@ export const Tab = ({ onChange }) => {
     <TabConteiner>
       <TabButton
       type="button"
-      onClick={() => switchOperationType(OPERATION_TYPES.expense)}
+      onClick={switchOperationType}
       active={OperationType === OPERATION_TYPES.expense ? true : false}
+      name='EXPENSES'
       >EXPENSES</TabButton>
       <TabButton
       type="button"
-      onClick={() => switchOperationType(OPERATION_TYPES.income)}
+      onClick={switchOperationType}
       active={OperationType === OPERATION_TYPES.income ? true : false}
+      name='INCOME'
       >INCOME</TabButton>
    </TabConteiner>
   );
