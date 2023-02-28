@@ -14,8 +14,8 @@ const ReportPage = () => {
   const [category, setCategory] = useState('');
   const [stats, setStats] = useState([]);
   const [operation, setOperation] = useState('expense');
-  const [year, setYear] = useState(2023);
-  const [month, setMonth] = useState(2);
+  const [year, setYear] = useState(2023); // 2023 заменить на переменную текщий год
+  const [month, setMonth] = useState(2); // 2 заменить на переменную текущий месяц
 
   const dispatch = useDispatch();
   const deadline = useSelector(selectTokenDeadline);
