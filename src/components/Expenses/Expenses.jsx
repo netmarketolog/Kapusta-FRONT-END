@@ -24,20 +24,26 @@ import { Calendar } from '../../components/Expenses/DatePicker/DatePicker';
 // import { setOperationType } from 'redux/transactions/transactionsSlice';
 import { useDispatch } from 'react-redux';
 import { getTransactions } from 'redux/transactions/transactionsOperations';
+import { useState } from 'react';
 
 export const Expenses = () => {
-  // const [ btn, setBtn ] = useState(true);
   const dispatch = useDispatch();
+  const [btn, setBtn] = useState(true);
+
+  const toggleBtn = () => {
+    setBtn(!btn);
+    console.log(btn);
+  };
 
   const switchOperationType = type => {
-    console.log(type.target.name);
-    // dispatch(setOperationType(type.target.name));
-    dispatch(getTransactions(type.target.name));
+    const operation = type.target.name ?? 'expense';
+    dispatch(getTransactions({ operation }));
+    toggleBtn();
   };
 
   return (
     <>
-      <Tab switchOperationType={switchOperationType} />
+      <Tab switchOperationType={switchOperationType} btn={btn} />
       <ConteinerGeneral>
         <ContForm>
           <Form>

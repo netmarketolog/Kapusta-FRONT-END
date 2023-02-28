@@ -1,17 +1,18 @@
-import { OPERATION_TYPES } from 'utils/constants';
 import { TabConteiner } from './Tab.styled';
 import StyledTabButton from './Button.styled';
-import { selectOperationType } from 'redux/selectors';
-import { useSelector } from 'react-redux';
 
-export const Tab = ({ switchOperationType }) => {
-  const OperationType = useSelector(selectOperationType);
+export const Tab = ({ switchOperationType, btn }) => {
+  // const [btn, setBtn] = useState(true);
+  // const toggleBtn = () => {
+  //   setBtn(!btn);
+  //   console.log(btn);
+  // };
   return (
     <TabConteiner>
       <StyledTabButton
         type="button"
         onClick={switchOperationType}
-        active={OperationType === OPERATION_TYPES.expense ? true : false}
+        active={btn}
         name="expense"
       >
         EXPENSES
@@ -19,7 +20,7 @@ export const Tab = ({ switchOperationType }) => {
       <StyledTabButton
         type="button"
         onClick={switchOperationType}
-        active={OperationType === OPERATION_TYPES.income ? true : false}
+        active={!btn}
         name="income"
       >
         INCOME
