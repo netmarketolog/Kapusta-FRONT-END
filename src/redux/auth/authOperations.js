@@ -71,6 +71,20 @@ export const RefreshUser = createAsyncThunk(
   }
 );
 
+export const googleUser = createAsyncThunk(
+  'auth/google',
+  async ({ accessToken }, thunkAPI) => {
+    try {
+      setAuthHeader(accessToken);
+      const { data } = await axios.get('/users/current');
+
+      return data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
 export const refreshToken = async token => {
   if (Date.now() >= token.expiresIn) {
     const refreshToken = { refreshToken: token.refreshToken };
