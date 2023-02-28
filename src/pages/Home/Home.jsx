@@ -1,7 +1,6 @@
 import { ChangeBalance } from 'components/ChangeBalance/ChangeBalance';
 import { Expenses } from 'components/Expenses/Expenses';
 import { ContainerAuth } from 'components/Container/ContainerAuth';
-import { Summary } from 'components/Summary/Summary.jsx';
 import { Outlet } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';

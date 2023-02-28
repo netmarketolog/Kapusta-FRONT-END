@@ -11,7 +11,7 @@ export const TitleItem = styled.div`
     color: #000000;
     padding: 0 8px;
     text-transform: uppercase;
-`;
+    `;
 export const Title = styled.div`
     
     @media screen and (min-width: 768px) {
@@ -32,31 +32,31 @@ export const Title = styled.div`
         grid-template-columns: 126px 168px 216px 117px 119px;
         height: 38px;
     }
-`;
+    `;
 export const Container = styled.div`
     
     @media screen and (min-width: 768px) {
         width: 624px;
         margin-left: 40px;
     }
-
+    
     @media screen and (min-width: 1200px) {
         width: 746px;
         margin-left: 32px;
     }
-`;
+    `;
 export const Scrollbar = styled.div`
     overflow: auto;
     height: 342px;
     border-radius: 2px;
-`;
+    `;
 
 export const BudgetList = styled.div`
     margin: 0;
     position: relative;
     border-left: 2px solid #f4f6fb;
     border-right: 2px solid #f4f6fb;
-`;
+    `;
 export const Item = styled.div`
     height: 38px;
     grid-template-columns: 126px 168px 216px 117px 119px;
@@ -67,7 +67,7 @@ export const Item = styled.div`
     color: #52555f;
     border-bottom: 2px solid #f4f6fb;
     
-`;
+    `;
 export const Form = styled.div`
     display: flex;
     max-width: 100%;
@@ -76,7 +76,7 @@ export const Form = styled.div`
     
     @media screen and (min-width: 768px) {
         display: block;
-
+        
     }
     
     @media screen and (min-width: 1200px) {
@@ -84,13 +84,13 @@ export const Form = styled.div`
         max-width: 100%;
         justify-content: space-between;
     }
-`;
+    `;
 export const DatePicker = styled.div`
     width: auto;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-`;
+    `;
 export const ConteinerGeneral = styled.div`
     display: none;
     @media screen and (min-width: 768px) {
@@ -108,41 +108,49 @@ export const ConteinerGeneral = styled.div`
         height: 579px;
         padding-top: 32px;
     }
-`;
+    `;
+export const MainContainer = styled.div`
+    margin: auto;
+    @media screen and (min-width: 768px) {
+        width: 768px;
+    }
+    @media screen and (min-width: 1200px) {
+        width: 1200px;
+    }
+`
 export const Cont = styled.div`
  
-    @media screen and (min-width: 768px) {
-        display: flex;
-        padding-top: 48px;
+ @media screen and (min-width: 768px) {
+     display: flex;
+     padding-top: 48px;
     }
     
     @media screen and (min-width: 1200px) {
         display: flex;
         padding-top: 60px;
     }
-`;
+    `;
 export const ButtonCont = styled.div`
 
-    @media screen and (min-width: 768px) {
-        display: flex;
-        padding-top: 32px;
-        justify-content: center;
+@media screen and (min-width: 768px) {
+    display: flex;
+    padding-top: 32px;
+    justify-content: center;
     }
     
     @media screen and (min-width: 1200px) {
         display: flex;
         padding-top: 0px;
     }
-`;
+    `;
 export const ContForm = styled.div`
 @media screen and (min-width: 768px) {
     display: block;
-
+    
 }
 
 @media screen and (min-width: 1200px) {
     display: flex;
-
-}
     
+}
 `;
