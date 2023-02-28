@@ -1,39 +1,33 @@
-import { TabConteiner } from './Tab.styled';
-import StyledTabButton from './Button.styled';
+import { PropTypes } from 'prop-types';
 
-export const Tab = ({ switchOperationType, btn }) => {
-  // const [btn, setBtn] = useState(true);
-  // const toggleBtn = () => {
-  //   setBtn(!btn);
-  //   console.log(btn);
-  // };
+import { TabConteiner } from './Tab.styled';
+import { StyledTabButton, StyledTabButtonA } from './Button.styled';
+
+export const Tab = ({ switchOperation, btn }) => {
+
   return (
     <TabConteiner>
       <StyledTabButton
         type="button"
-        onClick={switchOperationType}
+        onClick={switchOperation}
         active={btn}
         name="expense"
       >
         EXPENSES
       </StyledTabButton>
-      <StyledTabButton
+      <StyledTabButtonA
         type="button"
-        onClick={switchOperationType}
+        onClick={switchOperation}
         active={!btn}
         name="income"
       >
         INCOME
-      </StyledTabButton>
+      </StyledTabButtonA>
     </TabConteiner>
   );
 };
 
-// e.target.name ()
-// () => switchOperationType(OPERATION_TYPES.expense)
-// () => switchOperationType(OPERATION_TYPES.income)
-
-// useEffect(() => {
-
-//   console.log('switchOperationType');
-// }, [dispatch]);
+Tab.propTypes = {
+  switchOperation: PropTypes.func.isRequired,
+  btn: PropTypes.bool.isRequired,
+};

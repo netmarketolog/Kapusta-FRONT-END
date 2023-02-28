@@ -1,3 +1,18 @@
+import { useDispatch } from 'react-redux';
+import { getTransactions } from 'redux/transactions/transactionsOperations';
+import { useState } from 'react';
+
+import { Tab } from './Tab/Tab';
+import { Summary } from '../Expenses/Summary/Summary';
+import { ProductCategori } from '../ProductCategory/ProductCategori.jsx';
+import { Button } from '../Expenses/Buttons/Buttons';
+
+import { Input } from './Input/Input';
+import { Calc } from './Calc/Calc';
+import { TabExIn } from './TabExIn/TabExIn';
+
+import { Calendar } from '../../components/Expenses/DatePicker/DatePicker';
+
 import {
   TitleItem,
   Title,
@@ -10,32 +25,15 @@ import {
   ContForm,
 } from './Expenses.styled';
 
-import { Tab } from './Tab/Tab';
-import { Summary } from '../Expenses/Summary/Summary';
-import { ProductCategori } from '../ProductCategory/ProductCategori.jsx';
-import { Button } from '../Expenses/Buttons/Buttons';
-
-import { Input } from './Input/Input';
-import { Calc } from './Calc/Calc';
-import { TabExIn } from './TabExIn/TabExIn';
-
-import { Calendar } from '../../components/Expenses/DatePicker/DatePicker';
-// import { useState } from 'react';
-// import { setOperationType } from 'redux/transactions/transactionsSlice';
-import { useDispatch } from 'react-redux';
-import { getTransactions } from 'redux/transactions/transactionsOperations';
-import { useState } from 'react';
-
 export const Expenses = () => {
   const dispatch = useDispatch();
   const [btn, setBtn] = useState(true);
 
   const toggleBtn = () => {
     setBtn(!btn);
-    console.log(btn);
   };
 
-  const switchOperationType = type => {
+  const switchOperation = type => {
     const operation = type.target.name ?? 'expense';
     dispatch(getTransactions({ operation }));
     toggleBtn();
@@ -43,7 +41,7 @@ export const Expenses = () => {
 
   return (
     <>
-      <Tab switchOperationType={switchOperationType} btn={btn} />
+      <Tab switchOperation={switchOperation} btn={btn} />
       <ConteinerGeneral>
         <ContForm>
           <Form>
@@ -75,3 +73,4 @@ export const Expenses = () => {
     </>
   );
 };
+
