@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 // import { Notify } from 'notiflix';
 import { logIn, logOut, RefreshUser, register } from './authOperations';
+import { addBalance } from '../balance/balanceOperation';
 const initialState = {
   user: { email: null, balance: null }, //зависит от того, как будем получать с бека
   token: null,
@@ -39,6 +40,19 @@ const authSlice = createSlice({
         state.isRefreshing = false;
       })
       .addCase(RefreshUser.rejected, state => {
+        state.isRefreshing = false;
+        state.isLoggedIn = false;
+      })
+      .addCase(addBalance.pending, state => {
+        state.isRefreshing = true;
+        state.isLoggedIn = true;
+      })
+      .addCase(addBalance.fulfilled, (state, action) => {
+        state.balance = action.payload.data.balance;
+        state.isLoggedIn = true;
+        state.isRefreshing = false;
+      })
+      .addCase(addBalance.rejected, state => {
         state.isRefreshing = false;
         state.isLoggedIn = false;
       }),

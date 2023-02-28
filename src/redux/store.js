@@ -11,21 +11,8 @@ import {
   REGISTER,
 } from 'redux-persist';
 import { authReducer } from './auth/authSlice';
-import { balanceReducer } from './balance/balanceSlice';
-import { transactionsReducer } from './transactions/transactionsSlice';
 
-// const middleware = [
-//   ...getDefaultMiddleware({
-//     serializableCheck: {
-//       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-//     },
-//   }),
-// ];
-const balancePersistConfig = {
-  key: 'balance',
-  storage,
-  whitelist: ['balance'],
-};
+import { transactionsReducer } from './transactions/transactionsSlice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -35,10 +22,9 @@ const authPersistConfig = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
-    balance: persistReducer(balancePersistConfig, balanceReducer),
+
     transactions: transactionsReducer,
   },
-  // middleware,
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({
       serializableCheck: {
