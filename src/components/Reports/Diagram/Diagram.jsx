@@ -14,12 +14,14 @@ export const Diagram = ({ stats }) => {
     window.addEventListener('resize', () => onResize());
     return window.removeEventListener('resize', () => onResize());
   }, []);
-
-  const max = stats[0].total;
+  let max;
+  if (stats && stats[0]) {
+    max = stats[0].total;
+  }
   return (
     <Box>
       <Section>
-        {stats.map(item => {
+        {stats?.map(item => {
           return (
             <Item
               key={item.name}
