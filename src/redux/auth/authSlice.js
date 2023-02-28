@@ -62,7 +62,7 @@ const authSlice = createSlice({
       .addCase(addBalance.rejected, state => {
         state.isRefreshing = false;
         state.isLoggedIn = false;
-
+      })
       .addCase(googleUser.pending, state => {
         state.isRefreshing = true;
         state.isLoggedIn = true;
