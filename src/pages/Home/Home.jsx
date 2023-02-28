@@ -19,7 +19,6 @@ const Home = () => {
       <main>
         <ChangeBalance />
         <Expenses />
-        <Summary />
         <Outlet />
       </main>
     </ContainerAuth>
