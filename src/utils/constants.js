@@ -5,3 +5,8 @@ export const BTN_NAME = {
   WHITE: 'white',
   CONFIRM: 'confirm',
 };
+
+export const OPERATION_TYPES = {
+  expenses: 'expense',
+  incomes: 'income',
+};

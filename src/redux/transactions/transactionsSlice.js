@@ -12,6 +12,7 @@ const initialState = {
   items: [],
   report: {},
   error: null,
+  operationType: 'expense',
 };
 
 const handlePending = state => {
@@ -30,6 +31,11 @@ const handleFulfilled = state => {
 const transactionsSlice = createSlice({
   name: 'transaction',
   initialState,
+  reducers: {
+    setOperationType(state, action) {
+      state.operationType = action.payload;
+    },
+  },
   extraReducers: builder =>
     builder
       .addCase(addTransaction.pending, handlePending)
@@ -68,3 +74,5 @@ const transactionsSlice = createSlice({
 });
 
 export const transactionsReducer = transactionsSlice.reducer;
+export const { setOperationType } = transactionsSlice.actions;
+
