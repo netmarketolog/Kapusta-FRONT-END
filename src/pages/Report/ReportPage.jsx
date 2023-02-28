@@ -31,11 +31,10 @@ const ReportPage = () => {
   }, [deadline, dispatch, month, operation, year]);
 
   useEffect(() => {
-    if (statistics && statistics[0]) {
-      setCategory(statistics[0]._id);
-      const [data] = statistics.filter(item => item._id === category);
-      setStats(data?.stats);
-    }
+    if (!statistics || !statistics[0]) return;
+    setCategory(statistics[0]._id);
+    const [data] = statistics.filter(item => item._id === category);
+    setStats(data?.stats);
   }, [category, statistics]);
 
   return (
