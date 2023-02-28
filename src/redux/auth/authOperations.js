@@ -4,7 +4,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 axios.defaults.baseURL = 'https://kapusta-wwgw.onrender.com';
 
-const setAuthHeader = token => {
+export const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
@@ -62,6 +62,20 @@ export const RefreshUser = createAsyncThunk(
     try {
       const token = await refreshToken(persistedToken);
       setAuthHeader(token.accessToken);
+      const { data } = await axios.get('/users/current');
+
+      return data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
+export const googleUser = createAsyncThunk(
+  'auth/google',
+  async ({ accessToken }, thunkAPI) => {
+    try {
+      setAuthHeader(accessToken);
       const { data } = await axios.get('/users/current');
 
       return data;

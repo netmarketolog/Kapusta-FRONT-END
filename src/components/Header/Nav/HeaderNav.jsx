@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectIsLoggedIn } from 'redux/selectors';
+import { selectIsLoggedIn, selectTokenDeadline } from 'redux/selectors';
 
 import logoutImg from 'images/header/logout.svg';
 
 import { ModalAsk } from 'components/Modal/ModalAsk/ModalAsk';
-import { logOut } from 'redux/auth/authOperations';
+import { logOut, RefreshUser } from 'redux/auth/authOperations';
 
 import {
   AuthNavContainer,
@@ -27,8 +27,13 @@ export const HeaderNav = () => {
     setModalOpen(prevState => !prevState);
   };
 
-  const handleClick = () => {
-    dispatch(logOut());
+  const deadline = useSelector(selectTokenDeadline);
+
+  const handleClick = async () => {
+    if (deadline) {
+      if (Date.now() >= deadline) await dispatch(RefreshUser());
+    }
+    await dispatch(logOut());
     toggleModal();
   };
 
