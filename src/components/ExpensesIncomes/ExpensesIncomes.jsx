@@ -6,10 +6,8 @@ import {
   Exp,
   Inc,
   ExpСontainer,
-} from './ExpensesIncomes';
-// import { patchTransactions } from '../../redux/transaction/transactionOperation';
+} from './ExpensesIncomes.styled';
 export const ExpensesIncomes = () => {
-  // console.log(patchTransactions());
   return (
     <Container>
       <ExpIncContainer>
