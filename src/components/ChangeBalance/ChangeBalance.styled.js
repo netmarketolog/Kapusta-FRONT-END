@@ -2,25 +2,28 @@ import styled from 'styled-components';
 
 export const BackgroundContainer = styled.div`
   width: 100%;
-  padding-top: 40px;
+`;
+
+export const BalanceContainer = styled.div`
+  width: 320px;
   padding-left: 20px;
   padding-right: 20px;
-`;
-export const BalanceContainer = styled.div`
-  width: 280px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 32px;
   @media screen and (min-width: 768px) {
+    width: 704px;
+    padding: 0px;
+    padding-left: 40px;
+    padding-top: 40px;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    width: 704px;
   }
-
-  @media screen and (min-width: 1200px) {
-    width: 1034px;
+  @media screen and (min-width: 1280px) {
+    width: 1280px;
+    padding-left: 0px;
+    padding-right: 91px;
     justify-content: flex-start;
   }
 `;
@@ -35,8 +38,8 @@ export const Balance = styled.div`
     margin-bottom: 0px;
   }
 
-  @media screen and (min-width: 1200px) {
-    margin-right: 298px;
+  @media screen and (min-width: 1280px) {
+    margin-right: 310px;
   }
 `;
 
@@ -52,10 +55,10 @@ export const BalanceText = styled.p`
 
   @media screen and (min-width: 768px) {
     margin-bottom: 0px;
-    margin-right: 21px;
+    margin-right: 20px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     margin-right: 20px;
   }
 `;
@@ -105,53 +108,33 @@ export const BalanceInput = styled.input`
     border-radius: 16px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     margin-right: 16px;
   }
 `;
-export const ReportsBalanceInput = styled.input`
+export const ReportsBalance = styled.div`
+  display: flex;
   width: 183px;
   height: 44px;
-  text-align: center;
-  padding: 12px 44px 12px 19px;
+  align-items: center;
+  justify-content: center;
   border: 2px solid #fff;
   border-radius: 22px 22px 22px 22px;
   background: transparent;
-  outline: none;
   font-weight: 700;
   font-size: 12px;
   line-height: 14px;
   text-transform: uppercase;
   color: #000000;
-  ::-webkit-outer-spin-button,
-  ::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-  }
-  ::-moz-outer-spin-button,
-  ::-moz-inner-spin-button {
-    -moz-appearance: none;
-  }
-  ::-ms-outer-spin-button,
-  ::-ms-inner-spin-button {
-    -ms-appearance: none;
-  }
-
-  :focus {
-    border-width: 2px;
-    border-style: solid;
-    border-color: #ff751d;
-  }
 
   @media screen and (min-width: 768px) {
     width: 125px;
-    padding: 12px 47px 12px 0px;
-    margin-right: 15px;
-    border: 2px solid #ffffff;
     border-radius: 16px;
+    align-items: center;
+    justify-content: center;
   }
 
-  @media screen and (min-width: 1200px) {
-    margin-right: 16px;
+  @media screen and (min-width: 1280px) {
   }
 `;
 export const InputBtn = styled.button`
@@ -210,16 +193,6 @@ export const InputBtn = styled.button`
     :hover {
       border-width: 2px 2px 2px 2px;
     }
-  }
-`;
-
-export const CalendarContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  @media screen and (min-width: 768px) {
-    display: none;
   }
 `;
 

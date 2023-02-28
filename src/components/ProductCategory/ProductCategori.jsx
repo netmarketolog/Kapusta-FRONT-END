@@ -13,7 +13,6 @@ export const ProductCategori = () => {
   const onChangr = newValue => {
     setCategories(newValue.value);
   };
-  console.log(categories);
   return (
     <div>
       <SelectCustom
