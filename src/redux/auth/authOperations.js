@@ -4,7 +4,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 axios.defaults.baseURL = 'https://kapusta-wwgw.onrender.com';
 
-const setAuthHeader = token => {
+export const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
