@@ -2,9 +2,7 @@ import styled from 'styled-components';
 
 export const BackgroundContainer = styled.div`
   width: 100%;
-  padding: 40px 0px 40px;
-  background-color: #f5f6fb;
-  border-bottom-left-radius: 100px;
+  padding-top: 40px;
   padding-left: 20px;
   padding-right: 20px;
 `;
@@ -12,19 +10,17 @@ export const BalanceContainer = styled.div`
   width: 280px;
   margin-left: auto;
   margin-right: auto;
-
+  margin-bottom: 32px;
   @media screen and (min-width: 768px) {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
     width: 704px;
-    padding-left: 32px;
-    padding-right: 32px;
   }
 
   @media screen and (min-width: 1200px) {
-    width: 1098px;
+    width: 1034px;
     justify-content: flex-start;
   }
 `;
@@ -33,7 +29,6 @@ export const Balance = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 40px;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -114,7 +109,51 @@ export const BalanceInput = styled.input`
     margin-right: 16px;
   }
 `;
+export const ReportsBalanceInput = styled.input`
+  width: 183px;
+  height: 44px;
+  text-align: center;
+  padding: 12px 44px 12px 19px;
+  border: 2px solid #fff;
+  border-radius: 22px 22px 22px 22px;
+  background: transparent;
+  outline: none;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: #000000;
+  ::-webkit-outer-spin-button,
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  ::-moz-outer-spin-button,
+  ::-moz-inner-spin-button {
+    -moz-appearance: none;
+  }
+  ::-ms-outer-spin-button,
+  ::-ms-inner-spin-button {
+    -ms-appearance: none;
+  }
 
+  :focus {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #ff751d;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 125px;
+    padding: 12px 47px 12px 0px;
+    margin-right: 15px;
+    border: 2px solid #ffffff;
+    border-radius: 16px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 16px;
+  }
+`;
 export const InputBtn = styled.button`
   width: 142px;
   height: 44px;
@@ -184,18 +223,9 @@ export const CalendarContainer = styled.div`
   }
 `;
 
-export const Calendar = styled.p`
-  margin-left: 8px;
-  font-weight: 900;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #52555f;
-`;
-
 export const Label = styled.label`
   position: absolute;
+  top: 16px;
   right: 0;
   font-weight: 700;
   font-size: 12px;
@@ -209,8 +239,8 @@ export const Label = styled.label`
 `;
 
 export const InputContainer = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 `;

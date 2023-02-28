@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RefreshUser } from 'redux/auth/authOperations';
 import { selectTokenDeadline } from 'redux/selectors';
 import { getReport } from 'redux/transactions/transactionsOperations';
-
+import { ExpensesIncomes } from '../../components/ExpensesIncomes/ExpensesIncomes';
+import { ChangeBalance } from '../../components/ChangeBalance/ChangeBalance';
 const ReportPage = () => {
   const dispatch = useDispatch();
   const deadline = useSelector(selectTokenDeadline);
@@ -26,6 +27,8 @@ const ReportPage = () => {
 
   return (
     <>
+      <ChangeBalance />
+      <ExpensesIncomes stats={arr} />
       <Diagram stats={arr} />
     </>
   );
