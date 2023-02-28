@@ -14,9 +14,9 @@ const AuthPage = lazy(() => import('../pages/Auth/Auth'));
 
 export const App = () => {
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(RefreshUser());
+    console.log('useEffect in App.js');
   }, [dispatch]);
 
   return (
@@ -27,7 +27,12 @@ export const App = () => {
             index
             element={<PrivateRoute redirectTo="/auth" component={<Home />} />}
           />
-          <Route path="/reports" element={<ReportPage />} />
+          <Route
+            path="/reports"
+            element={
+              <PrivateRoute redirectTo="/auth" component={<ReportPage />} />
+            }
+          />
           <Route
             path="auth"
             element={<RestrictedRoute component={<AuthPage />} />}

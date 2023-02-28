@@ -14,7 +14,7 @@ export const Home = styled.div`
   }
   @media screen and (min-width: 1280px) {
     flex-direction: row-reverse;
-
+    align-items: center;
     left: 55%;
   }
 `;

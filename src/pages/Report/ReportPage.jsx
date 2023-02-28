@@ -1,21 +1,47 @@
-import { arr } from 'components/Reports/Diagram/arr';
+// import { arr } from 'components/Reports/Diagram/arr';
 import { Diagram } from 'components/Reports/Diagram/Diagram';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RefreshUser } from 'redux/auth/authOperations';
+import { selectReports, selectTokenDeadline } from 'redux/selectors';
 import { getReport } from 'redux/transactions/transactionsOperations';
+import { ExpensesIncomes } from '../../components/ExpensesIncomes/ExpensesIncomes';
+import { ChangeBalance } from '../../components/ChangeBalance/ChangeBalance';
 
 const ReportPage = () => {
+  const { statistics } = useSelector(selectReports);
+
+  const [category, setCategory] = useState('');
+  const [stats, setStats] = useState([]);
+  const [operation, setOperation] = useState('expense');
+  const [year, setYear] = useState(2023); // 2023 заменить на переменную текщий год
+  const [month, setMonth] = useState(2); // 2 заменить на переменную текущий месяц
+
   const dispatch = useDispatch();
-  const operation = 'expense';
-  const year = 2023;
-  const month = 2;
+  const deadline = useSelector(selectTokenDeadline);
+
   useEffect(() => {
-    dispatch(getReport({ operation, year, month }));
-    console.log('UseEffect!!!!!');
-  }, [dispatch]);
+    (async function fetchData() {
+      if (deadline) {
+        if (Date.now() >= deadline) await dispatch(RefreshUser());
+      }
+      await dispatch(getReport({ operation, year, month }));
+    })();
+    console.log('UseEffect in Report.js!!!!!');
+  }, [deadline, dispatch, month, operation, year]);
+
+  useEffect(() => {
+    if (!statistics || !statistics[0]) return;
+    setCategory(statistics[0]._id);
+    const [data] = statistics.filter(item => item._id === category);
+    setStats(data?.stats);
+  }, [category, statistics]);
+
   return (
     <>
-      <Diagram stats={arr} />
+      <ChangeBalance />
+      <ExpensesIncomes />
+      {stats && stats.length > 0 && <Diagram stats={stats} />}
     </>
   );
 };

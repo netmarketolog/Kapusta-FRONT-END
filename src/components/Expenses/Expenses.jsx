@@ -1,6 +1,6 @@
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getTransactions } from 'redux/transactions/transactionsOperations';
-import { useState } from 'react';
 
 import { Tab } from './Tab/Tab';
 import { Summary } from '../Expenses/Summary/Summary';
@@ -13,6 +13,7 @@ import { TabExIn } from './TabExIn/TabExIn';
 
 import { Calendar } from '../../components/Expenses/DatePicker/DatePicker';
 
+
 import {
   TitleItem,
   Title,
@@ -23,6 +24,7 @@ import {
   Cont,
   ButtonCont,
   ContForm,
+
 } from './Expenses.styled';
 
 export const Expenses = () => {

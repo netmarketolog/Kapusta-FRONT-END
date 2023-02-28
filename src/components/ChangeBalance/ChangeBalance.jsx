@@ -12,16 +12,20 @@ import {
   BalanceForm,
   Label,
   InputContainer,
+  ReportsBalanceInput,
 } from './ChangeBalance.styled';
 import { addBalance } from '../../redux/balance/balanceOperation';
-import { selectBalance } from '../../redux/selectors';
+import { selectBalance, selectIsRefreshing } from '../../redux/selectors';
 import { LoaderBtn } from '../Loader/Loader';
+import { useLocation } from 'react-router-dom';
 
 export const ChangeBalance = () => {
   const [startBalance, setStartBalance] = useState(`00.00`);
-  const { balance, isRefreshing } = useSelector(selectBalance);
-
+  const { pathname } = useLocation();
+  const balance = useSelector(selectBalance);
+  const IsRefreshing = useSelector(selectIsRefreshing);
   const dispatch = useDispatch();
+
   const formBalanceChange = e => {
     setStartBalance(e.currentTarget.value);
   };
@@ -34,23 +38,33 @@ export const ChangeBalance = () => {
       })
     );
   };
-  console.log(balance);
+
   return (
     <BackgroundContainer>
       <BalanceContainer>
-        <ReportsBtn />
+        {pathname === '/reports' ? <></> : <ReportsBtn />}
 
         <Balance>
           <BalanceText>Balance:</BalanceText>
           <BalanceForm onSubmit={formSubmit}>
             <InputContainer>
-              {isRefreshing ? (
+              {IsRefreshing ? (
                 LoaderBtn()
+              ) : pathname === '/reports' ? (
+                <>
+                  <ReportsBalanceInput
+                    type="Number"
+                    value={balance > 0 ? balance : startBalance}
+                    disabled={balance > 0 ? true : false}
+                    onChange={formBalanceChange}
+                  ></ReportsBalanceInput>{' '}
+                  <Label>UAH</Label>
+                </>
               ) : (
                 <>
                   <BalanceInput
                     type="Number"
-                    value={balance > 0 ? balance : startBalance} //
+                    value={balance > 0 ? balance : startBalance}
                     disabled={balance > 0 ? true : false}
                     onChange={formBalanceChange}
                   />
@@ -58,14 +72,18 @@ export const ChangeBalance = () => {
                 </>
               )}
             </InputContainer>
-            <InputBtn
-              BackgroundColor="transparent"
-              type="submit"
-              disabled={balance > 0 ? true : false}
-              onSubmit={formSubmit}
-            >
-              {isRefreshing ? LoaderBtn() : 'Confirm'}
-            </InputBtn>
+            {pathname === '/reports' ? (
+              <></>
+            ) : (
+              <InputBtn
+                BackgroundColor="transparent"
+                type="submit"
+                disabled={balance > 0 ? true : false}
+                onSubmit={formSubmit}
+              >
+                {IsRefreshing ? LoaderBtn() : 'Confirm'}
+              </InputBtn>
+            )}
           </BalanceForm>
         </Balance>
       </BalanceContainer>

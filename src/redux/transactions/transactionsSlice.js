@@ -53,6 +53,7 @@ const transactionsSlice = createSlice({
         handleFulfilled(state);
         const arr = Object.keys(action.payload);
         const data = { ...action.payload };
+        if (!data[arr[0]]) return;
         const { transactions } = data[arr[0]];
         state.items = transactions;
         state.sumary = arr.map(item => {

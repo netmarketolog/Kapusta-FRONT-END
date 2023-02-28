@@ -1,12 +1,16 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectIsLoggedIn } from 'redux/selectors';
+import {
+  selectIsLoggedIn,
+  selectTokenDeadline,
+  selectEmail,
+} from 'redux/selectors';
 
 import logoutImg from 'images/header/logout.svg';
 
 import { ModalAsk } from 'components/Modal/ModalAsk/ModalAsk';
-import { logOut } from 'redux/auth/authOperations';
+import { logOut, RefreshUser } from 'redux/auth/authOperations';
 
 import {
   AuthNavContainer,
@@ -21,14 +25,19 @@ export const HeaderNav = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  // const userEmail = useSelector(selectUser);
+  const email = useSelector(selectEmail);
 
   const toggleModal = () => {
     setModalOpen(prevState => !prevState);
   };
 
-  const handleClick = () => {
-    dispatch(logOut());
+  const deadline = useSelector(selectTokenDeadline);
+
+  const handleClick = async () => {
+    if (deadline) {
+      if (Date.now() >= deadline) await dispatch(RefreshUser());
+    }
+    await dispatch(logOut());
     toggleModal();
   };
 
@@ -37,7 +46,7 @@ export const HeaderNav = () => {
       <>
         <AuthNavContainer>
           <UserAvatar>U</UserAvatar>
-          <UserEmail>EmailUser</UserEmail>
+          <UserEmail>{email}</UserEmail>
           <LogoutImg src={logoutImg} alt="logout" onClick={toggleModal} />
           <VerticalLine></VerticalLine>
           <ExitButton type="button" onClick={toggleModal}>

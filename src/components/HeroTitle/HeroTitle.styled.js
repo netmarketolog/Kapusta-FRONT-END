@@ -18,8 +18,8 @@ export const HeroLogo = styled.div`
   @media screen and (min-width: 1280px) {
     width: 377px;
     height: 139px;
-    margin-right: 160px;
-    margin-top: 300px;
+    margin-right: 155px;
+    margin-bottom: 0;
   }
 `;
 
