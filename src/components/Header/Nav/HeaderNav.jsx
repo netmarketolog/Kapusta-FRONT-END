@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectIsLoggedIn, selectTokenDeadline } from 'redux/selectors';
+import {
+  selectIsLoggedIn,
+  selectTokenDeadline,
+  selectEmail,
+} from 'redux/selectors';
 
 import logoutImg from 'images/header/logout.svg';
 
@@ -21,7 +25,7 @@ export const HeaderNav = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  // const userEmail = useSelector(selectUser);
+  const email = useSelector(selectEmail);
 
   const toggleModal = () => {
     setModalOpen(prevState => !prevState);
@@ -42,7 +46,7 @@ export const HeaderNav = () => {
       <>
         <AuthNavContainer>
           <UserAvatar>U</UserAvatar>
-          <UserEmail>EmailUser</UserEmail>
+          <UserEmail>{email}</UserEmail>
           <LogoutImg src={logoutImg} alt="logout" onClick={toggleModal} />
           <VerticalLine></VerticalLine>
           <ExitButton type="button" onClick={toggleModal}>
