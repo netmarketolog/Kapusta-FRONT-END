@@ -10,12 +10,11 @@ import {
   FormAuth,
   Input,
   Label,
-  LogIn,
-  Register,
   StyleForm,
   TextForm,
 } from './AuthForm.styled';
 import { AuthGoogle } from './AuthGoogle';
+import StyledButtonLog from 'components/Buttons/ButtonsLog.styled';
 
 const shema = yup.object().shape({
   email: yup.string().required().email(),
@@ -53,6 +52,7 @@ export const AuthForm = () => {
     dispatch(logIn(values));
     resetForm();
   };
+
   return (
     <Formik
       initialValues={initialValues}
@@ -87,12 +87,17 @@ export const AuthForm = () => {
           </label>
         </StyleForm>
         <Buttons>
-          <LogIn onClick={handleClick} name="login" type="submit">
+          <StyledButtonLog onClick={handleClick} name="login" type="login">
             Log in
-          </LogIn>
-          <Register onClick={handleClick} name="register" type="submit">
+          </StyledButtonLog>
+          <StyledButtonLog
+            onClick={handleClick}
+            name="register"
+            type="register"
+            style={{ marginRight: 0 }}
+          >
             Registration
-          </Register>
+          </StyledButtonLog>
         </Buttons>
       </FormAuth>
     </Formik>

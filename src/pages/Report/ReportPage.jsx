@@ -7,7 +7,9 @@ import { selectReports, selectTokenDeadline } from 'redux/selectors';
 import { getReport } from 'redux/transactions/transactionsOperations';
 import { ExpensesIncomes } from '../../components/ExpensesIncomes/ExpensesIncomes';
 import { ChangeBalance } from '../../components/ChangeBalance/ChangeBalance';
+import { ContainerAuth } from 'components/Container/ContainerAuth';
 import { ExpensesAndIncome } from 'components/Reports/ExpensesAndIncome/ExpensesAndIncome';
+
 
 const ReportPage = () => {
   // base
@@ -71,12 +73,12 @@ const ReportPage = () => {
   };
 
   return (
-    <>
+    <ContainerAuth>
       <ChangeBalance />
       <ExpensesIncomes />
       <ExpensesAndIncome report={report} changeOperation={changeOperation} />
       {stats && stats.length > 0 && <Diagram stats={stats} />}
-    </>
+    </ContainerAuth>
   );
 };
 export default ReportPage;
