@@ -13,6 +13,7 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.0",
+    "eslint-plugin-react-hooks": "^5.0.0-next-41110021f-20230301",
     "formik": "^2.2.9",
     "framer-motion": "^7.6.19",
     "js-datepicker": "^5.18.2",

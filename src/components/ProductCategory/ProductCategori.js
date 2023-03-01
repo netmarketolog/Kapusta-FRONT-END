@@ -15,9 +15,10 @@ export const SelectCustom = styled(Select)`
     line-height: 14px;
     letter-spacing: 0.02em;
     color: #c7ccdc;
+    box-shadow: none;
     :hover {
       outline: none;
-      border: 2px solid #C7CCDC;
+      border: 2px solid #c7ccdc;
     }
     @media screen and (min-width: 768px) {
       width: 186px;
