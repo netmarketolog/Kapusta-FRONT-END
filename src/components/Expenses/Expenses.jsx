@@ -26,7 +26,7 @@ import {
   Cont,
   ButtonCont,
   ContForm,
-  TabStyle
+  TabStyle,
 } from './Expenses.styled';
 import { selectTokenDeadline } from 'redux/selectors';
 import { RefreshUser } from 'redux/auth/authOperations';
@@ -66,6 +66,8 @@ export const Expenses = ({ operation }) => {
         operation,
       })
     );
+    await dispatch(getTransactions({ operation }));
+    console.log('qeqewqewq');
     setDescription('');
     setSum('');
     setDate(new Date());
