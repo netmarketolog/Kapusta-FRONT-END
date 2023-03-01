@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { SelectCustom } from './ProductCategori';
 import { defaultItems } from './DefaultItem';
 import React from 'react';
-export const ProductCategori = () => {
+export const ProductCategori = ({ updateCategory }) => {
   const [categories, setCategories] = useState('label category');
   const getValue = () => {
     return categories
@@ -12,6 +12,7 @@ export const ProductCategori = () => {
   };
   const onChangr = newValue => {
     setCategories(newValue.value);
+    updateCategory(newValue.value);
   };
   return (
     <div>
