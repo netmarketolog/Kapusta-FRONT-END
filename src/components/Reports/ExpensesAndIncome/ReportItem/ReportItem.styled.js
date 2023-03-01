@@ -25,7 +25,7 @@ export const Sum = styled.p`
   letter-spacing: 0.04em;
   text-transform: uppercase;
 
-  color: #525559;
+  color: #52555f;
   margin-bottom: 5px;
 `;
 
@@ -38,10 +38,12 @@ export const ButtonReport = styled.button`
   cursor: pointer;
   height: 60px;
   max-width: 60px;
+  padding: 0;
 
   background-color: transparent;
   border: none;
   margin-bottom: 5px;
+  fill: #071f41;
 
   &:hover > div {
     background-color: #ffdac0;
@@ -62,7 +64,7 @@ export const ButtonReport = styled.button`
     transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
       transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    background-color: #ffdac0;
+    background-color: #f5f6fb;
     border-radius: 20px;
     position: absolute;
     bottom: 0;
@@ -75,7 +77,7 @@ export const ButtonReport = styled.button`
       transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1;
 
-    fill: #ff751d;
+    fill: #071f41;
   }
 `;
 
@@ -88,5 +90,5 @@ export const Type = styled.p`
   letter-spacing: 0.02em;
   text-transform: uppercase;
 
-  color: #525559;
+  color: #52555f;
 `;
