@@ -1,15 +1,15 @@
 import logo from '../../images/icons/main.svg';
-import { StyledLink, Text } from './ButtonMain.styled';
+import { ButtonMainContainer, StyledLink, Text } from './ButtonMain.styled';
 
 export const ButtonMain = () => {
   return (
-    <div>
+    <ButtonMainContainer>
       <nav>
         <StyledLink to="/">
           <img src={logo} alt="logo" />
           <Text>Main menu</Text>
         </StyledLink>
       </nav>
-    </div>
+    </ButtonMainContainer>
   );
 };
