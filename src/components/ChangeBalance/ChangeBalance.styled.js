@@ -19,12 +19,14 @@ export const BalanceContainer = styled.div`
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 60px;
   }
   @media screen and (min-width: 1280px) {
     width: 1280px;
     padding-left: 0px;
     padding-right: 91px;
     justify-content: flex-start;
+    margin-bottom: 20px;
   }
 `;
 

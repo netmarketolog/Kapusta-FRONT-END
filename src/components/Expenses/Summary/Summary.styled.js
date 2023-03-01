@@ -2,17 +2,18 @@ import styled from 'styled-components';
 
 export const SummaryContainer = styled.div`
   display: none;
-  margin-left: 75px;
 
   @media screen and (min-width: 768px) {
     display: block;
     width: 230px;
-    display: none;
+    margin-top: 80px;
   }
 
   @media screen and (min-width: 1200px) {
     display: block;
     width: 213px;
+    margin-left: 75px;
+    margin-top: 0px;
   }
 `;
 
