@@ -16,10 +16,10 @@ export const ReportItem = ({ name, total, setCategory }) => {
           <svg width="60" height="60">
             <use href={`${Icons}#icon-${name}`}></use>
           </svg>
-          <div>{name}</div>
+          <div></div>
         </ButtonReport>
       </Wrapper>
-      <Type></Type>
+      <Type>{name}</Type>
     </ReportItemButton>
   );
 };

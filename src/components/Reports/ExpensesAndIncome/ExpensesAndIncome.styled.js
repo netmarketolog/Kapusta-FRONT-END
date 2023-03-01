@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Section = styled.div`
   margin: 0 auto;
   border-radius: 30px;
-  background-color: ${p => p.theme.headerColor};
+  background-color: #ffffff;
 
   width: 100%;
   /* margin-top: 20px; */
@@ -23,7 +23,7 @@ export const Section = styled.div`
 
 export const Wrap = styled.div`
   @media screen and (min-width: 768px) {
-    width: 623px;
+    width: 625px;
     margin: 0 auto;
   }
 `;
@@ -62,7 +62,7 @@ export const Title = styled.p`
   letter-spacing: 0.02em;
   text-transform: uppercase;
 
-  color: ${p => p.theme.tableHeadTextColor};
+  color: #000000;
 `;
 
 export const ReportList = styled.ul`
