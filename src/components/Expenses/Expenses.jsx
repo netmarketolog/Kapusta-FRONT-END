@@ -1,6 +1,9 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { getTransactions } from 'redux/transactions/transactionsOperations';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  addTransaction,
+  getTransactions,
+} from 'redux/transactions/transactionsOperations';
 
 import { Tab } from './Tab/Tab';
 import { Summary } from '../Expenses/Summary/Summary';
@@ -13,7 +16,6 @@ import { TabExIn } from './TabExIn/TabExIn';
 
 import { Calendar } from '../../components/Expenses/DatePicker/DatePicker';
 
-
 import {
   TitleItem,
   Title,
@@ -24,13 +26,18 @@ import {
   Cont,
   ButtonCont,
   ContForm,
-
 } from './Expenses.styled';
+import { selectTokenDeadline } from 'redux/selectors';
+import { RefreshUser } from 'redux/auth/authOperations';
 
-export const Expenses = () => {
+export const Expenses = ({ operation }) => {
   const dispatch = useDispatch();
   const [btn, setBtn] = useState(true);
+  const [description, setDescription] = useState('');
+  const [sum, setSum] = useState('');
+  const [date, setDate] = useState(new Date());
 
+  const deadline = useSelector(selectTokenDeadline);
   const toggleBtn = () => {
     setBtn(!btn);
   };
@@ -41,6 +48,31 @@ export const Expenses = () => {
     toggleBtn();
   };
 
+  const handleSubmit = async () => {
+    if (description === '' || sum === '') return;
+    if (deadline) {
+      if (Date.now() >= deadline) await dispatch(RefreshUser());
+    }
+    await dispatch(
+      addTransaction({
+        date,
+        description,
+        category: 'products',
+        sum,
+        operation,
+      })
+    );
+    setDescription('');
+    setSum('');
+    setDate(new Date());
+  };
+
+  const handleClear = () => {
+    setDescription('');
+    setSum('');
+    setDate(new Date());
+  };
+
   return (
     <>
       <Tab switchOperation={switchOperation} btn={btn} />
@@ -48,15 +80,15 @@ export const Expenses = () => {
         <ContForm>
           <Form>
             <DatePicker>
-              <Calendar />
-              <Input></Input>
+              <Calendar value={date} changeValue={setDate} />
+              <Input value={description} changeValue={setDescription}></Input>
               <ProductCategori></ProductCategori>
-              <Calc></Calc>
+              <Calc value={sum} changeValue={setSum}></Calc>
             </DatePicker>
           </Form>
           <ButtonCont>
-            <Button>INPUT</Button>
-            <Button>CLEAR</Button>
+            <Button handleAction={handleSubmit}>INPUT</Button>
+            <Button handleAction={handleClear}>CLEAR</Button>
           </ButtonCont>
         </ContForm>
         <Cont>
@@ -75,4 +107,3 @@ export const Expenses = () => {
     </>
   );
 };
-

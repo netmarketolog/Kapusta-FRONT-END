@@ -19,11 +19,19 @@ export const ExpensesIncomes = () => {
       <ExpIncContainer>
         <ExpСontainer>
           <Title>Expenses:</Title>
-          {isLoading ? LoaderBtn() : <Exp>- {expense} UAH.</Exp>}
+          {isLoading ? (
+            LoaderBtn()
+          ) : (
+            <Exp>- {expense?.toLocaleString()} UAH.</Exp>
+          )}
         </ExpСontainer>
         <IncСontainer>
           <Title>Income:</Title>
-          {isLoading ? LoaderBtn() : <Inc>+ {income} UAH.</Inc>}
+          {isLoading ? (
+            LoaderBtn()
+          ) : (
+            <Inc>+ {income?.toLocaleString()} UAH.</Inc>
+          )}
         </IncСontainer>
       </ExpIncContainer>
     </Container>

@@ -10,7 +10,7 @@ import { RefreshUser } from 'redux/auth/authOperations';
 import { selectOperationType } from 'redux/selectors';
 
 const Home = () => {
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const operation = useSelector(selectOperationType);
   const deadline = useSelector(selectTokenDeadline);
 
@@ -23,15 +23,13 @@ const dispatch = useDispatch();
     })();
 
     console.log('UseEffect!!!!!');
-
   }, [dispatch, operation, deadline]);
-
 
   return (
     <ContainerAuth>
       <main>
         <ChangeBalance />
-        <Expenses />
+        <Expenses operation={operation} />
         <Outlet />
       </main>
     </ContainerAuth>
