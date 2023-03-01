@@ -78,61 +78,9 @@ export const Label = styled.p`
 export const Buttons = styled.div`
   display: flex;
   justify-content: center;
-`;
-
-export const Register = styled.button`
-  width: 116px;
-  height: 44px;
-  border-radius: 16px;
-  border: none;
-  filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 14px;
   align-items: center;
-  text-align: center;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: #52555f;
-  cursor: pointer;
-
-  :hover {
-    background-color: red;
-  }
-
-  @media screen and (min-width: 768px) {
-    width: 122px;
-  }
 `;
 
-export const LogIn = styled.button`
-  width: 116px;
-  height: 44px;
-  border-radius: 16px;
-  margin-right: 8px;
-  border: none;
-  background: #ff751d;
-  color: white;
-  filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 14px;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  cursor: pointer;
-  color: #ffffff;
-
-  :hover {
-    background-color: red;
-  }
-
-  @media screen and (min-width: 768px) {
-    width: 122px;
-    margin-right: 16px;
-  } ;
-`;
 export const TextForm = styled.p`
   font-weight: 400;
   font-size: 12px;

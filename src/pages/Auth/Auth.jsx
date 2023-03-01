@@ -1,4 +1,4 @@
-import { ContainerUnAuth } from 'components/Container/ContainerUnAuth';
+import { ContainerAuth } from 'components/Container/ContainerAuth';
 import { HomePages } from 'components/Home/HomePage';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -16,9 +16,9 @@ const AuthPage = () => {
   }, [dispatch, searchParams]);
 
   return (
-    <ContainerUnAuth>
+    <ContainerAuth>
       <HomePages></HomePages>
-    </ContainerUnAuth>
+    </ContainerAuth>
   );
 };
 export default AuthPage;
