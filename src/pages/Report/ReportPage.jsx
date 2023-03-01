@@ -10,7 +10,6 @@ import { ChangeBalance } from '../../components/ChangeBalance/ChangeBalance';
 import { ContainerAuth } from 'components/Container/ContainerAuth';
 import { ExpensesAndIncome } from 'components/Reports/ExpensesAndIncome/ExpensesAndIncome';
 
-
 const ReportPage = () => {
   // base
   const { statistics } = useSelector(selectReports);
@@ -80,6 +79,7 @@ const ReportPage = () => {
         report={report}
         changeOperation={changeOperation}
         setCategory={setCategory}
+        operation={operation}
       />
       {stats && stats.length > 0 && <Diagram stats={stats} />}
     </ContainerAuth>
