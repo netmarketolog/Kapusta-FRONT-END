@@ -9,7 +9,8 @@ import { ExpensesIncomes } from '../../components/ExpensesIncomes/ExpensesIncome
 import { ChangeBalance } from '../../components/ChangeBalance/ChangeBalance';
 import { ContainerAuth } from 'components/Container/ContainerAuth';
 import { ExpensesAndIncome } from 'components/Reports/ExpensesAndIncome/ExpensesAndIncome';
-
+import { ContainerConfig } from './ReportPage.styled';
+import { ButtonMain } from 'components/Buttons/ButtonMain';
 
 const ReportPage = () => {
   // base
@@ -74,7 +75,11 @@ const ReportPage = () => {
 
   return (
     <ContainerAuth>
-      <ChangeBalance />
+      <ContainerConfig>
+        <ButtonMain />
+        <ChangeBalance />
+        {/* <div>тут могла бути ваша РЕКЛАМА )))</div> */}
+      </ContainerConfig>
       <ExpensesIncomes />
       <ExpensesAndIncome
         report={report}

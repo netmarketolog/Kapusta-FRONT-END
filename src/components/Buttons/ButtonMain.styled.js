@@ -1,10 +1,27 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+
+export const ButtonMainContainer = styled.div`
+  position: absolute;
+  top: 22px;
+  left: 23px;
+
+  @media screen and (min-width: 768px) {
+    top: 50px;
+    left: 35px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    left: 120px;
+  }
+`;
+
 export const StyledLink = styled(NavLink)`
   display: flex;
   flex-direction: row;
   align-items: center;
 `;
+
 export const Text = styled.p`
   display: none;
 
