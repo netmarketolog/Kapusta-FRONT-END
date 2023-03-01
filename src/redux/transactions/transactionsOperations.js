@@ -30,7 +30,6 @@ export const deleteTransaction = createAsyncThunk(
     try {
       console.log(transactionId);
       const { data } = await axios.delete(`/transactions/${transactionId}`);
-      data.id = transactionId;
       return data;
     } catch (e) {
       Notify.warning(e.response.data.message);

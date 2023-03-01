@@ -42,9 +42,12 @@ export const Expenses = ({ operation }) => {
     setBtn(!btn);
   };
 
-  const switchOperation = type => {
+  const switchOperation = async type => {
     const operation = type.target.name ?? 'expense';
-    dispatch(getTransactions({ operation }));
+    if (deadline) {
+      if (Date.now() >= deadline) await dispatch(RefreshUser());
+    }
+    await dispatch(getTransactions({ operation }));
     toggleBtn();
   };
 
@@ -82,7 +85,7 @@ export const Expenses = ({ operation }) => {
             <DatePicker>
               <Calendar value={date} changeValue={setDate} />
               <Input value={description} changeValue={setDescription}></Input>
-              <ProductCategori></ProductCategori>
+              <ProductCategori />
               <Calc value={sum} changeValue={setSum}></Calc>
             </DatePicker>
           </Form>
