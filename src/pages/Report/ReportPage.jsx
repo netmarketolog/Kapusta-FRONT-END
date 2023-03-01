@@ -7,12 +7,15 @@ import { selectReports, selectTokenDeadline } from 'redux/selectors';
 import { getReport } from 'redux/transactions/transactionsOperations';
 import { ExpensesIncomes } from '../../components/ExpensesIncomes/ExpensesIncomes';
 import { ChangeBalance } from '../../components/ChangeBalance/ChangeBalance';
+import { ExpensesAndIncome } from 'components/Reports/ExpensesAndIncome/ExpensesAndIncome';
 
 const ReportPage = () => {
+  // base
   const { statistics } = useSelector(selectReports);
-
   const [category, setCategory] = useState('');
   const [stats, setStats] = useState([]);
+  const [report, setReport] = useState([]);
+
   const [operation, setOperation] = useState('expense');
   const [year, setYear] = useState(new Date().getFullYear()); // 2023 заменить на переменную текщий год
   const [month, setMonth] = useState(new Date().getMonth() + 1); // 2 заменить на переменную текущий месяц
@@ -34,6 +37,10 @@ const ReportPage = () => {
     setCategory(statistics[0]._id);
     const [data] = statistics.filter(item => item._id === category);
     setStats(data?.stats);
+    const arr = statistics.map(it => {
+      return { name: it._id, total: it.total };
+    });
+    setReport(arr);
   }, [category, statistics]);
 
   const changeDate = op => {
@@ -67,6 +74,7 @@ const ReportPage = () => {
     <>
       <ChangeBalance />
       <ExpensesIncomes />
+      <ExpensesAndIncome report={report} changeOperation={changeOperation} />
       {stats && stats.length > 0 && <Diagram stats={stats} />}
     </>
   );
