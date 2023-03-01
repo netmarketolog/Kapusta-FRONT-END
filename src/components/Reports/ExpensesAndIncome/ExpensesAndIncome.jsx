@@ -8,10 +8,10 @@ import {
   Title,
   Wrap,
 } from './ExpensesAndIncome.styled';
-import Icons from '../../../images/icons/ReportsSvg.svg';
+import Icons from '../../../images/icons/spriteReportsSvg.svg';
 import { ReportItem } from './ReportItem/ReportItem';
 
-export const ExpensesAndIncome = ({ report, changeOperation }) => {
+export const ExpensesAndIncome = ({ report, changeOperation, setCategory }) => {
   console.log(report);
 
   return (
@@ -32,7 +32,7 @@ export const ExpensesAndIncome = ({ report, changeOperation }) => {
         </Switcher>
         <ReportList>
           {report.map(({ total, name }) => (
-            <ReportItem total={total} name={name} />
+            <ReportItem total={total} name={name} setCategory={setCategory} />
           ))}
         </ReportList>
       </Wrap>
