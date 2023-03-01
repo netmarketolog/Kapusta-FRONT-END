@@ -10,7 +10,7 @@ export const ModalBackdrop = styled.div`
 
 export const ModalContainer = styled.div`
   position: fixed;
-  top: 250px;
+  top: 235px;
   left: 50%;
 
   max-width: 280px;
