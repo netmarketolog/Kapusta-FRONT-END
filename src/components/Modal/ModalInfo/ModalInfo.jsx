@@ -1,42 +1,54 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { selectBalance } from 'redux/selectors';
 import { ModalBackdrop, ModalContainer, Text, Title } from './ModalInfo.styled';
 
 const modalRoot = document.querySelector('#modal-root');
 
 export const ModalInfo = () => {
+  const { pathname } = useLocation();
   const [showModal, setShowModal] = useState(true);
+  const balance = useSelector(selectBalance);
+  console.log(typeof balance);
 
   useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
-    document.body.style.overflow = 'hidden';
+    if (balance === 0) {
+      window.addEventListener('keydown', handleKeyDown);
+      window.addEventListener('click', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    }
   });
 
   const handleKeyDown = evt => {
-    if (evt.code === 'Escape') {
+    console.log(document.body.style.overflow);
+    document.body.style.overflow = 'unset';
+    if (evt.target === evt.currentTarget || evt.code === 'Escape') {
       setShowModal(false);
-      window.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'unset';
+      window.removeEventListener('click', handleKeyDown);
+      window.removeEventListener('keydown', handleKeyDown);
     }
   };
-
-  const handleBackdropClick = evt => {
-    if (evt.target === evt.currentTarget) {
-      setShowModal(false);
-    }
-  };
-
   return createPortal(
-    showModal && (
-      <ModalBackdrop onClick={handleBackdropClick}>
-        <ModalContainer>
-          <Title>
-            Hello! To get started, enter the current balance of your account!
-          </Title>
-          <Text>You can't spend money until you have it :)</Text>
-        </ModalContainer>
-      </ModalBackdrop>
-    ),
+    <>
+      {balance !== 0 || pathname === '/reports' ? (
+        <></>
+      ) : (
+        showModal && (
+          <ModalBackdrop onClick={handleKeyDown}>
+            <ModalContainer>
+              <Title>
+                Hello! To get started, enter the current balance of your
+                account!
+              </Title>
+              <Text>You can't spend money until you have it :)</Text>
+            </ModalContainer>
+          </ModalBackdrop>
+        )
+      )}
+    </>,
     modalRoot
   );
 };

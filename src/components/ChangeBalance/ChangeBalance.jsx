@@ -18,7 +18,7 @@ import { addBalance } from '../../redux/balance/balanceOperation';
 import { selectBalance, selectIsRefreshing } from '../../redux/selectors';
 import { LoaderBtn } from '../Loader/Loader';
 import { useLocation } from 'react-router-dom';
-// import { ModalInfo } from 'components/Modal/ModalInfo/ModalInfo';
+import { ModalInfo } from 'components/Modal/ModalInfo/ModalInfo';
 
 export const ChangeBalance = () => {
   const [startBalance, setStartBalance] = useState(`00.00`);
@@ -44,7 +44,7 @@ export const ChangeBalance = () => {
   return (
     <BackgroundContainer>
       <BalanceContainer>
-        {/* <ModalInfo /> */}
+        <ModalInfo />
         {pathname === '/reports' ? <></> : <ReportsBtn />}
 
         <Balance>
@@ -53,7 +53,7 @@ export const ChangeBalance = () => {
             <InputContainer>
               {IsRefreshing ? (
                 LoaderBtn()
-              ) : pathname === '/reports' ? (
+              ) : pathname === '/reports' && screenWidth <= 1280 ? (
                 <>
                   <ReportsBalance>
                     <p>{balance} UAH</p>

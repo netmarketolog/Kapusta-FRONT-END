@@ -10,7 +10,7 @@ export const ModalBackdrop = styled.div`
 
 export const ModalContainer = styled.div`
   position: fixed;
-  top: 235px;
+  top: 195px;
   left: 50%;
 
   max-width: 280px;
@@ -27,12 +27,12 @@ export const ModalContainer = styled.div`
 
   @media screen and (min-width: 768px) {
     top: 160px;
-
+    left: calc(50% - 100px);
     max-width: 288px;
   }
 
   @media screen and (min-width: 1280px) {
-    left: 54%;
+    left: calc(50% + 40px);
 
     padding: 30px;
   }

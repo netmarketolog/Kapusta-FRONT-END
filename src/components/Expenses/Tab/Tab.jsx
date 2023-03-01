@@ -4,7 +4,6 @@ import { TabConteiner } from './Tab.styled';
 import { StyledTabButton, StyledTabButtonA } from './Button.styled';
 
 export const Tab = ({ switchOperation, btn }) => {
-
   return (
     <TabConteiner>
       <StyledTabButton
