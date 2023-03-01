@@ -8,7 +8,7 @@ export const TabExInContainer = styled.div`
     width: 624px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     width: 746px;
   }
 `;
@@ -42,7 +42,7 @@ export const Item = styled.li`
     border-left: 2px solid #f4f6fb;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     height: 38px;
     grid-template-columns: 130px 160px 210px 110px 120px;
   }

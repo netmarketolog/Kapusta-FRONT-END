@@ -10,6 +10,7 @@ export const BalanceContainer = styled.div`
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 40px;
   @media screen and (min-width: 768px) {
     width: 704px;
     padding: 0px;
