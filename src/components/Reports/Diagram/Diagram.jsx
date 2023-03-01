@@ -21,7 +21,7 @@ export const Diagram = ({ stats }) => {
   return (
     <Box>
       <Section>
-        {stats?.map(item => {
+        {stats?.slice(0, 10).map(item => {
           return (
             <Item
               key={item.name}

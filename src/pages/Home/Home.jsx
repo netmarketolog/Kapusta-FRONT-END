@@ -21,8 +21,6 @@ const Home = () => {
       }
       await dispatch(getTransactions({ operation }));
     })();
-
-    console.log('UseEffect!!!!!');
   }, [dispatch, operation, deadline]);
 
   return (

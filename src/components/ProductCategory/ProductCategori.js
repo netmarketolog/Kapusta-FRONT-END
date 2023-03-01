@@ -25,7 +25,7 @@ export const SelectCustom = styled(Select)`
       border: 2px solid #f5f6fb;
     }
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1280px) {
       width: 169px;
     }
   }
@@ -58,7 +58,7 @@ export const SelectCustom = styled(Select)`
       border-bottom-right-radius: 0px;
     }
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1280px) {
       width: 169px;
     }
   }

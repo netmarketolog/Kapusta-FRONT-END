@@ -13,6 +13,7 @@ export const TitleItem = styled.div`
   text-transform: uppercase;
 `;
 export const Title = styled.div`
+  display: none;
   @media screen and (min-width: 768px) {
     height: 40px;
     align-items: center;
@@ -27,7 +28,7 @@ export const Title = styled.div`
     background-color: #f4f6fb;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     grid-template-columns: 130px 160px 210px 110px 120px;
     height: 38px;
   }
@@ -38,7 +39,7 @@ export const Container = styled.div`
     margin-left: 40px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     width: 746px;
     margin-left: 32px;
   }
@@ -75,17 +76,20 @@ export const Form = styled.div`
     display: block;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     display: flex;
     max-width: 100%;
     justify-content: space-between;
   }
 `;
 export const DatePicker = styled.div`
-  width: auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  
+  @media screen and (min-width: 768px){
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
 `;
 export const ConteinerGeneral = styled.div`
   @media screen and (min-width: 768px) {
@@ -98,7 +102,7 @@ export const ConteinerGeneral = styled.div`
     margin: auto;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     width: 1098px;
     height: 579px;
     padding-top: 32px;
@@ -110,7 +114,7 @@ export const MainContainer = styled.div`
   @media screen and (min-width: 768px) {
     width: 784px;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     width: 1098px;
   }
 `;
@@ -120,7 +124,7 @@ export const TabStyle = styled.div`
     width: 704px;
     margin: auto;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     width: 1098px;
     margin: auto;
   }
@@ -132,30 +136,34 @@ export const Cont = styled.div`
     flex-direction: column;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     display: flex;
     padding-top: 60px;
     flex-direction: row;
   }
 `;
 export const ButtonCont = styled.div`
+display: none;
   @media screen and (min-width: 768px) {
     display: flex;
     padding-top: 32px;
     justify-content: center;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     display: flex;
     padding-top: 0px;
   }
 `;
 export const ContForm = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   @media screen and (min-width: 768px) {
     display: block;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     display: flex;
   }
 `;

@@ -36,7 +36,6 @@ const transactionsSlice = createSlice({
       .addCase(addTransaction.pending, handlePending)
       .addCase(addTransaction.fulfilled, (state, action) => {
         handleFulfilled(state);
-        state.items.push(action.payload);
       })
       .addCase(addTransaction.rejected, handleError)
       .addCase(deleteTransaction.pending, handlePending)

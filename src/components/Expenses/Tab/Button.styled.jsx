@@ -12,7 +12,7 @@ export const StyledTabButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 158px;
+  width: 100%;
   height: 53px;
   font-family: Roboto, sans-serif;
   font-size: 12px;
@@ -52,7 +52,7 @@ export const StyledTabButtonA = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 158px;
+  width: 100%;
   height: 53px;
   font-family: Roboto, sans-serif;
   font-size: 12px;
