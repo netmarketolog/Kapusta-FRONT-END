@@ -21,7 +21,8 @@ export const BasketBtn = ({ transactionId }) => {
   };
 
   const handleDelete = evt => {
-    dispatch(deleteTransaction(currentId));
+    const transactionId = currentId;
+    dispatch(deleteTransaction({ transactionId }));
     setCurrentId(null);
     setModalOpen(false);
   };
