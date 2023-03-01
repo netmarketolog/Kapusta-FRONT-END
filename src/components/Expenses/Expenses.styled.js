@@ -21,14 +21,14 @@ export const Title = styled.div`
     font-weight: normal;
     color: #52555f;
     border-bottom: 2px solid #f4f6fb;
-    grid-template-columns: 89px 142px 199px 107px 87px;
+    grid-template-columns: 90px 140px 200px 100px 80px;
     border-top-right-radius: 16px;
     border-top-left-radius: 16px;
     background-color: #f4f6fb;
   }
 
   @media screen and (min-width: 1200px) {
-    grid-template-columns: 126px 168px 216px 117px 119px;
+    grid-template-columns: 130px 160px 210px 110px 120px;
     height: 38px;
   }
 `;
@@ -57,7 +57,7 @@ export const BudgetList = styled.div`
 `;
 export const Item = styled.div`
   height: 38px;
-  grid-template-columns: 126px 168px 216px 117px 119px;
+  grid-template-columns: 130px 160px 210px 110px 120px;
   align-items: center;
   display: grid;
   font-size: 13px;
