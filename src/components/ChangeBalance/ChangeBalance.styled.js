@@ -8,6 +8,7 @@ export const BalanceContainer = styled.div`
   width: 320px;
   padding-left: 20px;
   padding-right: 20px;
+  padding-top: 37px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;

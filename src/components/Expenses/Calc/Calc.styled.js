@@ -1,10 +1,19 @@
 import styled from 'styled-components';
 
 export const CalcS = styled.input`
-  display: none;
+  display: block;
+  width: 125px;
+  height: 44px;
+  border: 2px solid #FFFFFF;
+  border-radius: 22px 0px 0px 22px;
+  margin: auto;
+  margin-top: 8px;
+  background-color: transparent;
+  padding-left: 50px;
+
   @media screen and (min-width: 768px) {
-    display: block;
-    width: 280px;
+  display: block;
+  width: 280px;
   height: 44px;
   background-color: transparent;
   border-top-right-radius: 25px;

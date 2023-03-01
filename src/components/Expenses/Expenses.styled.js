@@ -143,27 +143,33 @@ export const Cont = styled.div`
   }
 `;
 export const ButtonCont = styled.div`
-display: none;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 170px;
   @media screen and (min-width: 768px) {
     display: flex;
     padding-top: 32px;
     justify-content: center;
+    margin-top: 0;
   }
 
   @media screen and (min-width: 1280px) {
     display: flex;
     padding-top: 0px;
+    margin-top: 0;
   }
 `;
 export const ContForm = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   @media screen and (min-width: 768px) {
     display: block;
   }
 
   @media screen and (min-width: 1280px) {
     display: flex;
+    flex-direction: row;
   }
 `;

@@ -4,7 +4,7 @@ import { selectTransactions } from 'redux/selectors';
 
 import moment from 'moment';
 
-import { TabExInContainer, Item, Plug, Scrollbar } from './TabExIn.styled';
+import { TabExInContainer, Item, Plug, Scrollbar, DescriptionStyle } from './TabExIn.styled';
 import { BasketBtn } from './BasketBtn';
 
 export const TabExIn = () => {
@@ -23,7 +23,7 @@ export const TabExIn = () => {
             _id ? (
               <Item key={_id}>
                 <p>{moment(date).format('DD.MM.YYYY')}</p>
-                <p>{description}</p>
+                <DescriptionStyle>{description}</DescriptionStyle>
                 <p>{category}</p>
                 <p>{sum.toFixed(2)}</p>
                 <p>

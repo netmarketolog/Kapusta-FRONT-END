@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const TabExInContainer = styled.div`
-  display: none;
-
+  display: block;
+  width: 320px;
+  margin: auto;
   @media screen and (min-width: 768px) {
     display: block;
     width: 624px;
@@ -28,6 +29,9 @@ export const Scrollbar = styled.div`
 `;
 
 export const Item = styled.li`
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
   @media screen and (min-width: 768px) {
     height: 40px;
     grid-template-columns: 90px 140px 200px 100px 80px;
@@ -40,6 +44,7 @@ export const Item = styled.li`
     border-bottom: 2px solid #f4f6fb;
     border-right: 2px solid #f4f6fb;
     border-left: 2px solid #f4f6fb;
+    padding-top: 0;
   }
 
   @media screen and (min-width: 1280px) {
@@ -47,7 +52,11 @@ export const Item = styled.li`
     grid-template-columns: 130px 160px 210px 110px 120px;
   }
 `;
-
+export const DescriptionStyle = styled.p`
+  font-weight: 700;
+  color: #52555F;
+  display: flex;
+`
 export const Plug = styled.div`
   height: 38px;
   grid-template-columns: 130px 160px 210px 110px 120px;
