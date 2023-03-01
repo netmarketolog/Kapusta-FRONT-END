@@ -76,7 +76,11 @@ const ReportPage = () => {
     <ContainerAuth>
       <ChangeBalance />
       <ExpensesIncomes />
-      <ExpensesAndIncome report={report} changeOperation={changeOperation} />
+      <ExpensesAndIncome
+        report={report}
+        changeOperation={changeOperation}
+        setCategory={setCategory}
+      />
       {stats && stats.length > 0 && <Diagram stats={stats} />}
     </ContainerAuth>
   );
