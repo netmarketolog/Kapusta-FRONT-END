@@ -16,7 +16,7 @@ export const Calendar = () => {
         maxDate={new Date()}
         selected={startDate}
         onChange={date => setStartDate(date)}
-        dateFormat="dd/MM/yyyy"
+        dateFormat="dd.MM.yyyy"
       />
     </DateWrapper>
   );

@@ -54,7 +54,7 @@ export const Expenses = () => {
                 </Title>
                 <TabExIn></TabExIn>
               </Container>
-              <Summary></Summary>
+              <Summary/>
             </Cont>
           </ConteinerGeneral>
       </MainContainer>
