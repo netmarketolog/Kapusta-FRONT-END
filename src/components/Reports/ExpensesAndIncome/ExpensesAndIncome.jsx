@@ -26,7 +26,9 @@ export const ExpensesAndIncome = ({
               <use href={`${Icons}#icon-arrow-left`}></use>
             </svg>
           </BtnArrow>
-          <Title>{operation.toUpperCase()}</Title>
+          <Title>
+            {operation === 'expense' ? 'EXPENSES' : operation.toUpperCase()}
+          </Title>
           <BtnArrow onClick={changeOperation}>
             <svg width="8" height="15">
               <use href={`${Icons}#icon-arrow-right`}></use>
@@ -35,7 +37,12 @@ export const ExpensesAndIncome = ({
         </Switcher>
         <ReportList>
           {report.map(({ total, name }) => (
-            <ReportItem total={total} name={name} setCategory={setCategory} />
+            <ReportItem
+              key={name}
+              total={total}
+              name={name.toUpperCase()}
+              setCategory={setCategory}
+            />
           ))}
         </ReportList>
       </Wrap>
