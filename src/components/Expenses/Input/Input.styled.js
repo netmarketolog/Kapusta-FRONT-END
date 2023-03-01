@@ -7,8 +7,7 @@ export const InputW = styled.input`
   border-top-left-radius: 16px;
   padding-left: 19px;
   outline: none;
-  border: 2px solid #C7CCDC;
-  border-right: 1px solid #C7CCDC;
+  border: 2px solid white;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;

@@ -37,7 +37,8 @@ export const StyledButton = styled.button`
   box-shadow: ${props =>
     props.type === BTN_NAME.REGISTER
       ? '1px 3px 5px rgba(82, 85, 95, 0.15)'
-      : 'none'};
+    : 'none'};
+      border-radius: 16px;
 
   @media screen and (min-width: 768px) {
     border-radius: ${props =>
