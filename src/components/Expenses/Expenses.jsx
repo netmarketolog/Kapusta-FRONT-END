@@ -26,7 +26,7 @@ import {
   Cont,
   ButtonCont,
   ContForm,
-  TabStyle
+  TabStyle,
 } from './Expenses.styled';
 import { selectTokenDeadline } from 'redux/selectors';
 import { RefreshUser } from 'redux/auth/authOperations';
@@ -37,12 +37,11 @@ export const Expenses = ({ operation }) => {
   const [description, setDescription] = useState('');
   const [sum, setSum] = useState('');
   const [date, setDate] = useState(new Date());
-
+  const [category, setCategory] = useState('');
   const deadline = useSelector(selectTokenDeadline);
   const toggleBtn = () => {
     setBtn(!btn);
   };
-
   const switchOperation = async type => {
     const operation = type.target.name ?? 'expense';
     if (deadline) {
@@ -61,7 +60,7 @@ export const Expenses = ({ operation }) => {
       addTransaction({
         date,
         description,
-        category: 'products',
+        category,
         sum,
         operation,
       })
@@ -76,7 +75,9 @@ export const Expenses = ({ operation }) => {
     setSum('');
     setDate(new Date());
   };
-
+  const updateCategory = value => {
+    setCategory(value);
+  };
   return (
     <>
       <TabStyle>
@@ -88,7 +89,7 @@ export const Expenses = ({ operation }) => {
             <DatePicker>
               <Calendar value={date} changeValue={setDate} />
               <Input value={description} changeValue={setDescription}></Input>
-              <ProductCategori />
+              <ProductCategori updateCategory={updateCategory} />
               <Calc value={sum} changeValue={setSum}></Calc>
             </DatePicker>
           </Form>
