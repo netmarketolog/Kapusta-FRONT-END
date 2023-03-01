@@ -17,11 +17,13 @@ export const FormAuth = styled(Form)`
   justify-content: space-around;
 
   @media screen and (min-width: 768px) {
-    z-index: 4;
     width: 426px;
     height: 552px;
-    padding: 56px 20px 56px 20px;
+    padding: 56px 83px 56px 83px;
     justify-content: center;
+  }
+  @media screen and (min-width: 1280px) {
+    margin: 117px 91px 125px 0;
   }
 `;
 export const StyleForm = styled.div`
