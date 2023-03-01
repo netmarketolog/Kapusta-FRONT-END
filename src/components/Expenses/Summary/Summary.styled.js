@@ -9,7 +9,7 @@ export const SummaryContainer = styled.div`
     margin-top: 80px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     display: block;
     width: 213px;
     margin-left: 75px;
@@ -24,7 +24,7 @@ export const TitleContainer = styled.div`
   padding: 12px 77px;
   margin-bottom: 2px;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     margin-bottom: 4px;
   }
 `;

@@ -6,10 +6,6 @@ export const DateWrapper = styled.div`
   justify-content: center;
   margin-bottom: 30px;
 
-  @media screen and (min-width: 320px) {
-    width: auto;
-  }
-
   @media screen and (min-width: 768px) {
     display: flex;
     align-items: center;
@@ -21,21 +17,27 @@ export const DateWrapper = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
-    margin-right: 20px;
-    margin-left: 32px;
-  };
-  .react-datepicker__input-container{
+    margin: auto;
+    
+  }
+  .react-datepicker-wrapper {
+    display: inline-block;
+    padding: 0;
+    border: 0;
+    width: auto;
+  }
+  .react-datepicker__input-container {
     width: 80px;
-  };
-  input{
-    border: none;
-    width: 100px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+  }
+  input {
+      background-color: transparent;
+      border: none;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
   }
 `;

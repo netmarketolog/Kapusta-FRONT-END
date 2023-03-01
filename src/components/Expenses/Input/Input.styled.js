@@ -25,7 +25,7 @@ export const InputW = styled.input`
     margin-left: 44px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     width: 290px;
     border-right: 1px #C7CCDC;
     margin-left: 32px;

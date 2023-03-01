@@ -49,7 +49,7 @@ export const StyledButton = styled.button`
     margin-left: 0px;
   }
   
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     border-radius: 16px;
     width: 136px;
     height: 44px;
