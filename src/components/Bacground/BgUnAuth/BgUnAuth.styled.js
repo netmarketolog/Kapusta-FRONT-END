@@ -22,8 +22,6 @@ export const BgIcon = styled.svg`
     width: 100%;
     height: 232px;
   }
-  @media screen and (min-width: 1280px) {
-  }
 `;
 export const BgIconBottom = styled.svg`
   position: fixed;

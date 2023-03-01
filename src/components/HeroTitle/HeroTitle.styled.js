@@ -9,17 +9,18 @@ export const HeroLogo = styled.div`
   flex-direction: column;
   width: 183px;
   height: 63px;
-  margin-bottom: 50px;
+  margin: 50px auto 80px auto;
+
   @media screen and (min-width: 768px) {
-    width: 306px;
-    height: 100px;
-    margin-bottom: 80px;
+    width: 307px;
+    height: 101px;
+    margin: 80px auto;
   }
   @media screen and (min-width: 1280px) {
     width: 377px;
     height: 139px;
-    margin-right: 155px;
-    margin-bottom: 0;
+    margin-right: 157px;
+    margin-bottom: 80px;
   }
 `;
 
