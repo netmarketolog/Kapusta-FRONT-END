@@ -8,15 +8,19 @@ import { getReport } from 'redux/transactions/transactionsOperations';
 import { ExpensesIncomes } from '../../components/ExpensesIncomes/ExpensesIncomes';
 import { ChangeBalance } from '../../components/ChangeBalance/ChangeBalance';
 import { ContainerAuth } from 'components/Container/ContainerAuth';
+import { ExpensesAndIncome } from 'components/Reports/ExpensesAndIncome/ExpensesAndIncome';
+
 
 const ReportPage = () => {
+  // base
   const { statistics } = useSelector(selectReports);
-
   const [category, setCategory] = useState('');
   const [stats, setStats] = useState([]);
+  const [report, setReport] = useState([]);
+
   const [operation, setOperation] = useState('expense');
-  const [year, setYear] = useState(2023); // 2023 заменить на переменную текщий год
-  const [month, setMonth] = useState(2); // 2 заменить на переменную текущий месяц
+  const [year, setYear] = useState(new Date().getFullYear()); // 2023 заменить на переменную текщий год
+  const [month, setMonth] = useState(new Date().getMonth() + 1); // 2 заменить на переменную текущий месяц
 
   const dispatch = useDispatch();
   const deadline = useSelector(selectTokenDeadline);
@@ -28,7 +32,6 @@ const ReportPage = () => {
       }
       await dispatch(getReport({ operation, year, month }));
     })();
-    console.log('UseEffect in Report.js!!!!!');
   }, [deadline, dispatch, month, operation, year]);
 
   useEffect(() => {
@@ -36,12 +39,44 @@ const ReportPage = () => {
     setCategory(statistics[0]._id);
     const [data] = statistics.filter(item => item._id === category);
     setStats(data?.stats);
+    const arr = statistics.map(it => {
+      return { name: it._id, total: it.total };
+    });
+    setReport(arr);
   }, [category, statistics]);
+
+  const changeDate = op => {
+    switch (op) {
+      case 'inc':
+        if (month - 1 < 1) {
+          setMonth(12);
+          setYear(year - 1);
+          return;
+        }
+        setMonth(month - 1);
+        break;
+      case 'dec':
+        if (month + 1 > 12) {
+          setMonth(1);
+          setYear(year + 1);
+          return;
+        }
+        setMonth(month + 1);
+        break;
+      default:
+        return;
+    }
+  };
+
+  const changeOperation = () => {
+    operation === 'expense' ? setOperation('income') : setOperation('expense');
+  };
 
   return (
     <ContainerAuth>
       <ChangeBalance />
       <ExpensesIncomes />
+      <ExpensesAndIncome report={report} changeOperation={changeOperation} />
       {stats && stats.length > 0 && <Diagram stats={stats} />}
     </ContainerAuth>
   );

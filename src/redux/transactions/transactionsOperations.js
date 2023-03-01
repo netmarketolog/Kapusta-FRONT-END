@@ -28,7 +28,8 @@ export const deleteTransaction = createAsyncThunk(
   'transactions/deleteTransaction',
   async ({ transactionId }, ThunkAPI) => {
     try {
-      const { data } = await axios.post(`/transactions/${transactionId}`);
+      console.log(transactionId);
+      const { data } = await axios.delete(`/transactions/${transactionId}`);
       data.id = transactionId;
       return data;
     } catch (e) {

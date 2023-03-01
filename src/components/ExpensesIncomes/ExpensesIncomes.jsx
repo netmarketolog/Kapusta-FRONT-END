@@ -7,17 +7,31 @@ import {
   Inc,
   ExpСontainer,
 } from './ExpensesIncomes.styled';
+import { selectReports, selectIsLoading } from '../../redux/selectors';
+import { useSelector } from 'react-redux';
+import { LoaderBtn } from '../Loader/Loader';
 export const ExpensesIncomes = () => {
+  const { expense, income } = useSelector(selectReports);
+
+  const isLoading = useSelector(selectIsLoading);
   return (
     <Container>
       <ExpIncContainer>
         <ExpСontainer>
           <Title>Expenses:</Title>
-          <Exp>- 18 000.00 UAH.</Exp>
+          {isLoading ? (
+            LoaderBtn()
+          ) : (
+            <Exp>- {expense?.toLocaleString()} UAH.</Exp>
+          )}
         </ExpСontainer>
         <IncСontainer>
           <Title>Income:</Title>
-          <Inc>+ 45 000.00 UAH.</Inc>
+          {isLoading ? (
+            LoaderBtn()
+          ) : (
+            <Inc>+ {income?.toLocaleString()} UAH.</Inc>
+          )}
         </IncСontainer>
       </ExpIncContainer>
     </Container>

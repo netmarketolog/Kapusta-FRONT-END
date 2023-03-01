@@ -6,17 +6,11 @@ import {
   Plug,
 } from './Summary.styled';
 
-import { defaultItem } from './DefaultItem';
+import { selectSumary } from '../../../redux/selectors';
+import { useSelector } from 'react-redux';
 
 export const Summary = () => {
-  const summary = [...defaultItem];
-
-  for (let i = 0; i < 6; i += 1) {
-    const emptyMonth = { id: 100 + i, month: '', amount: '' };
-    summary.push(emptyMonth);
-  }
-
-  const summaryArray = summary.slice(0, 6);
+  const selectSummary = useSelector(selectSumary);
 
   return (
     <SummaryContainer>
@@ -24,14 +18,14 @@ export const Summary = () => {
         <Text>Summary</Text>
       </TitleContainer>
       <ul>
-        {summaryArray.map(({ id, month, amount }) =>
-          month ? (
-            <Item key={id}>
-              <p>{month}</p>
-              <p>{amount.toFixed(2)}</p>
+        {selectSummary.map(({ name, total }) =>
+          name ? (
+            <Item key={name}>
+              <p>{name}</p>
+              <p>{total.toFixed(2)}</p>
             </Item>
           ) : (
-            <Plug key={id}></Plug>
+            <Plug key={name}></Plug>
           )
         )}
       </ul>

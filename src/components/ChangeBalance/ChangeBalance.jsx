@@ -12,12 +12,13 @@ import {
   BalanceForm,
   Label,
   InputContainer,
-  ReportsBalanceInput,
+  ReportsBalance,
 } from './ChangeBalance.styled';
 import { addBalance } from '../../redux/balance/balanceOperation';
 import { selectBalance, selectIsRefreshing } from '../../redux/selectors';
 import { LoaderBtn } from '../Loader/Loader';
 import { useLocation } from 'react-router-dom';
+// import { ModalInfo } from 'components/Modal/ModalInfo/ModalInfo';
 
 export const ChangeBalance = () => {
   const [startBalance, setStartBalance] = useState(`00.00`);
@@ -25,6 +26,7 @@ export const ChangeBalance = () => {
   const balance = useSelector(selectBalance);
   const IsRefreshing = useSelector(selectIsRefreshing);
   const dispatch = useDispatch();
+  const screenWidth = window.screen.width;
 
   const formBalanceChange = e => {
     setStartBalance(e.currentTarget.value);
@@ -42,6 +44,7 @@ export const ChangeBalance = () => {
   return (
     <BackgroundContainer>
       <BalanceContainer>
+        {/* <ModalInfo /> */}
         {pathname === '/reports' ? <></> : <ReportsBtn />}
 
         <Balance>
@@ -52,13 +55,9 @@ export const ChangeBalance = () => {
                 LoaderBtn()
               ) : pathname === '/reports' ? (
                 <>
-                  <ReportsBalanceInput
-                    type="Number"
-                    value={balance > 0 ? balance : startBalance}
-                    disabled={balance > 0 ? true : false}
-                    onChange={formBalanceChange}
-                  ></ReportsBalanceInput>{' '}
-                  <Label>UAH</Label>
+                  <ReportsBalance>
+                    <p>{balance} UAH</p>
+                  </ReportsBalance>
                 </>
               ) : (
                 <>
@@ -72,7 +71,8 @@ export const ChangeBalance = () => {
                 </>
               )}
             </InputContainer>
-            {pathname === '/reports' ? (
+
+            {pathname === '/reports' && screenWidth <= 1280 ? (
               <></>
             ) : (
               <InputBtn

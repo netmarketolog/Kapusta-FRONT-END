@@ -33,7 +33,7 @@ export const Diagram = ({ stats }) => {
             >
               <Span>
                 <Title>{item.name}</Title>
-                <Sum>{item.total} UAH</Sum>
+                <Sum>{item.total?.toLocaleString()} UAH</Sum>
               </Span>
             </Item>
           );

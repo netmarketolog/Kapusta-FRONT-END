@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import IconBG from './bgi.png';
+import IconBG from 'images/reports/bgi.png';
 
 export const Box = styled.div`
   @media screen and (min-width: 768px) {

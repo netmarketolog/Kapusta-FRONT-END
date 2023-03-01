@@ -10,16 +10,13 @@ export const ModalInfo = () => {
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
     document.body.style.overflow = 'hidden';
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'unset';
-    };
   });
 
   const handleKeyDown = evt => {
     if (evt.code === 'Escape') {
       setShowModal(false);
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
     }
   };
 

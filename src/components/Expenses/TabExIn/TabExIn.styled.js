@@ -21,19 +21,18 @@ export const Scrollbar = styled.div`
     background-color: #f4f6fb;
   }
   &::-webkit-scrollbar-thumb {
-    background: #FF751D;
+    background: #ff751d;
     border-radius: 2px;
     height: 130px;
-}
+  }
 `;
 
 export const Item = styled.li`
-  
   @media screen and (min-width: 768px) {
     height: 40px;
-    grid-template-columns: 89px 142px 199px 107px 87px;
+    grid-template-columns: 90px 140px 200px 100px 80px;
     align-items: center;
-    text-align:center;
+    text-align: center;
     display: grid;
     font-size: 13px;
     font-weight: normal;
@@ -45,15 +44,15 @@ export const Item = styled.li`
 
   @media screen and (min-width: 1200px) {
     height: 38px;
-    grid-template-columns: 126px 168px 216px 117px 119px;
+    grid-template-columns: 130px 160px 210px 110px 120px;
   }
 `;
 
 export const Plug = styled.div`
   height: 38px;
-  grid-template-columns: 126px 168px 216px 117px 119px;
+  grid-template-columns: 130px 160px 210px 110px 120px;
   align-items: center;
-  text-align:center;
+  text-align: center;
   display: grid;
   font-size: 13px;
   font-weight: normal;
