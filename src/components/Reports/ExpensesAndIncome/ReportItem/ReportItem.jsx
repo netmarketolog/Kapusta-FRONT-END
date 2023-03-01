@@ -6,11 +6,12 @@ import {
   Type,
 } from './ReportItem.styled';
 import Icons from '../../../../images/icons/spriteReportsSvg.svg';
+import { nanoid } from 'nanoid';
 
 export const ReportItem = ({ name, total, setCategory }) => {
   console.log(name);
   return (
-    <ReportItemButton>
+    <ReportItemButton key={nanoid()}>
       <Sum>{total}</Sum>
       <Wrapper>
         <ButtonReport onClick={() => setCategory(name)} name={name}>
