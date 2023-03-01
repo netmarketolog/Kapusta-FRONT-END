@@ -31,24 +31,19 @@ export const AuthForm = () => {
   const handleClick = e => {
     switch (e.target.name) {
       case 'login':
-        console.log(true);
         return setButton(true);
       case 'register':
-        console.log(false);
         return setButton(false);
       default:
-        console.log('no');
         return;
     }
   };
 
   const handleSubmit = (values, { resetForm }) => {
     if (!button) {
-      console.log('register');
       dispatch(register(values));
       return;
     }
-    console.log('login');
     dispatch(logIn(values));
     resetForm();
   };

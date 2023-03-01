@@ -11,9 +11,12 @@ import {
 import Icons from '../../../images/icons/spriteReportsSvg.svg';
 import { ReportItem } from './ReportItem/ReportItem';
 
-export const ExpensesAndIncome = ({ report, changeOperation, setCategory }) => {
-  console.log(report);
-
+export const ExpensesAndIncome = ({
+  report,
+  changeOperation,
+  setCategory,
+  operation,
+}) => {
   return (
     <Section>
       <Wrap>
@@ -23,7 +26,7 @@ export const ExpensesAndIncome = ({ report, changeOperation, setCategory }) => {
               <use href={`${Icons}#icon-arrow-left`}></use>
             </svg>
           </BtnArrow>
-          <Title>testText</Title>
+          <Title>{operation.toUpperCase()}</Title>
           <BtnArrow onClick={changeOperation}>
             <svg width="8" height="15">
               <use href={`${Icons}#icon-arrow-right`}></use>
