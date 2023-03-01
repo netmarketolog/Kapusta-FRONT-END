@@ -26,6 +26,7 @@ import {
   Cont,
   ButtonCont,
   ContForm,
+  TabStyle
 } from './Expenses.styled';
 import { selectTokenDeadline } from 'redux/selectors';
 import { RefreshUser } from 'redux/auth/authOperations';
@@ -78,7 +79,9 @@ export const Expenses = ({ operation }) => {
 
   return (
     <>
-      <Tab switchOperation={switchOperation} btn={btn} />
+      <TabStyle>
+        <Tab switchOperation={switchOperation} btn={btn} />
+      </TabStyle>
       <ConteinerGeneral>
         <ContForm>
           <Form>
@@ -104,7 +107,7 @@ export const Expenses = ({ operation }) => {
             </Title>
             <TabExIn></TabExIn>
           </Container>
-          <Summary></Summary>
+          <Summary />
         </Cont>
       </ConteinerGeneral>
     </>

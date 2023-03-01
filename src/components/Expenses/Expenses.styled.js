@@ -88,41 +88,54 @@ export const DatePicker = styled.div`
   align-items: center;
 `;
 export const ConteinerGeneral = styled.div`
-  display: none;
   @media screen and (min-width: 768px) {
-    display: block;
     width: 704px;
     height: 616px;
     background: #ffffff;
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 0px 30px 30px 30px;
     padding-top: 24px;
+    margin: auto;
   }
 
   @media screen and (min-width: 1200px) {
     width: 1098px;
     height: 579px;
     padding-top: 32px;
+    margin: auto;
   }
 `;
 export const MainContainer = styled.div`
   margin: auto;
   @media screen and (min-width: 768px) {
-    width: 768px;
+    width: 784px;
   }
   @media screen and (min-width: 1200px) {
-    width: 1200px;
+    width: 1098px;
   }
 `;
+export const TabStyle = styled.div`
+  
+  @media screen and (min-width: 768px) {
+    width: 704px;
+    margin: auto;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 1098px;
+    margin: auto;
+  }
+`
 export const Cont = styled.div`
   @media screen and (min-width: 768px) {
     display: flex;
     padding-top: 48px;
+    flex-direction: column;
   }
 
   @media screen and (min-width: 1200px) {
     display: flex;
     padding-top: 60px;
+    flex-direction: row;
   }
 `;
 export const ButtonCont = styled.div`
