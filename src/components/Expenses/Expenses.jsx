@@ -33,23 +33,18 @@ import { RefreshUser } from 'redux/auth/authOperations';
 
 export const Expenses = ({ operation, setOperation }) => {
   const dispatch = useDispatch();
-  // const [btn, setBtn] = useState(true);
   const [description, setDescription] = useState('');
   const [sum, setSum] = useState('');
   const [date, setDate] = useState(new Date());
   const [category, setCategory] = useState('');
   const deadline = useSelector(selectTokenDeadline);
 
-  // const toggleBtn = () => {
-  //   setBtn(!btn);
-  // };
   const switchOperation = async type => {
     setOperation(type);
     if (deadline) {
       if (Date.now() >= deadline) await dispatch(RefreshUser());
     }
     await dispatch(getTransactions({ operation }));
-    // toggleBtn();
   };
 
   const handleSubmit = async () => {
@@ -92,8 +87,11 @@ export const Expenses = ({ operation, setOperation }) => {
             <DatePicker>
               <Calendar value={date} changeValue={setDate} />
               <Input value={description} changeValue={setDescription}></Input>
-              <ProductCategori updateCategory={updateCategory} />
-              <Calc value={sum} changeValue={setSum}></Calc>
+              <ProductCategori
+                operation={operation}
+                updateCategory={updateCategory}
+              />
+              ;<Calc value={sum} changeValue={setSum}></Calc>
             </DatePicker>
           </Form>
           <ButtonCont>
