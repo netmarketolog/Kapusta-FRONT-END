@@ -56,5 +56,8 @@ export const ExitButton = styled.button`
     font-size: 12px;
     line-height: 1.17;
     color: #52555f;
+    :hover {
+      color: #ff751d;
+    }
   }
 `;
