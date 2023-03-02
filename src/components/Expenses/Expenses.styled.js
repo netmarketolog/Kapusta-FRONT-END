@@ -83,8 +83,7 @@ export const Form = styled.div`
   }
 `;
 export const DatePicker = styled.div`
-  
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     width: auto;
     display: flex;
     justify-content: flex-start;
@@ -119,7 +118,6 @@ export const MainContainer = styled.div`
   }
 `;
 export const TabStyle = styled.div`
-  
   @media screen and (min-width: 768px) {
     width: 704px;
     margin: auto;
@@ -128,7 +126,7 @@ export const TabStyle = styled.div`
     width: 1098px;
     margin: auto;
   }
-`
+`;
 export const Cont = styled.div`
   @media screen and (min-width: 768px) {
     display: flex;

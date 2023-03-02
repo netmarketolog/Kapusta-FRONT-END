@@ -103,7 +103,7 @@ export const Title = styled.span`
     width: 60px;
     text-align: center;
     position: absolute;
-    bottom: -21px;
+    bottom: -26px;
     left: -11px;
   }
 `;
@@ -119,7 +119,7 @@ export const Sum = styled.span`
 `;
 
 export const Span = styled.span`
-  @media screen and (max-width: 767.99px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     bottom: 19px;
     left: 0;
