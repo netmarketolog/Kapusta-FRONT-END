@@ -9,7 +9,6 @@ import Icons from '../../../../images/icons/spriteReportsSvg.svg';
 import { nanoid } from 'nanoid';
 
 export const ReportItem = ({ name, total, setCategory }) => {
-  console.log(name);
   return (
     <ReportItemButton key={nanoid()}>
       <Sum>{total}</Sum>

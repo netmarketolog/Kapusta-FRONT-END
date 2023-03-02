@@ -6,7 +6,6 @@ export const Wrap = styled.div`
     position: absolute;
     top: 42px;
     right: 32px;
-    width: 150px;
   }
   @media screen and (min-width: 1280px) {
     top: 42px;
@@ -50,7 +49,7 @@ export const BtnArrow = styled.button`
 export const Title = styled.p`
   text-align: center;
   font-weight: 700;
-  width: 98px;
+  min-width: 98px;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
