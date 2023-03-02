@@ -9,10 +9,10 @@ import { ExpensesIncomes } from '../../components/ExpensesIncomes/ExpensesIncome
 import { ChangeBalance } from '../../components/ChangeBalance/ChangeBalance';
 import { ContainerAuth } from 'components/Container/ContainerAuth';
 import { ExpensesAndIncome } from 'components/Reports/ExpensesAndIncome/ExpensesAndIncome';
+import { CalendarReport } from 'components/Reports/Calendar/Calendar';
 
 import { ContainerConfig } from './ReportPage.styled';
 import { ButtonMain } from 'components/Buttons/ButtonMain';
-
 
 const ReportPage = () => {
   // base
@@ -22,11 +22,13 @@ const ReportPage = () => {
   const [report, setReport] = useState([]);
 
   const [operation, setOperation] = useState('expense');
-  const [year, setYear] = useState(new Date().getFullYear()); // 2023 заменить на переменную текщий год
-  const [month, setMonth] = useState(new Date().getMonth() + 1); // 2 заменить на переменную текущий месяц
+  const [year, setYear] = useState(new Date().getFullYear());
+  const [month, setMonth] = useState(new Date().getMonth() + 1);
 
   const dispatch = useDispatch();
   const deadline = useSelector(selectTokenDeadline);
+
+  console.log(month);
 
   useEffect(() => {
     (async function fetchData() {
@@ -79,6 +81,7 @@ const ReportPage = () => {
     <ContainerAuth>
       <ContainerConfig>
         <ButtonMain />
+        <CalendarReport month={month} year={year} changeDate={changeDate} />
         <ChangeBalance />
         {/* <div>тут могла бути ваша РЕКЛАМА )))</div> */}
       </ContainerConfig>
