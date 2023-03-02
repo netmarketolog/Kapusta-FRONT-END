@@ -7,12 +7,14 @@ import { useEffect } from 'react';
 import { getTransactions } from 'redux/transactions/transactionsOperations';
 import { selectTokenDeadline } from 'redux/selectors';
 import { RefreshUser } from 'redux/auth/authOperations';
-import { selectOperationType } from 'redux/selectors';
+// import { selectOperationType } from 'redux/selectors';
+import { useState } from 'react';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const operation = useSelector(selectOperationType);
   const deadline = useSelector(selectTokenDeadline);
+
+  const [operation, setOperation] = useState('expense');
 
   useEffect(() => {
     (async function fetchData() {
@@ -21,13 +23,14 @@ const Home = () => {
       }
       await dispatch(getTransactions({ operation }));
     })();
+    console.log(operation);
   }, [dispatch, operation, deadline]);
 
   return (
     <ContainerAuth>
       <main>
         <ChangeBalance />
-        <Expenses operation={operation} />
+        <Expenses operation={operation} setOperation={setOperation} />
         <Outlet />
       </main>
     </ContainerAuth>
