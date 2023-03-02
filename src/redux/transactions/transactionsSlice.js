@@ -50,11 +50,10 @@ const transactionsSlice = createSlice({
       .addCase(getTransactions.pending, handlePending)
       .addCase(getTransactions.fulfilled, (state, action) => {
         handleFulfilled(state);
-        const arr = Object.keys(action.payload);
-        const data = { ...action.payload };
+        const arr = Object.keys(action.payload.salary);
+        const data = { ...action.payload.salary };
         if (!data[arr[0]]) return;
-        const { transactions } = data[arr[0]];
-        state.items = transactions;
+        state.items = action.payload.transactions;
         state.sumary = arr.map(item => {
           return { name: item, total: data[item].total };
         });

@@ -13,14 +13,6 @@ export const Tab = ({ switchOperation, operation }) => {
           backgroundColor: operation === 'expense' ? '#FEFEFE' : '#FAFBFD',
           color: operation === 'expense' ? '#ff751d' : '#000000',
         }}
-        // style={
-        //   operation === 'expense' && {
-        //     backgroundColor: '#FEFEFE',
-        //     color: '#ff751d',
-        //   }
-        // }
-        // active={operation === 'expense' ? true : false}
-        // name="expense"
       >
         EXPENSES
       </StyledTabButton>
@@ -31,8 +23,6 @@ export const Tab = ({ switchOperation, operation }) => {
           backgroundColor: operation === 'income' ? '#FEFEFE' : '#FAFBFD',
           color: operation === 'income' ? '#ff751d' : '#000000',
         }}
-        // active={operation === 'expense' ? false : true}
-        // name="income"
       >
         INCOME
       </StyledTabButtonA>
