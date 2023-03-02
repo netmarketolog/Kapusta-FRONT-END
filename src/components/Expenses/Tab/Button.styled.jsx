@@ -21,31 +21,30 @@ export const StyledTabButton = styled.button`
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #000000;
-  background-color: #FAFBFD;
+  background-color: #fafbfd;
   border-style: solid;
   border-color: ${props =>
     props.type === BTN_NAME.WHITE ? '#FEFEFE' : '#FAFBFD'};
 
   &:focus {
-    color: #FEFEFE;
-    background-color: #FF751D;
+    color: #fefefe;
+    background-color: #ff751d;
     border: none;
   }
-  
+
   @media screen and (min-width: 768px) {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     width: 138px;
     height: 40px;
     color: #000000;
-    background-color: #FAFBFD;
+    background-color: #fafbfd;
     &:focus {
-      color: #FF751D;
-      background-color: #FEFEFE;
+      color: #ff751d;
+      background-color: #fefefe;
       border: none;
     }
   }
-
 `;
 
 export const StyledTabButtonA = styled.button`
@@ -61,30 +60,28 @@ export const StyledTabButtonA = styled.button`
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #000000;
-  background-color: #FAFBFD;
+  background-color: #fafbfd;
   border-style: solid;
   border-color: ${props =>
     props.type === BTN_NAME.WHITE ? '#FEFEFE' : '#FAFBFD'};
 
   &:focus {
-    color: #FEFEFE;
-    background-color: #FF751D;
+    color: #fefefe;
+    background-color: #ff751d;
     border: none;
   }
-  
+
   @media screen and (min-width: 768px) {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     width: 138px;
     height: 40px;
     color: #000000;
-    background-color: #FAFBFD;
+    background-color: #fafbfd;
     &:focus {
-      color: #FF751D;
-      background-color: #FEFEFE;
+      color: #ff751d;
+      background-color: #fefefe;
       border: none;
     }
   }
-
 `;
-

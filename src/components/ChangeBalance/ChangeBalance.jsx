@@ -21,7 +21,7 @@ import { useLocation } from 'react-router-dom';
 import { ModalInfo } from 'components/Modal/ModalInfo/ModalInfo';
 
 export const ChangeBalance = () => {
-  const [startBalance, setStartBalance] = useState(`00.00`);
+  const [startBalance, setStartBalance] = useState(``);
   const { pathname } = useLocation();
   const balance = useSelector(selectBalance);
   const IsRefreshing = useSelector(selectIsRefreshing);
@@ -65,6 +65,7 @@ export const ChangeBalance = () => {
                     type="Number"
                     value={balance > 0 ? balance : startBalance}
                     disabled={balance > 0 ? true : false}
+                    placeholder="0.00"
                     onChange={formBalanceChange}
                   />
                   <Label>UAH</Label>

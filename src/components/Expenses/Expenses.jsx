@@ -31,24 +31,25 @@ import {
 import { selectTokenDeadline } from 'redux/selectors';
 import { RefreshUser } from 'redux/auth/authOperations';
 
-export const Expenses = ({ operation }) => {
+export const Expenses = ({ operation, setOperation }) => {
   const dispatch = useDispatch();
-  const [btn, setBtn] = useState(true);
+  // const [btn, setBtn] = useState(true);
   const [description, setDescription] = useState('');
   const [sum, setSum] = useState('');
   const [date, setDate] = useState(new Date());
   const [category, setCategory] = useState('');
   const deadline = useSelector(selectTokenDeadline);
-  const toggleBtn = () => {
-    setBtn(!btn);
-  };
+
+  // const toggleBtn = () => {
+  //   setBtn(!btn);
+  // };
   const switchOperation = async type => {
-    const operation = type.target.name ?? 'expense';
+    setOperation(type);
     if (deadline) {
       if (Date.now() >= deadline) await dispatch(RefreshUser());
     }
     await dispatch(getTransactions({ operation }));
-    toggleBtn();
+    // toggleBtn();
   };
 
   const handleSubmit = async () => {
@@ -83,7 +84,7 @@ export const Expenses = ({ operation }) => {
   return (
     <>
       <TabStyle>
-        <Tab switchOperation={switchOperation} btn={btn} />
+        <Tab switchOperation={switchOperation} operation={operation} />
       </TabStyle>
       <ConteinerGeneral>
         <ContForm>
