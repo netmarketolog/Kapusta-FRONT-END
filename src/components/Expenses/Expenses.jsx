@@ -67,7 +67,7 @@ export const Expenses = ({ operation, setOperation }) => {
       })
     );
     await dispatch(getTransactions({ operation }));
-    console.log('qeqewqewq');
+
     setDescription('');
     setSum('');
     setDate(new Date());

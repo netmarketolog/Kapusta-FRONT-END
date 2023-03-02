@@ -7,7 +7,7 @@ import { MONTHES } from 'utils/constants';
 export const CalendarReport = ({ month, year, changeDate }) => {
   return (
     <Wrap>
-      <Text>Current Texteriod:</Text>
+      <Text>Current period:</Text>
       <Switcher>
         <BtnArrow onClick={() => changeDate('inc')}>
           <svg width="8" height="15">
