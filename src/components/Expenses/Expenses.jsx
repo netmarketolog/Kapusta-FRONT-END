@@ -91,7 +91,7 @@ export const Expenses = ({ operation, setOperation }) => {
                 operation={operation}
                 updateCategory={updateCategory}
               />
-              ;<Calc value={sum} changeValue={setSum}></Calc>
+              <Calc value={sum} changeValue={setSum}></Calc>
             </DatePicker>
           </Form>
           <ButtonCont>
