@@ -62,6 +62,7 @@ export const Expenses = ({ operation, setOperation }) => {
       })
     );
     await dispatch(getTransactions({ operation }));
+    await dispatch(RefreshUser());
 
     setDescription('');
     setSum('');
