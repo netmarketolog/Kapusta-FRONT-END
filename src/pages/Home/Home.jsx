@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 import { getTransactions } from 'redux/transactions/transactionsOperations';
 import { selectTokenDeadline } from 'redux/selectors';
 import { RefreshUser } from 'redux/auth/authOperations';
-// import { selectOperationType } from 'redux/selectors';
 import { useState } from 'react';
 
 const Home = () => {
