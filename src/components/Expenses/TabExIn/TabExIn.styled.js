@@ -29,9 +29,11 @@ export const Scrollbar = styled.div`
 `;
 
 export const Item = styled.li`
-  display: flex;
-  justify-content: space-between;
-  padding-top: 25px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 35px;
+    border-bottom: 2px solid #F5F6FB;
   @media screen and (min-width: 768px) {
     height: 40px;
     grid-template-columns: 90px 140px 200px 100px 80px;
@@ -53,9 +55,16 @@ export const Item = styled.li`
   }
 `;
 export const DescriptionStyle = styled.p`
+  position: absolute;
+  top: 8px;
   font-weight: 700;
   color: #52555F;
   display: flex;
+  @media screen and (min-width: 768px){
+    position: relative;
+    font-weight: 400;
+    top: 0;
+  }
 `
 export const Plug = styled.div`
   height: 38px;
