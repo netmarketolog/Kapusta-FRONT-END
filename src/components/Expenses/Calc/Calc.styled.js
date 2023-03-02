@@ -15,6 +15,7 @@ export const CalcS = styled.input`
   display: block;
   width: 280px;
   height: 44px;
+  margin-top: 0;
   background-color: transparent;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
