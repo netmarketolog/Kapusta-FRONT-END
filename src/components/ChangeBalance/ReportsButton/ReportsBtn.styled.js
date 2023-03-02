@@ -25,6 +25,11 @@ export const ReportsLink = styled(NavLink)`
 
   @media screen and (min-width: 768px) {
     margin-bottom: 0;
+    margin-left: 250px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-left: 0px;
   }
 `;
 
