@@ -7,19 +7,20 @@ export const ReportsLink = styled(NavLink)`
   justify-content: center;
 
   margin-bottom: 43px;
-
+  fill: '#52555F';
   font-size: 12px;
   line-height: 14px;
   text-decoration: none;
   color: rgba(82, 85, 95, 0.7);
 
-  transition-property: color;
+  transition-property: color fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   :hover,
   :focus {
     color: #ff751d;
+    fill: #ff751d;
   }
 
   @media screen and (min-width: 768px) {

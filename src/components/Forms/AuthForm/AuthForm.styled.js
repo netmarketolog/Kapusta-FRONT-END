@@ -54,6 +54,7 @@ export const Input = styled(Field)`
 `;
 
 export const Custom = styled.div`
+  position: absolute;
   color: tomato;
   font-size: 10px;
 `;
