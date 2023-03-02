@@ -12,10 +12,10 @@ import Icons from '../../../images/icons/spriteReportsSvg.svg';
 import { ReportItem } from './ReportItem/ReportItem';
 
 export const ExpensesAndIncome = ({
-  report,
   changeOperation,
   setCategory,
   operation,
+  report,
 }) => {
   return (
     <Section>
@@ -36,14 +36,16 @@ export const ExpensesAndIncome = ({
           </BtnArrow>
         </Switcher>
         <ReportList>
-          {report.map(({ total, name }) => (
-            <ReportItem
-              key={name}
-              total={total}
-              name={name.toUpperCase()}
-              setCategory={setCategory}
-            />
-          ))}
+          {report.length !== 0
+            ? report.map(({ total, name }) => (
+                <ReportItem
+                  key={name}
+                  total={total}
+                  name={name}
+                  setCategory={setCategory}
+                />
+              ))
+            : ''}
         </ReportList>
       </Wrap>
     </Section>

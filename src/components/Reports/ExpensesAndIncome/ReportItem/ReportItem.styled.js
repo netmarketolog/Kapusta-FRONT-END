@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const ReportItemButton = styled.li`
@@ -34,7 +35,7 @@ export const Wrapper = styled.div`
   z-index: 1;
 `;
 
-export const ButtonReport = styled.button`
+export const ButtonReport = styled(NavLink)`
   cursor: pointer;
   height: 60px;
   max-width: 60px;
@@ -55,6 +56,17 @@ export const ButtonReport = styled.button`
     transform: scale(1.1);
     fill: #ff751d;
   }
+
+  /* &.active {
+    svg {
+      transform: scale(1.1);
+      fill: #ff751d;
+    }
+    > div {
+      background-color: #ffdac0;
+      transform: scale(1.1);
+    }
+  } */
 
   & > div {
     z-index: -1;

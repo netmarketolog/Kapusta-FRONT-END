@@ -11,7 +11,6 @@ export const ModalInfo = () => {
   const { pathname } = useLocation();
   const [showModal, setShowModal] = useState(true);
   const balance = useSelector(selectBalance);
-  console.log(typeof balance);
 
   useEffect(() => {
     if (balance === 0) {
@@ -22,7 +21,6 @@ export const ModalInfo = () => {
   });
 
   const handleKeyDown = evt => {
-    console.log(document.body.style.overflow);
     document.body.style.overflow = 'unset';
     if (evt.target === evt.currentTarget || evt.code === 'Escape') {
       setShowModal(false);

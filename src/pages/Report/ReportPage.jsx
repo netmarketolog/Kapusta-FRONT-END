@@ -17,7 +17,11 @@ import { ButtonMain } from 'components/Buttons/ButtonMain';
 const ReportPage = () => {
   // base
   const { statistics } = useSelector(selectReports);
+  const { expense, income } = useSelector(selectReports);
+
   const [category, setCategory] = useState('');
+  const [carrentCategory, setCarrentCategory] = useState(null);
+
   const [stats, setStats] = useState([]);
   const [report, setReport] = useState([]);
 
@@ -27,8 +31,6 @@ const ReportPage = () => {
 
   const dispatch = useDispatch();
   const deadline = useSelector(selectTokenDeadline);
-
-  console.log(month);
 
   useEffect(() => {
     (async function fetchData() {
@@ -40,15 +42,22 @@ const ReportPage = () => {
   }, [deadline, dispatch, month, operation, year]);
 
   useEffect(() => {
-    if (!statistics || !statistics[0]) return;
-    setCategory(statistics[0]._id);
-    const [data] = statistics.filter(item => item._id === category);
-    setStats(data?.stats);
+    if (!statistics || !statistics[0]) {
+      setReport([]);
+      return;
+    }
     const arr = statistics.map(it => {
       return { name: it._id, total: it.total };
     });
     setReport(arr);
-  }, [category, statistics]);
+  }, [statistics]);
+
+  useEffect(() => {
+    if (!statistics || !statistics[0]) return setStats([]);
+    setCategory(carrentCategory ?? statistics[0]._id);
+    const [data] = statistics.filter(item => item._id === category);
+    setStats(data?.stats);
+  }, [carrentCategory, category, statistics]);
 
   const changeDate = op => {
     switch (op) {
@@ -85,14 +94,20 @@ const ReportPage = () => {
         <ChangeBalance />
         {/* <div>тут могла бути ваша РЕКЛАМА )))</div> */}
       </ContainerConfig>
-      <ExpensesIncomes />
-      <ExpensesAndIncome
-        report={report}
-        changeOperation={changeOperation}
-        setCategory={setCategory}
-        operation={operation}
-      />
-      {stats && stats.length > 0 && <Diagram stats={stats} />}
+      {expense || income ? (
+        <>
+          <ExpensesIncomes />
+          <ExpensesAndIncome
+            report={report}
+            changeOperation={changeOperation}
+            setCategory={setCarrentCategory}
+            operation={operation}
+          />
+          {stats && stats.length > 0 && <Diagram stats={stats} />}
+        </>
+      ) : (
+        ''
+      )}
     </ContainerAuth>
   );
 };

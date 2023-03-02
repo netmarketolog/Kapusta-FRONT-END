@@ -1,11 +1,11 @@
 import {
   Container,
   ExpIncContainer,
-  IncСontainer,
+  IncContainer,
   Title,
   Exp,
   Inc,
-  ExpСontainer,
+  ExpContainer,
 } from './ExpensesIncomes.styled';
 import { selectReports, selectIsLoading } from '../../redux/selectors';
 import { useSelector } from 'react-redux';
@@ -17,22 +17,22 @@ export const ExpensesIncomes = () => {
   return (
     <Container>
       <ExpIncContainer>
-        <ExpСontainer>
+        <ExpContainer>
           <Title>Expenses:</Title>
           {isLoading ? (
             LoaderBtn()
           ) : (
-            <Exp>- {expense?.toLocaleString()} UAH.</Exp>
+            <Exp>- {expense?.toLocaleString() ?? 0} UAH.</Exp>
           )}
-        </ExpСontainer>
-        <IncСontainer>
+        </ExpContainer>
+        <IncContainer>
           <Title>Income:</Title>
           {isLoading ? (
             LoaderBtn()
           ) : (
-            <Inc>+ {income?.toLocaleString()} UAH.</Inc>
+            <Inc>+ {income?.toLocaleString() ?? 0} UAH.</Inc>
           )}
-        </IncСontainer>
+        </IncContainer>
       </ExpIncContainer>
     </Container>
   );

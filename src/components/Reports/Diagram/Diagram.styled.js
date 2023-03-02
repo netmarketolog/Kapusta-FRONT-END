@@ -51,6 +51,7 @@ export const Item = styled.li`
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   height: 15px;
+  min-width: 10px;
   background-color: #fed9bf;
   animation: left 500ms;
 
@@ -87,7 +88,7 @@ export const Item = styled.li`
     }
 
     width: 38px;
-
+    min-height: 10px;
     font-size: 12px;
     line-height: 14px;
     &:not(:last-child) {
@@ -109,11 +110,11 @@ export const Title = styled.span`
 
 export const Sum = styled.span`
   @media screen and (min-width: 768px) {
-    width: 60px;
+    width: 100px;
     text-align: center;
     position: absolute;
     top: -25px;
-    right: -11px;
+    right: -31px;
   }
 `;
 

@@ -51,7 +51,7 @@ export const ExpIncContainer = styled.div`
   }
 `;
 
-export const ExpСontainer = styled.div`
+export const ExpContainer = styled.div`
   margin-top: auto;
   margin-bottom: auto;
   align-items: center;
@@ -63,7 +63,7 @@ export const ExpСontainer = styled.div`
     padding-right: 20px;
   }
 `;
-export const IncСontainer = styled.div`
+export const IncContainer = styled.div`
   margin-top: auto;
   margin-bottom: auto;
   align-items: center;
