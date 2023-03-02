@@ -50,6 +50,7 @@ const transactionsSlice = createSlice({
       .addCase(getTransactions.pending, handlePending)
       .addCase(getTransactions.fulfilled, (state, action) => {
         handleFulfilled(state);
+        if (!action.payload.salary) return;
         const arr = Object.keys(action.payload.salary);
         const data = { ...action.payload.salary };
         if (!data[arr[0]]) return;
