@@ -109,7 +109,7 @@ export const Expenses = ({ operation, setOperation }) => {
               <TitleItem>CATEGORY</TitleItem>
               <TitleItem>SUM</TitleItem>
             </Title>
-            <TabExIn></TabExIn>
+            <TabExIn operation={operation}></TabExIn>
           </Container>
           <Summary />
         </Cont>

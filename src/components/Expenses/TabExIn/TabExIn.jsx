@@ -4,10 +4,16 @@ import { selectTransactions } from 'redux/selectors';
 
 import moment from 'moment';
 
-import { TabExInContainer, Item, Plug, Scrollbar, DescriptionStyle } from './TabExIn.styled';
+import {
+  TabExInContainer,
+  Item,
+  Plug,
+  Scrollbar,
+  DescriptionStyle,
+} from './TabExIn.styled';
 import { BasketBtn } from './BasketBtn';
 
-export const TabExIn = () => {
+export const TabExIn = ({ operation }) => {
   const [transactions, setTransactions] = useState([]);
 
   const items = useSelector(selectTransactions);
@@ -25,7 +31,15 @@ export const TabExIn = () => {
                 <p>{moment(date).format('DD.MM.YYYY')}</p>
                 <DescriptionStyle>{description}</DescriptionStyle>
                 <p>{category}</p>
-                <p>{sum.toFixed(2)}</p>
+                <p
+                  style={{
+                    fontWeight: 700,
+                    color: operation === 'expense' ? '#E7192E' : '#407946',
+                  }}
+                >
+                  {operation === 'expense' ? '- ' : ''}
+                  {sum.toFixed(2)}
+                </p>
                 <p>
                   <BasketBtn transactionId={_id} />
                 </p>
