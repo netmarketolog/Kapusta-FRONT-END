@@ -19,9 +19,9 @@ export const BalanceContainer = styled.div`
     padding-top: 40px;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
   }
   @media screen and (min-width: 1280px) {
     width: 1280px;
