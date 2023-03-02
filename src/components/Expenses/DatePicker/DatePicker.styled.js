@@ -18,7 +18,6 @@ export const DateWrapper = styled.div`
 
   @media screen and (min-width: 1280px) {
     margin: auto;
-    
   }
   .react-datepicker-wrapper {
     display: inline-block;
@@ -30,14 +29,18 @@ export const DateWrapper = styled.div`
     width: 80px;
   }
   input {
-      background-color: transparent;
-      border: none;
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: 900;
-      font-size: 12px;
-      line-height: 14px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+    width: 150px;
+    background-color: transparent;
+    border: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    @media screen and (min-width: 1280px) {
+      width: 110px;
+    }
   }
 `;
