@@ -23,7 +23,6 @@ const Home = () => {
       }
       await dispatch(getTransactions({ operation }));
     })();
-    console.log(operation);
   }, [dispatch, operation, deadline]);
 
   return (
