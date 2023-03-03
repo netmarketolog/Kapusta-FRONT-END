@@ -1,18 +1,13 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { SelectCustom } from './ProductCategori';
-import { defaultItems } from './DefaultItem';
 import React from 'react';
 import { INCOME, EXPENSE } from '../../utils/constants';
 
 export const ProductCategori = ({ updateCategory, operation }) => {
-  const [categories, setCategories] = useState('label category');
-  const getValue = () => {
-    return categories
-      ? defaultItems.find(categorie => categorie.value === categories)
-      : '';
-  };
+  // const [categories, setCategories] = useState('label category');
+
   const onChangr = newValue => {
-    setCategories(newValue.value);
+    // setCategories(newValue.value);
     updateCategory(newValue.value);
   };
   return (
@@ -20,7 +15,7 @@ export const ProductCategori = ({ updateCategory, operation }) => {
       <SelectCustom
         classNamePrefix="custom-select"
         onChange={onChangr}
-        value={getValue()}
+        // value={categories}
         options={operation === 'income' ? INCOME : EXPENSE}
         isSearchable={false}
         placeholder={'label category'}
