@@ -1,7 +1,7 @@
 import { PropTypes } from 'prop-types';
 
 import { TabConteiner } from './Tab.styled';
-import { StyledTabButton, StyledTabButtonA } from './Button.styled';
+import { StyledTabButton } from './Button.styled';
 
 export const Tab = ({ switchOperation, operation }) => {
   return (
@@ -16,7 +16,7 @@ export const Tab = ({ switchOperation, operation }) => {
       >
         EXPENSES
       </StyledTabButton>
-      <StyledTabButtonA
+      <StyledTabButton
         type="button"
         onClick={() => switchOperation('income')}
         style={{
@@ -25,7 +25,7 @@ export const Tab = ({ switchOperation, operation }) => {
         }}
       >
         INCOME
-      </StyledTabButtonA>
+      </StyledTabButton>
     </TabConteiner>
   );
 };

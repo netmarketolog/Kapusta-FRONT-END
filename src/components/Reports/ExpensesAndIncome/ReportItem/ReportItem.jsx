@@ -15,7 +15,14 @@ export const ReportItem = ({ name, total, setCategory }) => {
       <Wrapper>
         <ButtonReport onClick={() => setCategory(name)} name={name}>
           <svg width="60" height="60">
-            <use href={`${Icons}#icon-${name.toLowerCase()}`}></use>
+            <use
+              href={`${Icons}#icon-${
+                (name === 'Communal, communication' && 'communal') ||
+                (name === 'Sports, hobbies' && 'sports') ||
+                (name === 'Add. income' && 'add-income') ||
+                name.toLowerCase()
+              }`}
+            ></use>
           </svg>
           <div></div>
         </ButtonReport>
