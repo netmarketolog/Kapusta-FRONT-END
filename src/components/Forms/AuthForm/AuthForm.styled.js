@@ -2,6 +2,7 @@ import { Field, Form } from 'formik';
 import styled from 'styled-components';
 
 export const FormAuth = styled(Form)`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,10 +58,16 @@ export const Custom = styled.div`
   position: absolute;
   color: tomato;
   font-size: 10px;
+  margin-top: 4px;
+  left: 50px;
+  @media screen and (min-width: 768px) {
+    left: 120px;
+  }
 `;
 
 export const Label = styled.p`
   display: flex;
+
   flex-direction: column;
   align-items: flex-start;
   margin: 16px 0 12px 0;
