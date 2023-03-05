@@ -1,21 +1,14 @@
-// import { useState } from 'react';
-import { SelectCustom } from './ProductCategori';
+import { SelectCustom } from './ProductCategori.styled';
 import React from 'react';
 import { INCOME, EXPENSE } from '../../utils/constants';
 
-export const ProductCategori = ({ updateCategory, operation }) => {
-  // const [categories, setCategories] = useState('label category');
-
-  const onChangr = newValue => {
-    // setCategories(newValue.value);
-    updateCategory(newValue.value);
-  };
+export const ProductCategori = ({ updateCategory, operation, category }) => {
   return (
     <div>
       <SelectCustom
         classNamePrefix="custom-select"
-        onChange={onChangr}
-        // value={categories}
+        onChange={updateCategory}
+        value={category}
         options={operation === 'income' ? INCOME : EXPENSE}
         isSearchable={false}
         placeholder={'label category'}

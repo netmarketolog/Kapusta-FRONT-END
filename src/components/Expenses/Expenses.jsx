@@ -48,7 +48,7 @@ export const Expenses = ({ operation, setOperation }) => {
       addTransaction({
         date,
         description,
-        category,
+        category: category.value,
         sum,
         operation,
       })
@@ -59,12 +59,14 @@ export const Expenses = ({ operation, setOperation }) => {
     setDescription('');
     setSum('');
     setDate(new Date());
+    setCategory('');
   };
 
   const handleClear = () => {
     setDescription('');
     setSum('');
     setDate(new Date());
+    setCategory('');
   };
   const updateCategory = value => {
     setCategory(value);
@@ -83,6 +85,7 @@ export const Expenses = ({ operation, setOperation }) => {
               <ProductCategori
                 operation={operation}
                 updateCategory={updateCategory}
+                category={category}
               />
               <Calc value={sum} changeValue={setSum}></Calc>
             </DatePicker>
