@@ -49,7 +49,7 @@ export const BtnArrow = styled.button`
   transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:focus {
-    transform: scale(2, 0.7);
+    transform: scale(0.8);
   }
 `;
 
