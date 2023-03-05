@@ -22,12 +22,13 @@ const Home = () => {
       }
       await dispatch(getTransactions({ operation }));
     })();
-  }, [dispatch, operation, deadline]);
+  }, [deadline, dispatch, operation]);
 
   return (
     <ContainerAuth>
       <main>
         <ChangeBalance />
+
         <Expenses operation={operation} setOperation={setOperation} />
         <Outlet />
       </main>

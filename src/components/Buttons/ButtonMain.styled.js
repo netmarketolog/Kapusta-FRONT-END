@@ -34,5 +34,12 @@ export const Text = styled.p`
     color: rgba(82, 85, 95, 0.7);
     margin-left: 16px;
     cursor: pointer;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      color: #ff751d;
+    }
   }
 `;

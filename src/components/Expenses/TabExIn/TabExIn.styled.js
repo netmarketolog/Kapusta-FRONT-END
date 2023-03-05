@@ -29,11 +29,11 @@ export const Scrollbar = styled.div`
 `;
 
 export const Item = styled.li`
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 35px;
-    border-bottom: 2px solid #F5F6FB;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 35px;
+  border-bottom: 2px solid #f5f6fb;
   @media screen and (min-width: 768px) {
     height: 40px;
     grid-template-columns: 90px 140px 200px 100px 80px;
@@ -58,14 +58,14 @@ export const DescriptionStyle = styled.p`
   position: absolute;
   top: 8px;
   font-weight: 700;
-  color: #52555F;
+  color: #52555f;
   display: flex;
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     position: relative;
     font-weight: 400;
     top: 0;
   }
-`
+`;
 export const Plug = styled.div`
   height: 38px;
   grid-template-columns: 130px 160px 210px 110px 120px;
@@ -78,4 +78,26 @@ export const Plug = styled.div`
   border-bottom: 2px solid #f4f6fb;
   border-right: 2px solid #f4f6fb;
   border-left: 2px solid #f4f6fb;
+`;
+
+export const DeleteItem = styled.span`
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (min-width: 1280px) {
+    margin-left: 60px;
+  }
+
+  &:hover,
+  &:focus {
+    background: #f5f6fb;
+  }
 `;

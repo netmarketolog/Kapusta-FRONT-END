@@ -20,6 +20,7 @@ export const StyledButton = styled.button`
   line-height: 1.167;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  cursor: pointer;
   color: ${props =>
     props.type === (BTN_NAME.LOGIN || BTN_NAME.ORANGE) ? '#fff' : '#52555f'};
 
@@ -37,8 +38,10 @@ export const StyledButton = styled.button`
   box-shadow: ${props =>
     props.type === BTN_NAME.REGISTER
       ? '1px 3px 5px rgba(82, 85, 95, 0.15)'
-    : 'none'};
-      border-radius: 16px;
+      : 'none'};
+  border-radius: 16px;
+
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   @media screen and (min-width: 768px) {
     border-radius: ${props =>
@@ -49,7 +52,7 @@ export const StyledButton = styled.button`
     margin-right: 15px;
     margin-left: 0px;
   }
-  
+
   @media screen and (min-width: 1280px) {
     border-radius: 16px;
     width: 136px;
@@ -65,4 +68,3 @@ export const StyledButton = styled.button`
     border: none;
   }
 `;
-

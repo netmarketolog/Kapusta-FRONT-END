@@ -63,7 +63,7 @@ export const RefreshUser = createAsyncThunk(
       const token = await refreshToken(persistedToken);
       setAuthHeader(token.accessToken);
       const { data } = await axios.get('/users/current');
-
+      data.token = token;
       return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -73,11 +73,11 @@ export const RefreshUser = createAsyncThunk(
 
 export const googleUser = createAsyncThunk(
   'auth/google',
-  async ({ accessToken }, thunkAPI) => {
+  async (token, thunkAPI) => {
     try {
-      setAuthHeader(accessToken);
+      setAuthHeader(token.accessToken);
       const { data } = await axios.get('/users/current');
-
+      data.token = token;
       return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

@@ -5,6 +5,15 @@ export const DateWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
+  border: 2px solid #ffffff;
+  border-radius: 16px;
+  border-bottom-right-radius: 0;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    border: 2px solid #c7ccdc;
+  }
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -13,7 +22,7 @@ export const DateWrapper = styled.div`
     margin-top: 0;
     margin-bottom: 0;
     margin-left: 30px;
-    margin-right: 30px;
+    width: 104px;
   }
 
   @media screen and (min-width: 1280px) {
@@ -39,8 +48,13 @@ export const DateWrapper = styled.div`
     line-height: 14px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    @media screen and (min-width: 1280px) {
-      width: 110px;
+    outline: none;
+    cursor: pointer;
+
+    @media screen and (min-width: 768px) {
+      width: 80px;
+      height: 40px;
+      padding: 13px 5px;
     }
   }
 `;

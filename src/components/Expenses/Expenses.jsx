@@ -39,14 +39,6 @@ export const Expenses = ({ operation, setOperation }) => {
   const [category, setCategory] = useState('');
   const deadline = useSelector(selectTokenDeadline);
 
-  const switchOperation = async type => {
-    setOperation(type);
-    if (deadline) {
-      if (Date.now() >= deadline) await dispatch(RefreshUser());
-    }
-    await dispatch(getTransactions({ operation }));
-  };
-
   const handleSubmit = async () => {
     if (description === '' || sum === '') return;
     if (deadline) {
@@ -80,7 +72,7 @@ export const Expenses = ({ operation, setOperation }) => {
   return (
     <>
       <TabStyle>
-        <Tab switchOperation={switchOperation} operation={operation} />
+        <Tab switchOperation={setOperation} operation={operation} />
       </TabStyle>
       <ConteinerGeneral>
         <ContForm>
@@ -96,7 +88,12 @@ export const Expenses = ({ operation, setOperation }) => {
             </DatePicker>
           </Form>
           <ButtonCont>
-            <Button handleAction={handleSubmit}>INPUT</Button>
+            <Button
+              style={{ backgroundColor: '#FF751D', color: '#ffffff' }}
+              handleAction={handleSubmit}
+            >
+              INPUT
+            </Button>
             <Button handleAction={handleClear}>CLEAR</Button>
           </ButtonCont>
         </ContForm>
