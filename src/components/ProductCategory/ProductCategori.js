@@ -16,6 +16,7 @@ export const SelectCustom = styled(Select)`
     letter-spacing: 0.02em;
     color: #c7ccdc;
     box-shadow: none;
+    cursor: pointer;
     :hover {
       outline: none;
       border: 2px solid #c7ccdc;

@@ -10,8 +10,10 @@ const AuthPage = () => {
   const [searchParams] = useSearchParams();
   useEffect(() => {
     const accessToken = searchParams.get('accessToken');
+    const refreshToken = searchParams.get('refreshToken');
+    const expiresIn = searchParams.get('expiresIn');
     if (accessToken) {
-      dispatch(googleUser({ accessToken }));
+      dispatch(googleUser({ accessToken, refreshToken, expiresIn }));
     }
   }, [dispatch, searchParams]);
 

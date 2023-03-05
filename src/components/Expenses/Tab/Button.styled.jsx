@@ -23,6 +23,7 @@ export const StyledTabButton = styled.button`
   color: #000000;
   background-color: #fafbfd;
   border-style: solid;
+  cursor: pointer;
   border-color: ${props =>
     props.type === BTN_NAME.WHITE ? '#FEFEFE' : '#FAFBFD'};
 
@@ -62,6 +63,7 @@ export const StyledTabButtonA = styled.button`
   color: #000000;
   background-color: #fafbfd;
   border-style: solid;
+  cursor: pointer;
   border-color: ${props =>
     props.type === BTN_NAME.WHITE ? '#FEFEFE' : '#FAFBFD'};
 

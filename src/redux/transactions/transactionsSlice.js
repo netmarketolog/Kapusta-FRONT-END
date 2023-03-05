@@ -34,9 +34,7 @@ const transactionsSlice = createSlice({
   extraReducers: builder =>
     builder
       .addCase(addTransaction.pending, handlePending)
-      .addCase(addTransaction.fulfilled, (state, action) => {
-        handleFulfilled(state);
-      })
+      .addCase(addTransaction.fulfilled, handlePending)
       .addCase(addTransaction.rejected, handleError)
       .addCase(deleteTransaction.pending, handlePending)
       .addCase(deleteTransaction.fulfilled, (state, action) => {
@@ -47,7 +45,11 @@ const transactionsSlice = createSlice({
         state.items.splice(index, 1);
       })
       .addCase(deleteTransaction.rejected, handleError)
-      .addCase(getTransactions.pending, handlePending)
+      .addCase(getTransactions.pending, state => {
+        handlePending(state);
+        state.sumary = [];
+        state.items = [];
+      })
       .addCase(getTransactions.fulfilled, (state, action) => {
         handleFulfilled(state);
         if (!action.payload.salary) return;
@@ -59,7 +61,11 @@ const transactionsSlice = createSlice({
           return { name: item, total: data[item].total };
         });
       })
-      .addCase(getTransactions.rejected, handleError)
+      .addCase(getTransactions.rejected, (state, action) => {
+        handleError(state);
+        state.sumary = [];
+        state.items = [];
+      })
       .addCase(getReport.pending, handlePending)
       .addCase(getReport.fulfilled, (state, action) => {
         handleFulfilled(state);

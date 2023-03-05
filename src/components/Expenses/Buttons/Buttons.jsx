@@ -1,10 +1,9 @@
-import {StyledButton} from './Button.styled';
+import { StyledButton } from './Button.styled';
 
-export function Button({ name, handleAction, children }) {
+export function Button({ style, name, handleAction, children }) {
   return (
-    <StyledButton type={name} onClick={handleAction}>
+    <StyledButton style={style} type={name} onClick={handleAction}>
       {children}
     </StyledButton>
   );
 }
-

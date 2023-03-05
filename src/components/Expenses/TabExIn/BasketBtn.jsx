@@ -6,6 +6,7 @@ import { ModalAsk } from 'components/Modal/ModalAsk/ModalAsk';
 import { deleteTransaction } from 'redux/transactions/transactionsOperations';
 import { RefreshUser } from 'redux/auth/authOperations';
 import { selectTokenDeadline } from 'redux/selectors';
+import { DeleteItem } from './TabExIn.styled';
 
 export const BasketBtn = ({ transactionId }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -36,13 +37,13 @@ export const BasketBtn = ({ transactionId }) => {
 
   return (
     <>
-      <span
+      <DeleteItem
         id={transactionId}
         onClick={() => handleModalOpen(transactionId)}
         style={{ cursor: 'pointer' }}
       >
         <DeleteIcon />
-      </span>
+      </DeleteItem>
 
       {modalOpen && (
         <ModalAsk

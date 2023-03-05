@@ -12,21 +12,22 @@ export const InputW = styled.input`
   line-height: 14px;
   letter-spacing: 0.02em;
   color: #c7ccdc;
+  cursor: pointer;
   :hover {
     outline: none;
-    border: 2px solid #C7CCDC;
-    
+    border: 2px solid #c7ccdc;
   }
   @media screen and (min-width: 768px) {
     width: 184px;
     border-bottom-right-radius: 0px;
     border: 2px solid #f5f6fb;
+    border-right: 1px #c7ccdc;
     margin-left: 44px;
   }
 
   @media screen and (min-width: 1280px) {
     width: 290px;
-    border-right: 1px #C7CCDC;
+    border-right: 1px #c7ccdc;
     margin-left: 32px;
   }
 `;
