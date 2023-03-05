@@ -55,18 +55,8 @@ export const ButtonReport = styled(NavLink)`
   &:hover svg {
     transform: scale(1.1);
     fill: #ff751d;
+    transform: scale(1.1);
   }
-
-  /* &.active {
-    svg {
-      transform: scale(1.1);
-      fill: #ff751d;
-    }
-    > div {
-      background-color: #ffdac0;
-      transform: scale(1.1);
-    }
-  } */
 
   & > div {
     z-index: -1;

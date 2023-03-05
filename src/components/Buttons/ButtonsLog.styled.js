@@ -11,6 +11,7 @@ const StyledButtonLog = styled.button`
   height: 44px;
   border-radius: 16px;
   margin-right: 8px;
+  cursor: pointer;
 
   font-family: Roboto, sans-serif;
   font-size: 12px;
