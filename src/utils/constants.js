@@ -33,7 +33,7 @@ export const INCOME = [
 
 export const EXPENSE = [
   { value: 'Transport', label: 'Transport' },
-  { value: 'labels', label: 'labels' },
+  { value: 'Products', label: 'Products' },
   { value: 'Health', label: 'Health' },
   { value: 'Alcohol', label: 'Alcohol' },
   { value: 'Entertainment', label: 'Entertainment' },
