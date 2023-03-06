@@ -16,6 +16,7 @@ export const ExpensesAndIncome = ({
   setCategory,
   operation,
   report,
+  category,
 }) => {
   return (
     <Section>
@@ -43,6 +44,7 @@ export const ExpensesAndIncome = ({
                   total={total}
                   name={name}
                   setCategory={setCategory}
+                  category={category}
                 />
               ))
             : ''}

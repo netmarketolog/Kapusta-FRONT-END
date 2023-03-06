@@ -8,12 +8,16 @@ import {
 import Icons from '../../../../images/icons/spriteReportsSvg.svg';
 import { nanoid } from 'nanoid';
 
-export const ReportItem = ({ name, total, setCategory }) => {
+export const ReportItem = ({ name, total, setCategory, category }) => {
   return (
     <ReportItemButton key={nanoid()}>
       <Sum>{total}</Sum>
       <Wrapper>
-        <ButtonReport onClick={() => setCategory(name)} name={name}>
+        <ButtonReport
+          name={name}
+          category={category}
+          onClick={() => setCategory(name)}
+        >
           <svg width="60" height="60">
             <use
               href={`${Icons}#icon-${

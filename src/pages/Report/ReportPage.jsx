@@ -57,7 +57,7 @@ const ReportPage = () => {
     setCategory(carrentCategory ?? statistics[0]._id);
     const [data] = statistics.filter(item => item._id === category);
     setStats(data?.stats);
-  }, [carrentCategory, category, statistics]);
+  }, [carrentCategory, category, statistics, operation]);
 
   const changeDate = op => {
     switch (op) {
@@ -102,6 +102,7 @@ const ReportPage = () => {
             changeOperation={changeOperation}
             setCategory={setCarrentCategory}
             operation={operation}
+            category={category}
           />
           {stats && stats.length > 0 && <Diagram stats={stats} />}
         </>
