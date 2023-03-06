@@ -55,7 +55,6 @@ export const ButtonReport = styled(NavLink)`
   &:hover svg {
     transform: scale(1.1);
     fill: #ff751d;
-    transform: scale(1.1);
   }
 
   & > div {
@@ -66,7 +65,10 @@ export const ButtonReport = styled(NavLink)`
     transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
       transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    background-color: #f5f6fb;
+    transform: ${props =>
+      props.name === props.category ? 'scale(1.1)' : 'none'};
+    background-color: ${props =>
+      props.name === props.category ? '#ffdac0' : '#f5f6fb'};
     border-radius: 20px;
     position: absolute;
     bottom: 0;
@@ -79,7 +81,9 @@ export const ButtonReport = styled(NavLink)`
       transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1;
 
-    fill: #071f41;
+    transform: ${props =>
+      props.name === props.category ? 'scale(1.1)' : 'none'};
+    fill: ${props => (props.name === props.category ? '#ff751d' : '#071f41')};
   }
 `;
 
