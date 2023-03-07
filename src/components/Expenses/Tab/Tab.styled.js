@@ -4,7 +4,7 @@ export const StyledButtonExpenses = styled.text`
   text-align: center;
   font-weight: 700;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.17;
   text-transform: uppercase;
   color: #ff751d;
 `;
@@ -13,7 +13,7 @@ export const StyledButtonIncome = styled.text`
   text-align: center;
   font-weight: 700;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.17;
   text-transform: uppercase;
   color: #000000;
 `;
@@ -24,6 +24,7 @@ export const TabConteiner = styled.div`
   left: 0;
   bottom: 0;
   width: 100%;
+  justify-content: center;
   @media screen and (min-width: 768px) {
     display: flex;
     position: relative;

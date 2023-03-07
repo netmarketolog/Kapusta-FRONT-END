@@ -90,7 +90,7 @@ export const Item = styled.li`
     width: 38px;
     min-height: 10px;
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.17;
     &:not(:last-child) {
       margin-right: 25px;
       margin-bottom: 0;
@@ -128,6 +128,6 @@ export const Span = styled.span`
     width: calc(100% + 10px);
     min-width: 80px;
     font-size: 10px;
-    line-height: 12px;
+    line-height: 1.2;
   }
 `;

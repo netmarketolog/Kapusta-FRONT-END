@@ -29,7 +29,7 @@ export const Text = styled.p`
     display: block;
     font-weight: 400;
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: rgba(82, 85, 95, 0.7);
     margin-left: 16px;

@@ -16,7 +16,7 @@ const StyledButtonLog = styled.button`
   font-family: Roboto, sans-serif;
   font-size: 12px;
   font-weight: 700;
-  line-height: 1.167;
+  line-height: 1.17;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: ${props =>

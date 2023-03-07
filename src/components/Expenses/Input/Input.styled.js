@@ -9,7 +9,7 @@ export const InputW = styled.input`
   outline: none;
   border: 2px solid white;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.17;
   letter-spacing: 0.02em;
   color: #c7ccdc;
   cursor: pointer;

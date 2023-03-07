@@ -22,7 +22,7 @@ export const CalcS = styled.input`
     padding-left: 19px;
     outline: none;
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.17;
     letter-spacing: 0.02em;
     color: #c7ccdc;
     :hover {

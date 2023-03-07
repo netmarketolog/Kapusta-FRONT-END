@@ -54,7 +54,7 @@ export const BalanceText = styled.p`
   margin: 0;
   font-weight: 500;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.17;
   margin-bottom: 8px;
 
   @media screen and (min-width: 768px) {
@@ -73,7 +73,7 @@ export const BalanceForm = styled.form`
 
 export const BalanceInput = styled.input`
   width: 140px;
-  height: 44px;
+  max-height: 46px;
   text-align: end;
   padding: 12px 44px 12px 19px;
   border: 2px solid #fff;
@@ -82,9 +82,10 @@ export const BalanceInput = styled.input`
   outline: none;
   font-weight: 700;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.17;
   text-transform: uppercase;
   color: #000000;
+
   ::-webkit-outer-spin-button,
   ::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -155,7 +156,7 @@ export const InputBtn = styled.button`
   border-radius: 0px 22px 22px 0px;
   background: transparent;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.17;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: rgba(82, 85, 95, 0.7);
@@ -167,8 +168,8 @@ export const InputBtn = styled.button`
     color: #ffffff;
   }
   :disabled {
-    width: 142px;
-    height: 44px;
+    width: 140px;
+    max-height: 42px;
     align-items: center;
     color: rgba(82, 85, 95, 0.7);
     padding: 12px 22px 12px 18px;
@@ -178,7 +179,7 @@ export const InputBtn = styled.button`
     border-radius: 0px 22px 22px 0px;
     background: transparent;
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.17;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: rgba(82, 85, 95, 0.7);
@@ -191,6 +192,7 @@ export const InputBtn = styled.button`
   }
   @media screen and (min-width: 768px) {
     width: 125px;
+    height: 42px;
     padding: 12px 6px;
     border: 2px solid #ffffff;
     border-radius: 16px;
@@ -202,16 +204,17 @@ export const InputBtn = styled.button`
 
 export const Label = styled.label`
   position: absolute;
-  top: 16px;
+  top: 15px;
   right: 0;
   font-weight: 700;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.17;
   text-transform: uppercase;
   margin-right: 16px;
 
   @media screen and (min-width: 768px) {
     margin-right: 36px;
+    top: 14px;
   }
 `;
 

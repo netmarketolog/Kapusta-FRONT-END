@@ -44,7 +44,7 @@ export const Input = styled(Field)`
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 1.14;
   letter-spacing: 0.04em;
   color: #a6abb9;
 
@@ -75,12 +75,12 @@ export const Label = styled.p`
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
-  line-height: 12px;
+  line-height: 1.2;
   letter-spacing: 0.04em;
 
   @media screen and (min-width: 768px) {
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.17;
   }
 `;
 export const Buttons = styled.div`
@@ -92,7 +92,7 @@ export const Buttons = styled.div`
 export const TextForm = styled.p`
   font-weight: 400;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   color: #52555f;
 `;

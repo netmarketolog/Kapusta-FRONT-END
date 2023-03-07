@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const TitleItem = styled.div`
   font-style: normal;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.17;
   align-items: center;
   text-align: center;
   font-weight: 700;
@@ -80,6 +80,7 @@ export const Form = styled.div`
     display: flex;
     max-width: 100%;
     justify-content: space-between;
+    align-items: center;
   }
 `;
 export const DatePicker = styled.div`
@@ -88,6 +89,8 @@ export const DatePicker = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-left: 20px;
+    margin-right: 30px;
   }
 `;
 export const ConteinerGeneral = styled.div`
