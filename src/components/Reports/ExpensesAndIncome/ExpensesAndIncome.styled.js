@@ -5,7 +5,7 @@ export const Section = styled.div`
   border-radius: 30px;
   background-color: #ffffff;
 
-  width: 100%;
+  max-width: 280px;
   /* margin-top: 20px; */
   margin-bottom: 30px;
 
@@ -32,6 +32,7 @@ export const Switcher = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 20px;
   margin-bottom: 20px;
 `;
 

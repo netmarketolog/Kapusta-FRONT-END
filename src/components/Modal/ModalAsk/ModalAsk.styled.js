@@ -52,7 +52,7 @@ export const TitleText = styled.p`
 
   font-weight: 500;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 1.14;
   text-align: center;
   letter-spacing: 0.02em;
 
@@ -74,7 +74,7 @@ export const ConfirmBtn = styled.button`
 
   font-weight: 700;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.17;
   text-align: center;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -105,7 +105,7 @@ export const CancelBtn = styled.button`
 
   font-weight: 700;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.17;
   text-align: center;
   letter-spacing: 0.02em;
   text-transform: uppercase;

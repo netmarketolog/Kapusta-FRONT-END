@@ -17,6 +17,7 @@ export const ExpIncContainer = styled.div`
   background: #ffffff;
   box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
   border-radius: 20px;
+  justify-content: center;
 
   ::after {
     content: '';
@@ -77,7 +78,7 @@ export const IncContainer = styled.div`
 export const Title = styled.div`
   font-weight: 700;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 1.14;
   text-align: center;
   color: #52555f;
   margin-bottom: 4px;
@@ -87,20 +88,11 @@ export const Title = styled.div`
   }
 `;
 
-export const Exp = styled.div`
+export const ExpInc = styled.div`
   font-weight: 700;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 1.14;
   text-align: center;
   letter-spacing: 0.04em;
   color: #e53935;
-`;
-
-export const Inc = styled.div`
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  text-align: center;
-  letter-spacing: 0.04em;
-  color: #407946;
 `;

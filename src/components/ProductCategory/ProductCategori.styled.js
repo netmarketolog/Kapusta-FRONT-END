@@ -12,7 +12,7 @@ export const SelectCustom = styled(Select)`
     outline: none;
     border: 2px solid #ffffff;
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.17;
     letter-spacing: 0.02em;
     color: #c7ccdc;
     box-shadow: none;
@@ -51,7 +51,7 @@ export const SelectCustom = styled(Select)`
     border-radius: 0px;
     border: 2px solid #f5f6fb;
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.17;
     letter-spacing: 0.02em;
     color: #c7ccdc;
     box-shadow: 0px 3px 4px rgba(170, 178, 197, 0.4);
@@ -76,7 +76,7 @@ export const SelectCustom = styled(Select)`
   .custom-select__option {
     padding: 10px 0px 10px 20px;
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.17;
     letter-spacing: 0.02em;
     color: #c7ccdc;
     cursor: pointer;
@@ -91,7 +91,7 @@ export const SelectCustom = styled(Select)`
   .custom-select__option--is-focused {
     background: #f5f6fb;
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.17;
     letter-spacing: 0.02em;
     color: #52555f;
     :hover {
@@ -106,17 +106,17 @@ export const SelectCustom = styled(Select)`
   .custom-select__option--is-selected {
     background: #f5f6fb;
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.17;
     letter-spacing: 0.02em;
     color: #52555f;
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.17;
     letter-spacing: 0.02em;
     color: #52555f;
     :hover {
       background: #f5f6fb;
       font-size: 12px;
-      line-height: 14px;
+      line-height: 1.17;
       letter-spacing: 0.02em;
       color: #52555f;
     }

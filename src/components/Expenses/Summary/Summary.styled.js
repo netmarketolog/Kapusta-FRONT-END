@@ -33,7 +33,7 @@ export const Text = styled.p`
   text-align: center;
   font-weight: 700;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.17;
   text-transform: uppercase;
   color: #000000;
 `;
@@ -43,7 +43,7 @@ export const Item = styled.li`
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #52555f;

@@ -44,14 +44,14 @@ export const HeroTitl = styled.svg`
 export const HeroText = styled.h1`
   font-weight: bold;
   font-size: 13px;
-  line-height: 15px;
+  line-height: 1.15;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: #52555f;
   padding-left: 12px;
   @media screen and (min-width: 768px) {
     font-size: 16px;
-    line-height: 19px;
+    line-height: 1.19;
     letter-spacing: 0.18em;
     padding-left: 50px;
   }

@@ -9,7 +9,7 @@ export const ReportsLink = styled(NavLink)`
   margin-bottom: 43px;
   fill: '#52555F';
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.17;
   text-decoration: none;
   color: rgba(82, 85, 95, 0.7);
 

@@ -3,8 +3,7 @@ import {
   ExpIncContainer,
   IncContainer,
   Title,
-  Exp,
-  Inc,
+  ExpInc,
   ExpContainer,
 } from './ExpensesIncomes.styled';
 import { selectReports, selectIsLoading } from '../../redux/selectors';
@@ -22,7 +21,7 @@ export const ExpensesIncomes = () => {
           {isLoading ? (
             LoaderBtn()
           ) : (
-            <Exp>- {expense?.toLocaleString() ?? 0} UAH.</Exp>
+            <ExpInc>- {expense?.toLocaleString() ?? 0} UAH.</ExpInc>
           )}
         </ExpContainer>
         <IncContainer>
@@ -30,7 +29,7 @@ export const ExpensesIncomes = () => {
           {isLoading ? (
             LoaderBtn()
           ) : (
-            <Inc>+ {income?.toLocaleString() ?? 0} UAH.</Inc>
+            <ExpInc>+ {income?.toLocaleString() ?? 0} UAH.</ExpInc>
           )}
         </IncContainer>
       </ExpIncContainer>

@@ -4,16 +4,16 @@ export const StyledTabButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 158px;
   height: 53px;
   font-family: Roboto, sans-serif;
   font-size: 12px;
   font-weight: 700;
-  line-height: 1.167;
+  line-height: 1.17;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #000000;
-  background-color: #fafbfd;
+  background-color: #0f182b;
   cursor: pointer;
   border-width: 0;
 
