@@ -32,6 +32,7 @@ export const Item = styled.li`
   position: relative;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-top: 35px;
   border-bottom: 2px solid #f5f6fb;
   @media screen and (min-width: 768px) {
