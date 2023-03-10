@@ -156,6 +156,7 @@ export const ButtonCont = styled.div`
 
   @media screen and (min-width: 1280px) {
     display: flex;
+    margin-right: 30px;
     padding-top: 0px;
     margin-top: 0;
   }
