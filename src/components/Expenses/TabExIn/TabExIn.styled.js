@@ -55,6 +55,19 @@ export const Item = styled.li`
     grid-template-columns: 130px 160px 210px 110px 120px;
   }
 `;
+
+export const TimeStyle = styled.p`
+  font-size: 10px;
+  line-height: 1.12;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #52555f;
+  @media screen and (min-width: 768px) {
+    font-size: 12px;
+    line-height: 1.12;
+  }
+`;
+
 export const DescriptionStyle = styled.p`
   position: absolute;
   top: 8px;

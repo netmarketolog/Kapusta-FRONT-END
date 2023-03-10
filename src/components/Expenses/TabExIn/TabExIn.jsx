@@ -10,6 +10,7 @@ import {
   Plug,
   Scrollbar,
   DescriptionStyle,
+  TimeStyle,
 } from './TabExIn.styled';
 import { BasketBtn } from './BasketBtn';
 import Loader from 'components/Loader/Loader';
@@ -33,7 +34,7 @@ export const TabExIn = ({ operation }) => {
             {transactions.map(({ _id, date, description, category, sum }) =>
               _id ? (
                 <Item key={_id}>
-                  <p>{moment(date).format('DD.MM.YYYY')}</p>
+                  <TimeStyle>{moment(date).format('DD.MM.YYYY')}</TimeStyle>
                   <DescriptionStyle>{description}</DescriptionStyle>
                   <p>{category}</p>
                   <p
